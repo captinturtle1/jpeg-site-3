@@ -23,7 +23,7 @@ const [scrollNav, setScrollNav] = useState(false);
   
 
     return (
-        <nav className={scrollNav === true ? "fixed top-0 left-0 right-0 flex items-center justify-between flex-wrap bg-teal-500 p-6 ease-out duration-300 bg-opacity-80 backdrop-blur-lg" : "fixed top-0 left-0 right-0 flex items-center justify-between flex-wrap bg-teal-500 p-6 bg-opacity-0 ease-out duration-300"}>
+        <nav className={scrollNav === true ? "fixed top-0 left-0 right-0 flex items-center justify-between flex-wrap bg-teal-400 p-6 ease-out duration-300 bg-opacity-80 backdrop-blur-lg" : "fixed top-0 left-0 right-0 flex items-center justify-between flex-wrap bg-teal-500 p-6 bg-opacity-0 ease-out duration-300"}>
             <div onClick={toggleHome} className="flex items-center flex-shrink-0 text-white mr-6 cursor-pointer">
                 <img className="fill-current h-8 w-8 mr-2" width="54" height="54" src={"pinksquare.png"}/>
                 <span className="font-semibold text-xl tracking-tight mr-4">NFTEZY</span>
@@ -47,7 +47,7 @@ const [scrollNav, setScrollNav] = useState(false);
                 </div>
             </div>
             <div className="hidden lg:block">
-                <a href="#" className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Dashboard</a>
+                <a href="/dashboard" className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Dashboard</a>
             </div>
         </nav>
     );
