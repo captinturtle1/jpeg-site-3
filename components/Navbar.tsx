@@ -35,19 +35,19 @@ const Navbar = ({ toggle }) => {
             </div>
             <div className={scrollNav === true ? "transition-all w-full hidden flex-grow lg:flex lg:items-center lg:w-auto text-xl text-teal-200" : "transition-all w-full hidden lg:flex lg:items-center lg:w-auto text-xl text-black"}>
                 <div className="">
-                  <Link to="About" spy={true} smooth={true} offset={0} duration={800} className={scrollNav === true ? "block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-10 cursor-pointer" : "block mt-4 lg:inline-block lg:mt-0 hover:text-gray-300 mr-10 cursor-pointer"}>
+                  <Link activeClass="underline decoration-pink-300 decoration-4 underline-offset-[28px]" to="About" spy={true} smooth={true} offset={0} duration={800} className={scrollNav === true ? "block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-10 cursor-pointer" : "block mt-4 lg:inline-block lg:mt-0 hover:text-gray-300 mr-10 cursor-pointer"}>
                     About
                   </Link>
-                  <Link to="Tools" spy={true} smooth={true} offset={0} duration={800} className={scrollNav === true ? "block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-10 cursor-pointer" : "block mt-4 lg:inline-block lg:mt-0 hover:text-gray-300 mr-10 cursor-pointer"}>
+                  <Link activeClass="underline decoration-pink-300 decoration-4 underline-offset-[28px]" to="Tools" spy={true} smooth={true} offset={0} duration={800} className={scrollNav === true ? "block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-10 cursor-pointer" : "block mt-4 lg:inline-block lg:mt-0 hover:text-gray-300 mr-10 cursor-pointer"}>
                     Tools
                   </Link>
-                  <Link to="Success" spy={true} smooth={true} offset={0} duration={800} className={scrollNav === true ? "block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-10 cursor-pointer" : "block mt-4 lg:inline-block lg:mt-0 hover:text-gray-300 mr-10 cursor-pointer"}>
+                  <Link activeClass="underline decoration-pink-300 decoration-4 underline-offset-[28px]" to="Success" spy={true} smooth={true} offset={0} duration={800} className={scrollNav === true ? "block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-10 cursor-pointer" : "block mt-4 lg:inline-block lg:mt-0 hover:text-gray-300 mr-10 cursor-pointer"}>
                     Success
                   </Link>
-                  <Link to="Team" spy={true} smooth={true} offset={0} duration={800} className={scrollNav === true ? "block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-10 cursor-pointer" : "block mt-4 lg:inline-block lg:mt-0 hover:text-gray-300 mr-10 cursor-pointer"}>
+                  <Link activeClass="underline decoration-pink-300 decoration-4 underline-offset-[28px]" to="Team" spy={true} smooth={true} offset={0} duration={800} className={scrollNav === true ? "block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-10 cursor-pointer" : "block mt-4 lg:inline-block lg:mt-0 hover:text-gray-300 mr-10 cursor-pointer"}>
                     Team
                   </Link>
-                  <Link to="Faq" spy={true} smooth={true} offset={0} duration={800} className={scrollNav === true ? "block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-10 cursor-pointer" : "block mt-4 lg:inline-block lg:mt-0 hover:text-gray-300 mr-10 cursor-pointer"}>
+                  <Link activeClass="underline decoration-pink-300 decoration-4 underline-offset-[28px]" to="Faq" spy={true} smooth={true} offset={0} duration={800} className={scrollNav === true ? "block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-10 cursor-pointer" : "block mt-4 lg:inline-block lg:mt-0 hover:text-gray-300 mr-10 cursor-pointer"}>
                     Faq
                   </Link>
                 </div>
