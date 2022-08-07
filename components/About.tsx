@@ -1,13 +1,8 @@
 const About = () => {
     return (
-    <div className="h-screen w-screen relative">
-        <div className="bg-gray-900 flex justify-center items-center absolute inset-0 z-0">
-
+        <div className="flex justify-center h-screen bg-gray-200">
+          <img className="object-cover h-full w-full absolute" src="bg1.png"></img>
         </div>
-        <div className="flex justify-center items-center absolute inset-0 z-10">
-    
-        </div>
-    </div>
     );
 }
 
