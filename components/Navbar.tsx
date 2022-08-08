@@ -23,7 +23,7 @@ const Navbar = ({ toggle }) => {
   
 
     return (
-        <nav className={scrollNav === true ? "z-20 fixed top-0 left-0 right-0 mr-20 ml-20 mt-5 flex items-center justify-between flex-wrap bg-teal-400 p-6 ease-out duration-300 bg-opacity-80 backdrop-blur-lg rounded-full" : "z-20 fixed top-0 left-0 right-0 flex items-center justify-between flex-wrap bg-teal-500 p-6 bg-opacity-0 ease-out duration-300"}>
+        <nav className={scrollNav === true ? "z-20 fixed top-0 left-0 right-0 mr-20 ml-20 mt-5 flex items-center justify-between flex-wrap bg-teal-400 p-6 ease-out duration-300 bg-opacity-80 backdrop-blur-lg rounded-full select-none" : "z-20 fixed top-0 left-0 right-0 flex items-center justify-between flex-wrap bg-teal-500 p-6 bg-opacity-0 ease-out duration-300 select-none"}>
             <div onClick={toggleHome} className="flex items-center flex-shrink-0 text-white mr-6 cursor-pointer">
                 <img className="fill-current h-8 w-8 mr-2" width="54" height="54" src={"pinksquare.png"}/>
                 <span className={scrollNav === true ? "font-semibold text-xl tracking-tight mr-4" : "hidden"}>JPGALPHA</span>
