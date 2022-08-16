@@ -3,7 +3,7 @@ import { BsTwitter } from "react-icons/bs";
 const Team = () => {
     return (
         <div className="flex justify-center h-screen bg-gray-400 z-[1]" id="Team">
-          <img className="object-cover lg:object-fill h-full w-full absolute z-[2]" src="bg4.png"></img>
+          <img className="object-cover lg:object-fill h-full  w-full absolute z-[2]" src="bg4.png"></img>
           <div className="m-auto z-[4] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
             <div>
               <div className="bg-teal-500 px-10 drop-shadow-[15px_5px_10px_rgba(0,0,0,0.4)]">
