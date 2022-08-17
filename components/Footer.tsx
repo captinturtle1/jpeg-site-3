@@ -9,7 +9,7 @@ const Footer = () => {
               <div className="flex justify-center lg:justify-start">
                 <img className="h-[100px] my-5 object-contain" src="banner.png"></img>
               </div>
-              <div>JPEG ALPHA © 2021 ALL RIGHTS RESERVED.</div>
+              <div>ABYSS © 2022 ALL RIGHTS RESERVED.</div>
             </div>
             <div>
               <div className="mb-2 font-bold text-xl select-none">Nav</div>
@@ -36,7 +36,7 @@ const Footer = () => {
                 <a href="https://opensea.io/collection/jpegmp10" className="text-white hover:text-gray-300">OpenSea</a>
               </div>
               <div>
-                <a href="https://twitter.com/jpegsquared" className="text-white hover:text-gray-300">Twitter</a>
+                <a href="https://twitter.com/jpegpass" className="text-white hover:text-gray-300">Twitter</a>
               </div>
               <div>
                 <a href="https://jpegsquared.medium.com/" className="text-white hover:text-gray-300">Medium</a>
