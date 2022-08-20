@@ -15,7 +15,7 @@ const Tools = () => {
   const [exampleCount, setExampleCount] = useState(0);
 
   //changes card information depending on exampleCount
-  useEffect(() => {
+  const updateImage = () => {
     if (exampleCount == 0) {
       setExample(nftnerdsDesc);
     } else if (exampleCount == 1) {
@@ -23,7 +23,7 @@ const Tools = () => {
     } else if (exampleCount == 2) {
       setExample(degenmintDesc);
     }
-  });
+  };
 
   //cycles examplecCount up, loops back at 2
   const cycleUp = () => {
@@ -31,6 +31,7 @@ const Tools = () => {
     if (exampleCount == 2) {
       setExampleCount(0);
     }
+    updateImage();
   };
 
   //cycles exampleCount down 1, loops back at 0
@@ -39,6 +40,7 @@ const Tools = () => {
     if (exampleCount == 0) {
       setExampleCount(2);
     }
+    updateImage();
   };
 
     return (
@@ -47,13 +49,13 @@ const Tools = () => {
           <div className="m-auto z-[4] grid grid-cols-1 lg:grid-cols-2 gap-10">
             <div className="bg-slate-900 m-auto p-10 rounded-3xl max-w-[500px] drop-shadow-[15px_10px_10px_rgba(0,0,0,0.4)]">
               <div className="">
-                <img className={exampleCount === 0 ? "transition-all translate-x-5 w-0" : "transition-all"} src={nftnerdsExample.src}/>
+                <img className={exampleCount === 0 ? "transition-all" : "transition-all w-0 translate-x-10"} src={nftnerdsExample.src}/>
               </div>
               <div className="">
-                <img className={exampleCount === 1 ? "transition-all translate-x-5 w-0" : "transition-all"} src={zetaExample.src}/>
+                <img className={exampleCount === 1 ? "transition-all" : "transition-all w-0 translate-x-10"} src={zetaExample.src}/>
               </div>
               <div className="">
-                <img className={exampleCount === 2 ? "transition-all translate-x-5 w-0" : "transition-all"} src={degenmintExample.src}/>
+                <img className={exampleCount === 2 ? "transition-all" : "transition-all w-0 translate-x-10"} src={degenmintExample.src}/>
               </div>
               <div className="pt-5 font-bold">{example[1]}</div>
               <div className="pt-5 max-w-lg min-h-[100px]">{example[2]}</div>
