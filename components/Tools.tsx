@@ -44,8 +44,8 @@ const Tools = () => {
   };
 
     return (
-        <div className="flex justify-center lg:h-screen bg-gray-200 z-[1]" id="Tools">
-          <img className="object-cover lg:object-fill h-full w-full absolute z-[2]" src="bg2.png"></img>
+        <div className="flex justify-center h-[1400px] lg:h-screen bg-gray-200 z-[1]" id="Tools">
+          <img className="object-cover lg:object-fill h-[1400px] lg:h-full w-full absolute z-[2]" src="bg2.png"></img>
           <div className="m-auto z-[4] grid grid-cols-1 lg:grid-cols-2 gap-10">
             <div className="bg-slate-900 m-auto p-10 rounded-3xl max-w-[500px] drop-shadow-[15px_10px_10px_rgba(0,0,0,0.4)]">
               <div className="">
@@ -60,7 +60,7 @@ const Tools = () => {
               <div className="pt-5 font-bold">{example[1]}</div>
               <div className="pt-5 max-w-lg min-h-[100px]">{example[2]}</div>
             </div>
-            <div className="flex sm:hidden justify-center text-white z-[4] gap-20 text-[30px]">
+            <div className="flex lg:hidden justify-center text-white z-[4] gap-20 text-[30px]">
               <AiOutlineLeft onClick={cycleDown} className="hover:text-gray-300 cursor-pointer"/>
               <AiOutlineRight onClick={cycleUp} className="hover:text-gray-300 cursor-pointer"/>
             </div>
@@ -68,7 +68,7 @@ const Tools = () => {
               <div className="text-[10vw] md:text-[2vw] font-bold  p-10 md:m-0 drop-shadow-[15px_5px_10px_rgba(0,0,0,0.4)] flex justify-center rounded-3xl">Keys to our success</div>
               <div className="max-w-[600px] h-[300px] mx-[20px] text-[95%] lg:text-[115%] p-8 select-none rounded-3xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
             </div>
-            <div className="md:flex sm:hidden justify-center text-white z-[4] gap-20 text-[30px]">
+            <div className="hidden lg:flex justify-center text-white z-[4] gap-20 text-[30px]">
               <AiOutlineLeft onClick={cycleDown} className="hover:text-gray-300 cursor-pointer"/>
               <AiOutlineRight onClick={cycleUp} className="hover:text-gray-300 cursor-pointer"/>
             </div>

@@ -1,7 +1,7 @@
 const About = () => {
     return (
-        <div className="flex justify-center h-screen min-h-[1000px] bg-gray-100 z-[1]" id="About">
-          <img className="object-cover lg:object-fill h-full min-h-[1000px] w-full absolute z-[3]" src="bg1.png"></img>
+        <div className="flex justify-center h-[1400px] lg:h-screen min-h-[1000px] bg-gray-100 z-[1]" id="About">
+          <img className="object-cover lg:object-fill h-[1400px] lg:h-full min-h-[1000px] w-full absolute z-[3]" src="bg1.png"></img>
           <div className="m-auto z-[4] grid grid-cols-1 lg:grid-cols-2 gap-10">
             <div className="grid grid-cols-2 gap-5">
               <div className=" bg-slate-800 rounded-3xl">

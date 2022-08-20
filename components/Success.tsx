@@ -7,10 +7,10 @@ const Success = () => {
     return (
         <div className="flex justify-center h-screen bg-gray-300 z-[1]" id="Success">
           <img className="object-cover lg:object-fill h-full w-full absolute z-[2]" src="bg3.png"></img>
-          <div className="m-auto z-[4]">
-            <div className="bg-pink-300 p-10 max-w-lg">
+          <div className="m-auto z-[4] grid grid-cols-1 gap-10">
+            <div className="bg-slate-800 p-10 max-w-lg rounded-3xl m-auto">
               <div className="flex gap-10">
-                <img src={aliensIcon.src} className="w-40"/>
+                <img src={aliensIcon.src} className="w-[200px]"/>
                 <h1 className="m-auto text-6xl font-bold">8liens</h1>
               </div>
               <div className="mt-10 flex text-3xl font-light">
@@ -30,7 +30,7 @@ const Success = () => {
                 </h1>
               </div>
             </div>
-            <div className="col-span-2 flex justify-center text-white z-[4] gap-20 text-[30px] m-5">
+            <div className="flex justify-center text-white z-[4] gap-20 text-[30px]">
               <AiOutlineLeft className="hover:text-gray-300 cursor-pointer"/>
               <AiOutlineRight className="hover:text-gray-300 cursor-pointer"/>
             </div>
