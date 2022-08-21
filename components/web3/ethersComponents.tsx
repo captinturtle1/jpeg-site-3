@@ -55,15 +55,31 @@ export async function getAccount() {
     }
 }
 
+export async function getAddressStatus(address) {
+    if (!isInitialized) {
+        await initWeb3();
+    }
+    let passBalance = await nftContract.balanceOf(address);
+    return passBalance;
+}
+
 export async function getENS(address) {
     let provider = new ethers.providers.Web3Provider(window.ethereum);
     let ensName = await provider.lookupAddress(address);
     return ensName;
 }
 
+export async function getExpire(tokenId) {
+    if (!isInitialized) {
+        await initWeb3();
+    }
+    let expireTime = await nftContract.expireTime(tokenId);
+    return expireTime;
+}
+
 export const checkIfPaused = async () => {
     if (!isInitialized) {
-      await initWeb3();
+        await initWeb3();
     }
     let isPaused = await nftContract.paused();
     return isPaused;
@@ -86,4 +102,25 @@ export const mintToken = async (mintAmount) => {
         value: ethers.utils.parseEther(totalcost.toString())
     };
     return nftContract.mint(mintAmount, overrides);
+};
+
+export const renewPass = async (tokenId) => {
+    if (!isInitialized) {
+      await initWeb3();
+    }
+    let ogTokenEnd = await nftContract.ogTokenEnd();
+    // mint if token is regular
+    if (tokenId > ogTokenEnd) {
+        let cost = await nftContract.renewPrice();
+        let overrides = {
+            value: ethers.utils.parseEther(cost.toString())
+        };
+        return nftContract.renewPass(tokenId, overrides);
+    }
+    //mint if token is og
+    let cost = await nftContract.renewPriceOG();
+    let overrides = {
+        value: ethers.utils.parseEther(cost.toString())
+    };
+    return nftContract.renewPassOG(tokenId, overrides);
 };
