@@ -2,8 +2,8 @@ import { BsTwitter } from "react-icons/bs";
 
 const Team = () => {
     return (
-        <div className="flex justify-center h-[1200px] lg:h-screen bg-gray-400 z-[1]" id="Team">
-          <img className="object-cover lg:object-fill h-[1200px] lg:h-full  w-full absolute z-[2]" src="bg4.png"></img>
+        <div className="flex justify-center h-[1000px] lg:h-screen bg-gray-400 z-[1]" id="Team">
+          <img className="object-cover lg:object-fill h-[1000px] lg:h-full  w-full absolute z-[2]" src="bg4.png"></img>
           <div className="m-auto z-[4] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
             <div>
               <a href="https://twitter.com/HeyDody">

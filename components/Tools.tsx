@@ -47,7 +47,7 @@ const Tools = () => {
         <div className="flex justify-center h-[1400px] lg:h-screen bg-gray-200 z-[1]" id="Tools">
           <img className="object-cover lg:object-fill h-[1400px] lg:h-full w-full absolute z-[2]" src="bg2.png"></img>
           <div className="m-auto z-[4] grid grid-cols-1 lg:grid-cols-2 gap-10">
-            <div className="bg-slate-900 m-auto p-10 rounded-3xl max-w-[500px] drop-shadow-[15px_10px_10px_rgba(0,0,0,0.4)]">
+            <div className="bg-slate-900 m-8 lg:m-auto p-10 rounded-3xl max-w-[500px] drop-shadow-[15px_10px_10px_rgba(0,0,0,0.4)]">
               <div className="">
                 <img className={exampleCount === 0 ? "transition-all" : "transition-all w-0 translate-x-10"} src={nftnerdsExample.src}/>
               </div>

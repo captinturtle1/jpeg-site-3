@@ -5,13 +5,13 @@ import aliensIcon from "../public/8liens.gif"
 
 const Success = () => {
     return (
-        <div className="flex justify-center h-screen bg-gray-300 z-[1]" id="Success">
-          <img className="object-cover lg:object-fill h-full w-full absolute z-[2]" src="bg3.png"></img>
+        <div className="flex justify-center h-[800px] lg:h-screen bg-gray-300 z-[1]" id="Success">
+          <img className="object-cover lg:object-fill h-[800px] lg:h-full w-full absolute z-[2]" src="bg3.png"></img>
           <div className="m-auto z-[4] grid grid-cols-1 gap-10">
-            <div className="bg-slate-800 p-10 max-w-lg rounded-3xl m-auto">
+            <div className="bg-slate-800 p-10 max-w-lg rounded-3xl m-10 lg:m-auto">
               <div className="flex gap-10">
                 <img src={aliensIcon.src} className="w-[200px]"/>
-                <h1 className="m-auto text-6xl font-bold">8liens</h1>
+                <h1 className="m-auto text-xl lg:text-6xl font-bold">8liens</h1>
               </div>
               <div className="mt-10 flex text-3xl font-light">
                 <h1 className="">
