@@ -8,6 +8,7 @@ const FAQ = () => {
   const [box5, setBox5] = useState(false);
   const [box6, setBox6] = useState(false);
 
+  // probably a way better way to do this, functions that opens the selected box and minimizes other ones
   const setBoxOne = () => {
     setBox1(!box1);
     setBox2(false);
