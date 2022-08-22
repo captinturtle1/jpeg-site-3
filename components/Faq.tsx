@@ -70,7 +70,7 @@ const FAQ = () => {
           <h1 className="m-auto text-6xl lg:text-8xl pb-10 font-bold">Questions?</h1>
         </div>
         <div className="z-[3] mt-[350px]">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-1 w-[400px] lg:w-[800px] m-auto">
+          <div className="grid grid-cols-1 gap-1 w-[400px] lg:w-[500px] m-auto">
             <div onClick={setBoxOne} className={box1 === true ? "bg-slate-800 h-[230px] rounded-3xl transition-all cursor-pointer" : "bg-slate-800 rounded-3xl h-[90px] transition-all cursor-pointer"}>
               <div className="text-sm lg:text-lg font-bold p-8 m-0 drop-shadow-[15px_10px_10px_rgba(0,0,0,0.4)]">Lorem Ipsum</div>
               <div className={box1 === true ? "text-sm lg:text-lg pb-8 px-8 transition-all" : "opacity-0 transition-all"}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
