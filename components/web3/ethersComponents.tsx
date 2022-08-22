@@ -1,7 +1,7 @@
 import { ethers } from "ethers";
 import abi from './abi.json'
 
-const contractAddress = "0xE7e8F297D39B0056a1706cCc7C3B6d5DCaeeeB74";
+const contractAddress = "0x1a52A04f870F137BCb915e1D256a0188E5292089";
 
 let selectedAccount;
 let nftContract;
@@ -119,14 +119,16 @@ export const renewPass = async (tokenId) => {
     let ogTokenEnd = await nftContract.ogTokenEnd();
     // mint if token is regular
     if (tokenId > ogTokenEnd) {
-        let cost = await nftContract.renewPrice().toString();
-        console.log(cost);
+        console.log("renewing regular pass")
+        let cost = await nftContract.renewPrice();
+        console.log(cost.toString());
         let overrides = {
-            value: ethers.utils.parseEther(cost.toString())
+            value: cost
         };
         return nftContract.renewPass(tokenId, overrides);
     }
     //mint if token is og
+    console.log("renewing og pass")
     let cost = await nftContract.renewPriceOG().toString();
     console.log(cost);
     let overrides = {
