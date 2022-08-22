@@ -7,7 +7,9 @@ import {
   mintToken,
   getENS,
   getExpire,
-  getAddressStatus
+  getAddressBalanceOf,
+  getTokenIdOfBalance,
+  renewPass,
 } from './web3/ethersComponents'
 
 const Dashboard = () => {
@@ -15,7 +17,9 @@ const Dashboard = () => {
   const [ensName, setENSName] = useState("...");
   const [token, setToken] = useState();
   const [expireTime, setExpireTime] = useState("");
-  const [addressStatus, setAddressStatus] = useState("");
+  const [passesOwned, setPassesOwned] = useState<any>([]);
+  const [tokenSelected, setTokenSelected] = useState();
+  console.log(passesOwned);
 
   // handles input box for pass expire check box
   const handleNumChange = event => {
@@ -23,15 +27,40 @@ const Dashboard = () => {
     setToken(event.target.value.slice(0, limit));
   };
 
+  const handleDropChange = event => {
+    setTokenSelected(event.target.value);
+  };
+
   // gets pass balance info from address
-  const updateAddressStatus = (address) => {
-    getAddressStatus(address).then(value => {
-      setAddressStatus(value);
-      console.log(value.toString());
+  const findBalanceOfOwner = (address) => {
+    getAddressBalanceOf(address).then(value => {
+      let newArray: any[] = [];
+      for (let i = 0; i < value.toString(); i++) {
+        getTokenIdOfBalance(address, i).then(value => {
+          newArray[i] = value.toString();
+        }).catch((err) => {
+          console.log(err);
+        })
+      }
+      setPassesOwned(newArray);
     }).catch((err) => {
       console.log(err);
     })
   }
+
+  /*
+  const ownedTokens = (address) => {
+    let passesOwnedNum = parseInt(passesOwned);
+    console.log(passesOwnedNum);
+    for (let i = 0; i < passesOwnedNum; i++) {
+      getTokenIdOfBalance(address, i).then(value => {
+        console.log(value.toString());
+      }).catch((err) => {
+        console.log(err);
+      })
+    }
+  }
+  */
 
   // runs when connect button is clicked
   const updateConnected = () => {
@@ -39,7 +68,7 @@ const Dashboard = () => {
       getAccount().then(value => {
         setWalletAddress(value);
         getENSName(value);
-        updateAddressStatus(value);
+        findBalanceOfOwner(value);
       }).catch((err) => {
         console.log(err);
       })
@@ -87,6 +116,15 @@ const Dashboard = () => {
     })
   }
 
+  const renew = (tokenId) => {
+    renewPass(tokenId).then(tx => {
+      console.log(tx);
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  }
+
     return (
       <div>
         <nav className="z-[1] fixed ml-20 mt-5 pt-6 px-10">
@@ -117,7 +155,24 @@ const Dashboard = () => {
                   <div className="flex">
                     <div className="pt-5 m-auto font-bold">{expireTime}</div>
                   </div>
-                  <div></div>
+                  <div className="flex">
+                    <div className="transition-all m-auto text-center p-8">Your token: {passesOwned}</div>
+                  </div>
+                  <div className="flex">
+                    <div onClick={renew} className="transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[2px] rounded-full w-16 m-auto text-center p-2">renew</div>
+                  </div>
+                  <form>
+                    <label>
+                      Pick your favorite flavor:
+                      <select value={tokenSelected} onChange={handleDropChange}>
+                        <option value={1}>Banana</option>
+                        <option value={2}>Grapefruit</option>
+                        <option value={3}>Orange</option>
+                        <option value={4}>Watermelon</option>
+                      </select>
+                    </label>
+                    <input type="submit" value="Submit" />
+                  </form>
                 </div>
               </div>
             </div>

@@ -55,12 +55,20 @@ export async function getAccount() {
     }
 }
 
-export async function getAddressStatus(address) {
+export async function getAddressBalanceOf(address) {
     if (!isInitialized) {
         await initWeb3();
     }
     let passBalance = await nftContract.balanceOf(address);
     return passBalance;
+}
+
+export async function getTokenIdOfBalance(address, index) {
+    if (!isInitialized) {
+        await initWeb3();
+    }
+    let tokenId = await nftContract.tokenOfOwnerByIndex(address, index);
+    return tokenId;
 }
 
 export async function getENS(address) {
@@ -111,14 +119,16 @@ export const renewPass = async (tokenId) => {
     let ogTokenEnd = await nftContract.ogTokenEnd();
     // mint if token is regular
     if (tokenId > ogTokenEnd) {
-        let cost = await nftContract.renewPrice();
+        let cost = await nftContract.renewPrice().toString();
+        console.log(cost);
         let overrides = {
             value: ethers.utils.parseEther(cost.toString())
         };
         return nftContract.renewPass(tokenId, overrides);
     }
     //mint if token is og
-    let cost = await nftContract.renewPriceOG();
+    let cost = await nftContract.renewPriceOG().toString();
+    console.log(cost);
     let overrides = {
         value: ethers.utils.parseEther(cost.toString())
     };
