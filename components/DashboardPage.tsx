@@ -115,6 +115,12 @@ const Dashboard = () => {
         setENSName(truncatedAdress);
         return;
       }
+      let nameMax = 20;
+      if (value.length > nameMax) {
+        let truncatedName = (`${value.substring(0, nameMax)}...`)
+        setENSName(truncatedName);
+        return;
+      }
       setENSName(value);
     }).catch((err) => {
       console.log(err);
