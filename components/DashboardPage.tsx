@@ -155,11 +155,11 @@ const Dashboard = () => {
         </nav>
         <div className="flex justify-center h-screen bg-slate-900">
           <div className="m-auto">
-            <div onClick={updateConnected} className={walletAddress === undefined ? "transition-all w-24 h-8 flex text-md px-4 py-2 leading-none rounded text-white bg-blue-300 hover:bg-blue-400 drop-shadow hover:drop-shadow-sm cursor-pointer" : "transition-all w-[45vw] h-[30vw] text-md p-10 leading-none text-white bg-blue-400 drop-shadow-2xl grid"}>
+            <div onClick={updateConnected} className={walletAddress === undefined ? "transition-all w-24 h-8 flex text-md px-4 py-2 leading-none rounded text-white bg-blue-300 hover:bg-blue-400 drop-shadow hover:drop-shadow-sm cursor-pointer" : "transition-all duration-300 trans w-[400px] h-[450px] max-w-[900px] max-h-[600px] xl:w-[45vw] xl:h-[30vw] text-md p-10 leading-none text-white bg-blue-900 drop-shadow-[15px_20px_20px_rgba(0,0,0,0.4)] grid"}>
               <div className={walletAddress === undefined ? "m-auto" : "hidden"}>Connect</div>
-              <div className={walletAddress === undefined ? "transition-all invisible opacity-0" : "transition-all visible flex opacity-100"}>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 m-auto">
-                  <img className="w-[350px] hidden lg:block rounded-3xl" src="testpassimg.png"></img>
+              <div className={walletAddress === undefined ? "transition-all duration-1000 invisible opacity-0" : "transition-all visible flex opacity-100"}>
+                <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 m-auto">
+                  <img className="w-[350px] hidden xl:block rounded-3xl" src="testpassimg.png"></img>
                   <div className="">
                     <h1 className="font-bold text-3xl">Welcome</h1>
                     <h1 className="font-bold text-3xl">{ensName}</h1>
@@ -181,7 +181,7 @@ const Dashboard = () => {
                       />
                       <div onClick={getExpireTime} className="transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] rounded-full text-center p-2"><FaSearch/></div>
                     </form>
-                    <div className="m-auto font-bold">{expireTime}</div>
+                    <div className="m-auto font-bold pt-2">{expireTime}</div>
                   </div>
                 </div>
               </div>
