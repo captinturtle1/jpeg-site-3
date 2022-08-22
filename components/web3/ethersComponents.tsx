@@ -1,6 +1,8 @@
 import { ethers } from "ethers";
 import abi from './abi.json'
 
+declare var window: any
+
 const contractAddress = "0x1a52A04f870F137BCb915e1D256a0188E5292089";
 
 let selectedAccount;

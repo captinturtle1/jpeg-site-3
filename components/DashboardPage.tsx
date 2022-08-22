@@ -11,6 +11,7 @@ import {
   getTokenIdOfBalance,
   renewPass,
 } from './web3/ethersComponents'
+import { FaSearch } from "react-icons/fa";
 
 const Dashboard = () => {
   const [walletAddress, setWalletAddress] = useState();
@@ -18,6 +19,8 @@ const Dashboard = () => {
   const [token, setToken] = useState();
   const [expireTime, setExpireTime] = useState("");
   const [tokenId, setTokenId] = useState();
+  const [userExpireTime, setUserExpireTime] = useState("");
+  const [userStatus, setUserStatus] = useState("");
 
   // handles input box for pass expire check box
   const handleNumChange = event => {
@@ -32,11 +35,21 @@ const Dashboard = () => {
         console.log("User owns pass");
         getTokenIdOfBalance(address, 0).then(value => {
           setTokenId(value.toString());
+          getUserExpireTime(value.toString());
+          console.log(value.toString());
+          if (value.toString() > 5) {
+            setUserStatus("Member");
+            return;
+          }
+          setUserStatus("OG");
+          return;
         }).catch((err) => {
           console.log(err);
         })
+      } else {
+        setUserStatus("Not a member");
+        return;
       }
-        
     }).catch((err) => {
       console.log(err);
     })
@@ -97,7 +110,7 @@ const Dashboard = () => {
     return time;
   }
   
-  const updateInput = () => {
+  const getExpireTime = () => {
     getExpire(token).then(value => {
       if (value == 0) {
         setExpireTime("Pass not found.");
@@ -105,6 +118,19 @@ const Dashboard = () => {
       }
       let expireDate = timeConverter(value);
       setExpireTime(expireDate);
+    }).catch((err) => {
+      console.log(err);
+    })
+  }
+
+  const getUserExpireTime = (tokenId) => {
+    getExpire(tokenId).then(value => {
+      if (value == 0) {
+        setUserExpireTime("No pass detected.");
+        return;
+      }
+      let expireDate = timeConverter(value);
+      setUserExpireTime(expireDate);
     }).catch((err) => {
       console.log(err);
     })
@@ -129,31 +155,33 @@ const Dashboard = () => {
         </nav>
         <div className="flex justify-center h-screen bg-slate-900">
           <div className="m-auto">
-            <div onClick={updateConnected} className={walletAddress === undefined ? "transition-all w-24 h-8 flex text-md px-4 py-2 leading-none rounded text-white bg-blue-300 hover:bg-blue-400 drop-shadow hover:drop-shadow-sm cursor-pointer" : "transition-all w-[45vw] h-[30vw] text-md px-4 py-2 leading-none rounded-3xl text-white bg-blue-400 drop-shadow"}>
+            <div onClick={updateConnected} className={walletAddress === undefined ? "transition-all w-24 h-8 flex text-md px-4 py-2 leading-none rounded text-white bg-blue-300 hover:bg-blue-400 drop-shadow hover:drop-shadow-sm cursor-pointer" : "transition-all w-[45vw] h-[30vw] text-md p-10 leading-none text-white bg-blue-400 drop-shadow-2xl grid"}>
               <div className={walletAddress === undefined ? "m-auto" : "hidden"}>Connect</div>
-              <div className={walletAddress === undefined ? "transition-all opacity-0 hidden" : "transition-all flex opacity-100"}>
-                <div className="m-auto">
-                  <h1 className="pt-10 font-bold text-xl text-center p-5">Welcome {ensName}</h1>
-                  <label className="">Check expiration</label>
-                  <form className="flex gap-5 pt-2">
-                    <input
-                      maxLength={4}
-                      type="number"
-                      value={token}
-                      onChange={handleNumChange}
-                      placeholder="token #"
-                      className="p-1 focus:outline-none"
-                    />
-                    <div onClick={updateInput} className="transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[2px] rounded-full w-16 m-auto text-center p-2">check</div>
-                  </form>
-                  <div className="flex">
-                    <div className="pt-5 m-auto font-bold">{expireTime}</div>
-                  </div>
-                  <div className="flex">
-                    <div className="transition-all m-auto text-center p-8">Your tokenId: #{tokenId}</div>
-                  </div>
-                  <div className="flex">
-                    <div onClick={renew} className="transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[2px] rounded-full w-16 m-auto text-center p-2">renew</div>
+              <div className={walletAddress === undefined ? "transition-all invisible opacity-0" : "transition-all visible flex opacity-100"}>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 m-auto">
+                  <img className="w-[350px] hidden lg:block rounded-3xl" src="testpassimg.png"></img>
+                  <div className="">
+                    <h1 className="font-bold text-3xl">Welcome</h1>
+                    <h1 className="font-bold text-3xl">{ensName}</h1>
+                    <div className="transition-all pt-5 font-bold text-xl">Status: {userStatus}</div>
+                    <div className="transition-all pt-5 font-bold text-xl">Your expiration: {userExpireTime}</div>
+                    <div className="flex pt-5 gap-5 text-2xl font-bold">
+                      <div onClick={renew} className="transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5">renew</div>
+                      <div onClick={renew} className="transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5">discord</div>
+                    </div>
+                    <h1 className="pt-10 font-light">check other pass</h1>
+                    <form className="flex pt-1 gap-3">
+                      <input
+                        maxLength={4}
+                        type="number"
+                        value={token}
+                        onChange={handleNumChange}
+                        placeholder="token #"
+                        className="p-1 focus:outline-none"
+                      />
+                      <div onClick={getExpireTime} className="transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] rounded-full text-center p-2"><FaSearch/></div>
+                    </form>
+                    <div className="m-auto font-bold">{expireTime}</div>
                   </div>
                 </div>
               </div>
