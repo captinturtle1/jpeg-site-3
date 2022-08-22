@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ethers } from "ethers";
 import { 
   requestAccount,
   getAccount, 
@@ -13,6 +14,12 @@ import {
 } from './web3/ethersComponents'
 import { FaSearch } from "react-icons/fa";
 
+declare var window: any
+
+function refresh() {
+  window.location.reload();
+}
+
 const Dashboard = () => {
   const [walletAddress, setWalletAddress] = useState();
   const [ensName, setENSName] = useState("...");
@@ -21,6 +28,22 @@ const Dashboard = () => {
   const [tokenId, setTokenId] = useState();
   const [userExpireTime, setUserExpireTime] = useState("");
   const [userStatus, setUserStatus] = useState("");
+
+  if (typeof window !== 'undefined') {
+    let provider = new ethers.providers.Web3Provider(window.ethereum);
+    if (typeof provider !== 'undefined') {
+      window.ethereum.on('accountsChanged', function (accounts){
+        let selectedAccount = accounts[0];
+        console.log(`Selected account changed to ${selectedAccount}`);
+        updateConnected();
+      })
+      window.ethereum.on('chainChanged', function(network){
+        console.log(`Selected network changed to ${network}`);
+        refresh();
+    })
+      
+    }
+  }
 
   // handles input box for pass expire check box
   const handleNumChange = event => {
@@ -48,6 +71,7 @@ const Dashboard = () => {
         })
       } else {
         setUserStatus("Not a member");
+        setUserExpireTime("N/A");
         return;
       }
     }).catch((err) => {
@@ -155,11 +179,11 @@ const Dashboard = () => {
         </nav>
         <div className="flex justify-center h-screen bg-slate-900">
           <div className="m-auto">
-            <div onClick={updateConnected} className={walletAddress === undefined ? "transition-all w-24 h-8 flex text-md px-4 py-2 leading-none rounded text-white bg-blue-300 hover:bg-blue-400 drop-shadow hover:drop-shadow-sm cursor-pointer" : "transition-all duration-300 trans w-[400px] h-[450px] max-w-[900px] max-h-[600px] xl:w-[45vw] xl:h-[30vw] text-md p-10 leading-none text-white bg-blue-900 drop-shadow-[15px_20px_20px_rgba(0,0,0,0.4)] grid"}>
+            <div onClick={updateConnected} className={walletAddress === undefined ? "transition-all w-24 h-8 flex text-md px-4 py-2 leading-none rounded text-white bg-blue-300 hover:bg-blue-400 drop-shadow hover:drop-shadow-sm cursor-pointer" : "transition-all duration-300 trans w-[400px] h-[450px] max-w-[900px] max-h-[600px] xl:w-[45vw] xl:h-[30vw] text-md p-10 leading-none text-white bg-indigo-900 drop-shadow-[15px_20px_20px_rgba(0,0,0,0.4)] grid"}>
               <div className={walletAddress === undefined ? "m-auto" : "hidden"}>Connect</div>
               <div className={walletAddress === undefined ? "transition-all duration-1000 invisible opacity-0" : "transition-all visible flex opacity-100"}>
                 <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 m-auto">
-                  <img className="w-[350px] hidden xl:block rounded-3xl" src="testpassimg.png"></img>
+                  <img className="w-[350px] hidden xl:block rounded-3xl drop-shadow-[5px_10px_10px_rgba(0,0,0,0.4)]" src="testpassimg.png"></img>
                   <div className="">
                     <h1 className="font-bold text-3xl">Welcome</h1>
                     <h1 className="font-bold text-3xl">{ensName}</h1>

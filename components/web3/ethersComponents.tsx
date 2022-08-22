@@ -1,5 +1,6 @@
 import { ethers } from "ethers";
 import abi from './abi.json'
+//import { refresh } from '../DashboardPage'
 
 declare var window: any
 
@@ -12,13 +13,6 @@ let isInitialized = false;
 export const initWeb3 = async () => {
     let provider = new ethers.providers.Web3Provider(window.ethereum);
     let signer = provider.getSigner();
-
-    if (typeof provider !== 'undefined') {
-        window.ethereum.on('accountsChanged', function (accounts){
-            selectedAccount = accounts[0];
-            console.log(`Selected account changed to ${selectedAccount}`);
-        })
-    }
 
     nftContract = new ethers.Contract(contractAddress, abi, signer);
 
@@ -107,9 +101,9 @@ export const mintToken = async (mintAmount) => {
     if (!isInitialized) {
       await initWeb3();
     }
-    let totalcost = mintAmount * COSTINETH;
+    let cost = await nftContract.price();
     let overrides = {
-        value: ethers.utils.parseEther(totalcost.toString())
+        value: cost
     };
     return nftContract.mint(mintAmount, overrides);
 };
