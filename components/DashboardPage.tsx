@@ -185,16 +185,16 @@ const Dashboard = () => {
         </nav>
         <div className="flex justify-center h-screen bg-slate-900">
           <div className="m-auto">
-            <div onClick={updateConnected} className={walletAddress === undefined ? "transition-all w-24 h-8 flex text-md px-4 py-2 leading-none rounded text-white bg-blue-300 hover:bg-blue-400 drop-shadow hover:drop-shadow-sm cursor-pointer" : "transition-all duration-300 trans w-[400px] h-[450px] max-w-[900px] max-h-[600px] xl:w-[45vw] xl:h-[30vw] text-md p-10 leading-none text-white bg-indigo-900 drop-shadow-[15px_20px_20px_rgba(0,0,0,0.4)] grid rounded-3xl"}>
+            <div onClick={updateConnected} className={walletAddress === undefined ? "transition-all w-24 h-8 flex flex-wrap text-md px-4 py-2 leading-none rounded text-white bg-blue-300 hover:bg-blue-400 drop-shadow hover:drop-shadow-sm cursor-pointer" : "transition-all duration-300 trans w-[400px] h-[450px] max-w-[900px] max-h-[600px] xl:w-[45vw] xl:h-[30vw] text-md p-10 leading-none text-white bg-indigo-900 drop-shadow-[15px_20px_20px_rgba(0,0,0,0.4)] grid rounded-3xl"}>
               <div className={walletAddress === undefined ? "m-auto" : "hidden"}>Connect</div>
               <div className={walletAddress === undefined ? "transition-all duration-1000 invisible opacity-0" : "transition-all visible flex opacity-100"}>
-                <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 m-auto">
+                <div className={walletAddress === undefined ? "grid grid-cols-1 xl:grid-cols-2 gap-10 m-auto invisible" : "transition-all ease-linear delay-100 duration-1000 grid grid-cols-1 xl:grid-cols-2 gap-10 m-auto visible"}>
                   <img className="w-[350px] hidden xl:block rounded-3xl drop-shadow-[5px_10px_10px_rgba(0,0,0,0.4)]" src="testpassimg.png"></img>
-                  <div className="">
+                  <div className="my-auto">
                     <h1 className="font-bold text-3xl">Welcome</h1>
                     <h1 className="font-bold text-3xl">{ensName}</h1>
-                    <div className="transition-all pt-5 font-bold text-xl">Status: {userStatus}</div>
-                    <div className="transition-all pt-5 font-bold text-xl">Your expiration: {userExpireTime}</div>
+                    <div className="transition-all pt-5 text-xl">Status: {userStatus}</div>
+                    <div className="transition-all pt-2 text-xl">Expiration: {userExpireTime}</div>
                     <div className="flex pt-5 gap-5 text-2xl font-bold">
                       <div onClick={renew} className="transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 rounded-xl">Mint</div>
                       <div onClick={renew} className="transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 rounded-xl">Apply</div>
@@ -207,7 +207,7 @@ const Dashboard = () => {
                         value={token}
                         onChange={handleNumChange}
                         placeholder="token #"
-                        className="p-1 focus:outline-none"
+                        className="pl-2 p-1 focus:outline-none rounded-lg"
                       />
                       <div onClick={getExpireTime} className="transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] rounded-full text-center p-2"><FaSearch/></div>
                     </form>
