@@ -26,7 +26,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <ParallaxProvider>
+
         <Navbar toggle={toggle}/>
         <Sidebar isOpen={isOpen} toggle={toggle} />
         <Landing/>
@@ -36,7 +36,7 @@ const Home: NextPage = () => {
         <Team/>
         <Faq/>
         <Footer/>
-      </ParallaxProvider>
+
     </>
   )
 }
