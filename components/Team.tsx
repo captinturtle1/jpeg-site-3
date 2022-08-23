@@ -5,8 +5,8 @@ const Team = () => {
         <div className="flex justify-center h-[1000px] lg:h-screen bg-gray-400 z-[1]" id="Team">
           <img className="object-cover lg:object-fill h-[1000px] lg:h-full  w-full absolute z-[2]" src="bg4.png"></img>
           <div className="z-[4] grid">
-          <h1 className="z-[4] m-auto text-6xl font-bold mb-[-90px]">Meet Our Team</h1>
-          <div className="h-[3px] bg-white w-[500px] m-auto mb-5"></div>
+          <h1 className="z-[4] m-auto text-4xl lg:text-6xl font-bold mb-[-90px]">Meet Our Team</h1>
+          <div className="h-[3px] bg-white w-80 lg:w-[500px] m-auto mb-5"></div>
           <div className="m-auto  grid grid-cols-2 lg:grid-cols-3 gap-10 px-10">
             <div>
               <a href="https://twitter.com/HeyDody">

@@ -68,7 +68,7 @@ const Tools = () => {
               <div className="text-[10vw] md:text-[2vw] font-bold  p-10 md:m-0 drop-shadow-[15px_5px_10px_rgba(0,0,0,0.4)] flex justify-center rounded-3xl">Keys to our success</div>
               <div className="max-w-[600px] h-[300px] mx-[20px] text-[95%] lg:text-[115%] p-8 select-none rounded-3xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
             </div>
-            <div className="hidden lg:flex justify-center text-white z-[4] gap-20 text-[30px]">
+            <div className="hidden lg:flex justify-center text-white z-[4] gap-20 text-[30px] select-none">
               <AiOutlineLeft onClick={cycleDown} className="hover:text-gray-300 cursor-pointer"/>
               <AiOutlineRight onClick={cycleUp} className="hover:text-gray-300 cursor-pointer"/>
             </div>

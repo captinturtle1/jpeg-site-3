@@ -30,7 +30,7 @@ const Success = () => {
                 </h1>
               </div>
             </div>
-            <div className="flex justify-center text-white z-[4] gap-20 text-[30px]">
+            <div className="flex justify-center text-white z-[4] gap-20 text-[30px] select-none">
               <AiOutlineLeft className="hover:text-gray-300 cursor-pointer"/>
               <AiOutlineRight className="hover:text-gray-300 cursor-pointer"/>
             </div>
