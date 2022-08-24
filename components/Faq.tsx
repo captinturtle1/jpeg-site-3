@@ -64,8 +64,8 @@ const FAQ = () => {
   };
 
     return (
-      <div className="flex justify-center h-[1000px] lg:h-screen bg-gray-500 z-[1]" id="Faq">
-        <img className="object-cover lg:object-fill h-[1000px] lg:h-full w-full absolute z-[2]" src="bg5.png"></img>
+      <div className="flex justify-center h-[1000px] lg:h-screen min-h-[1000px] bg-gray-500 z-[1]" id="Faq">
+        <img className="object-cover lg:object-fill h-[1000px] lg:h-full min-h-[1000px] w-full absolute z-[2]" src="bg5.png"></img>
         <div className="flex absolute pt-[150px] z-[3]">
           <h1 className="text-6xl font-bold">Questions?</h1>
         </div>

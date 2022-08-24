@@ -1,9 +1,9 @@
 const Team = () => {
     return (
-        <div className="flex justify-center h-[1400px] lg:h-screen min-h-[1000px] bg-gray-400 z-[1]" id="Team">
-          <img className="object-cover lg:object-fill h-[1400px] lg:h-full min-h-[1000px] w-full absolute z-[2]" src="bg4.png"></img>
+        <div className="flex justify-center h-[1000px] lg:h-screen min-h-[1000px] bg-gray-400 z-[1]" id="Team">
+          <img className="object-cover lg:object-fill h-[1000px] lg:h-full min-h-[1000px] w-full absolute z-[2]" src="bg4.png"></img>
           <div className="z-[4] grid">
-          <h1 className="z-[4] m-auto text-4xl lg:text-6xl font-bold mb-[-200px] lg:mb-[-90px]">Meet Our Team</h1>
+          <h1 className="text-4xl lg:text-6xl font-bold h-[3px] m-auto mb-[-50px]">Meet Our Team</h1>
           <div className="h-[3px] bg-white w-80 lg:w-[500px] m-auto mb-5"></div>
           <div className="m-auto  grid grid-cols-2 lg:grid-cols-3 gap-10 px-10">
             <div>
