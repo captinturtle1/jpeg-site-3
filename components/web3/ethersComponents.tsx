@@ -41,7 +41,9 @@ export async function getAccount() {
                 method: "eth_accounts"
             });
             selectedAccount = accounts[0];
-            console.log(selectedAccount, "Is connected");
+            if (selectedAccount !== undefined) {
+                console.log(selectedAccount, "Is connected");
+            }
             return accounts[0];
         } catch (error) {
             console.log("Error connecting...");

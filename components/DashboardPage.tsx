@@ -16,9 +16,7 @@ import { FaSearch } from "react-icons/fa";
 
 declare var window: any
 
-function refresh() {
-  window.location.reload();
-}
+
 
 const Dashboard = () => {
   const [walletAddress, setWalletAddress] = useState();
@@ -28,8 +26,9 @@ const Dashboard = () => {
   const [tokenId, setTokenId] = useState();
   const [userExpireTime, setUserExpireTime] = useState("");
   const [userStatus, setUserStatus] = useState("");
-
-  if (typeof window !== 'undefined') {
+  
+  // checks if there is an ethereum service, refreshes on network change, auto updates on account change, looks for address if ethereum is present
+  try{
     let provider = new ethers.providers.Web3Provider(window.ethereum);
     if (typeof provider !== 'undefined') {
       window.ethereum.on('accountsChanged', function (accounts){
@@ -39,10 +38,21 @@ const Dashboard = () => {
       })
       window.ethereum.on('chainChanged', function(network){
         console.log(`Selected network changed to ${network}`);
-        refresh();
-    })
-      
+        window.location.reload();
+      })
+      getAccount().then(value => {
+        if (value !== undefined) {
+          setWalletAddress(value);
+          getENSName(value);
+        } else {
+          console.log("Not connected");
+        }
+      }).catch((err) => {
+        console.log(err);
+      })
     }
+  } catch (err) {
+    console.log("No ethereum service.");
   }
 
   // handles input box for pass expire check box
@@ -97,9 +107,11 @@ const Dashboard = () => {
   const updateConnected = () => {
     requestAccount().then(value => {
       getAccount().then(value => {
-        setWalletAddress(value);
-        getENSName(value);
-        findBalanceOfOwner(value);
+        if (value !== undefined) {
+          setWalletAddress(value);
+          getENSName(value);
+          findBalanceOfOwner(value);
+        }
       }).catch((err) => {
         console.log(err);
       })
@@ -175,6 +187,8 @@ const Dashboard = () => {
     })
   }
 
+  const nothing = () => {}
+
     return (
       <div>
         <nav className="z-[1] fixed ml-20 mt-5 pt-6 px-10">
@@ -183,12 +197,12 @@ const Dashboard = () => {
             <span className="font-semibold text-xl tracking-tight mr-4">Abyss</span>
           </a>
         </nav>
-        <div className="flex justify-center h-screen bg-slate-900">
+        <div className="flex justify-center h-screen min-h-[700px] bg-slate-900">
           <div className="m-auto">
-            <div onClick={updateConnected} className={walletAddress === undefined ? "transition-all w-24 h-8 flex flex-wrap text-md px-4 py-2 leading-none rounded text-white bg-blue-300 hover:bg-blue-400 drop-shadow hover:drop-shadow-sm cursor-pointer" : "transition-all duration-300 trans w-[400px] h-[450px] max-w-[900px] max-h-[600px] xl:w-[45vw] xl:h-[30vw] text-md p-10 leading-none text-white bg-indigo-900 drop-shadow-[15px_20px_20px_rgba(0,0,0,0.4)] grid rounded-3xl"}>
+            <div onClick={walletAddress === undefined ? updateConnected : nothing} className={walletAddress === undefined ? "transition-all w-24 h-8 flex flex-wrap text-md px-4 py-2 leading-none rounded text-white bg-blue-300 hover:bg-blue-400 drop-shadow hover:drop-shadow-sm cursor-pointer" : "transition-all duration-300 trans w-[400px] h-[450px] max-w-[900px] max-h-[600px] xl:w-[45vw] xl:h-[30vw] text-md p-10 leading-none text-white bg-indigo-900 drop-shadow-[15px_20px_20px_rgba(0,0,0,0.4)] grid rounded-3xl"}>
               <div className={walletAddress === undefined ? "m-auto" : "hidden"}>Connect</div>
               <div className={walletAddress === undefined ? "transition-all duration-1000 invisible opacity-0" : "transition-all visible flex opacity-100"}>
-                <div className={walletAddress === undefined ? "grid grid-cols-1 xl:grid-cols-2 gap-10 m-auto invisible" : "transition-all ease-linear delay-100 duration-1000 grid grid-cols-1 xl:grid-cols-2 gap-10 m-auto visible"}>
+                <div className={walletAddress === undefined ? "grid grid-cols-1 xl:grid-cols-2 gap-10 m-auto invisible opacity-0" : "transition-all ease-linear delay-100 duration-200 grid grid-cols-1 xl:grid-cols-2 gap-10 m-auto visible opacity-100"}>
                   <img className="w-[350px] hidden xl:block rounded-3xl drop-shadow-[5px_10px_10px_rgba(0,0,0,0.4)]" src="testpassimg.png"></img>
                   <div className="my-auto">
                     <h1 className="font-bold text-3xl">Welcome</h1>
