@@ -5,8 +5,8 @@ import aliensIcon from "../public/8liens.gif"
 
 const Success = () => {
     return (
-        <div className="flex justify-center h-[800px] bg-gray-300 z-[1]" id="Success">
-          <img className="object-cover lg:object-fill h-[800px] w-full absolute z-[2]" src="bg3.png"></img>
+        <div className="flex justify-center h-[1000px] bg-gray-300 z-[1]" id="Success">
+          <img className="object-cover lg:object-fill h-[1000px] w-full absolute z-[2]" src="bg3.png"></img>
           <div className="m-auto z-[4] grid grid-cols-1 gap-10">
             <div className="bg-slate-800 p-10 max-w-lg rounded-3xl m-10 lg:m-auto">
               <div className="flex gap-10">
