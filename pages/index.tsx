@@ -26,17 +26,25 @@ const Home: NextPage = () => {
 
   return (
     <>
-
-        <Navbar toggle={toggle}/>
-        <Sidebar isOpen={isOpen} toggle={toggle} />
-        <Landing/>
-        <About/>
-        <Tools/>
-        <Success/>
-        <Team/>
-        <Faq/>
-        <Footer/>
-
+      <Head>
+        <title>Abyss</title>
+        <meta property="og:title" content="Abyss" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://localhost:3000/" />
+        <meta property="og:image" content="http://localhost:3000/banner.png" />
+        <meta property="og:description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+        <meta name="theme-color" content="#0f172a" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
+      <Navbar toggle={toggle}/>
+      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <Landing/>
+      <About/>
+      <Tools/>
+      <Success/>
+      <Team/>
+      <Faq/>
+      <Footer/>
     </>
   )
 }

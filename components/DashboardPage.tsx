@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { ethers } from "ethers";
 import { 
   requestAccount,
@@ -11,11 +11,12 @@ import {
   getAddressBalanceOf,
   getTokenIdOfBalance,
   renewPass,
+  getProof
 } from './web3/ethersComponents'
 import { FaSearch } from "react-icons/fa";
 
-declare var window: any
 
+declare var window: any
 
 
 const Dashboard = () => {
@@ -26,6 +27,8 @@ const Dashboard = () => {
   const [tokenId, setTokenId] = useState();
   const [userExpireTime, setUserExpireTime] = useState("");
   const [userStatus, setUserStatus] = useState("");
+  const [proof, setProof] = useState<any>();
+  const [privateSale, setPrivateSale] = useState();
   
   // checks if there is an ethereum service, refreshes on network change, auto updates on account change, looks for address if ethereum is present
   try{
@@ -111,6 +114,8 @@ const Dashboard = () => {
           setWalletAddress(value);
           getENSName(value);
           findBalanceOfOwner(value);
+          let gotProof = getProof(walletAddress);
+          setProof(gotProof);
         }
       }).catch((err) => {
         console.log(err);

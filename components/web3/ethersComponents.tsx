@@ -1,14 +1,30 @@
 import { ethers } from "ethers";
+import { MerkleTree } from "merkletreejs";
+import keccak256 from "keccak256";
 import abi from './abi.json'
+import { addresses, contractAddress } from "./config";
 //import { refresh } from '../DashboardPage'
 
 declare var window: any
 
-const contractAddress = "0x1a52A04f870F137BCb915e1D256a0188E5292089";
-
 let selectedAccount;
 let nftContract;
 let isInitialized = false;
+
+
+
+const leafNodes = addresses.map(addr => keccak256(addr));
+const merkleTree = new MerkleTree(leafNodes, keccak256, { sortPairs: true});
+
+export function getProof(address) {
+    const check = addresses.findIndex(element => element == address);
+    if (check > -1) {
+        const addressIndex = leafNodes[check];
+        const hexProof = merkleTree.getHexProof(addressIndex);
+        return hexProof;
+    }
+    return false;
+}
 
 export const initWeb3 = async () => {
     let provider = new ethers.providers.Web3Provider(window.ethereum);

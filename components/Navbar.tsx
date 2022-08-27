@@ -35,7 +35,7 @@ const Navbar = ({ toggle }) => {
             </div>
             <div className={scrollNav === true ? "transition-all w-full hidden flex-grow lg:flex lg:items-center lg:w-auto text-xl text-gray-200" : "transition-all w-full hidden lg:flex lg:items-center lg:w-auto text-xl text-white"}>
                 <div className="">
-                  <Link activeClass="underline decoration-blue-300 decoration-4 underline-offset-[28px]" to="About" spy={true} smooth={true} offset={0} duration={800} className={scrollNav === true ? "block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-10 cursor-pointer" : "block mt-4 lg:inline-block lg:mt-0 hover:text-gray-300 mr-10 cursor-pointer"}>
+                  <Link activeClass="underline decoration-blue-300 decoration-4 underline-offset-[28px] " to="About" spy={true} smooth={true} offset={0} duration={800} className={scrollNav === true ? "block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-10 cursor-pointer" : "block mt-4 lg:inline-block lg:mt-0 hover:text-gray-300 mr-10 cursor-pointer"}>
                     About
                   </Link>
                   <Link activeClass="underline decoration-blue-300 decoration-4 underline-offset-[28px]" to="Tools" spy={true} smooth={true} offset={0} duration={800} className={scrollNav === true ? "block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-10 cursor-pointer" : "block mt-4 lg:inline-block lg:mt-0 hover:text-gray-300 mr-10 cursor-pointer"}>
