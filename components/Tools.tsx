@@ -44,8 +44,8 @@ const Tools = () => {
   };
 
     return (
-        <div className="flex justify-center h-[1000px] bg-gray-200 z-[1]" id="Tools">
-          <img className="object-cover lg:object-fill h-[1000px] w-full absolute z-[2]" src="bg2.png"></img>
+        <div className="flex justify-center h-[900px] bg-gray-200 z-[1]" id="Tools">
+          <img className="object-cover lg:object-fill h-[900px] w-full absolute z-[2]" src="bg2.png"></img>
           <div className="my-auto mx-5 z-[4] grid grid-cols-1 lg:grid-cols-2 gap-10">
             <div className="bg-slate-900 m-8 lg:m-auto p-10 rounded-3xl max-w-[500px] min-h-[540px] drop-shadow-[15px_10px_10px_rgba(0,0,0,0.4)]">
               <div className="">

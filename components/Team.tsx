@@ -1,7 +1,7 @@
 const Team = () => {
     return (
-        <div className="flex justify-center h-[1000px] lg:h-screen min-h-[1000px] bg-gray-400 z-[1]" id="Team">
-          <img className="object-cover lg:object-fill h-[1000px] lg:h-full min-h-[1000px] w-full absolute z-[2]" src="bg4.png"></img>
+        <div className="flex justify-center h-[900px] bg-gray-400 z-[1]" id="Team">
+          <img className="object-cover lg:object-fill h-[900px] w-full absolute z-[2]" src="bg4.png"></img>
           <div className="z-[4] grid">
           <div className="grid">
             <h1 className="text-4xl lg:text-6xl font-bold h-[3px] m-auto">Meet Our Team</h1>
