@@ -1,13 +1,26 @@
-import { Parallax } from 'react-scroll-parallax';
+import React, { useState, useEffect } from 'react';
 
 const Background = () => {
+    const [scrollNav, setScrollNav] = useState(0);
+
+    const changeNav = () => {
+        if (window.scrollY >= 230) {
+          setScrollNav(window.scrollY);
+        } else {
+          setScrollNav(window.scrollY);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', changeNav);
+    }, []);
+
+    console.log(scrollNav);
+
     return (
-        <Parallax translateY={[-15, 20]}>
-            <div className="h-full w-full z-30 pt-[40vh]">
-                <div className="h-96 w-96 bg-slate-800 rounded-3xl">
-                </div>
-            </div>
-        </Parallax>
+        <>
+            <img src="fullPageBg.png" className="background-element"></img>
+        </>
     );
 }
 
