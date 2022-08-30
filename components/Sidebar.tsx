@@ -15,7 +15,7 @@ const Sidebar = ({ isOpen, toggle }) => {
                       </button>
                   </div>
                 </div>
-                <div className="mt-[10vh] gap-10 text-4xl grid justify-items-center">
+                <div className="mt-[10vh] gap-10 text-3xl grid justify-items-center">
                   <Link onClick={toggle} activeClass="" to="About" spy={true} smooth={true} offset={0} duration={800} className="text-gray-300 hover:text-white cursor-pointer">
                     About
                   </Link>
@@ -31,7 +31,7 @@ const Sidebar = ({ isOpen, toggle }) => {
                   <Link onClick={toggle} activeClass="" to="Faq" spy={true} smooth={true} offset={0} duration={800} className="text-gray-300 hover:text-white cursor-pointer">
                     Faq
                   </Link>
-                  <a href="dashboard" className="inline-block px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-slate-900 hover:bg-white">Dashboard</a>
+                  <a href="dashboard" className="inline-block px-4 py-2 leading-none border rounded text-white text-2xl border-white hover:border-transparent hover:text-slate-900 hover:bg-white">Dashboard</a>
                 </div>
             </nav>
     );

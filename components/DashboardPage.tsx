@@ -132,7 +132,7 @@ const Dashboard = () => {
         setENSName(truncatedAdress);
         return;
       }
-      let nameMax = 20;
+      let nameMax = 32;
       if (value.length > nameMax) {
         let truncatedName = (`${value.substring(0, nameMax)}...`)
         setENSName(truncatedName);
@@ -202,16 +202,16 @@ const Dashboard = () => {
             <span className="font-semibold text-xl tracking-tight mr-4">Abyss</span>
           </a>
         </nav>
-        <div className="flex justify-center h-screen min-h-[700px] bg-slate-900">
+        <div className="flex justify-center h-screen min-h-[700px] bg-slate-900 overflow-hidden">
           <div className="m-auto">
-            <div onClick={walletAddress === undefined ? updateConnected : nothing} className={walletAddress === undefined ? "transition-all w-24 h-8 flex flex-wrap text-md px-4 py-2 leading-none rounded text-white bg-blue-300 hover:bg-blue-400 drop-shadow hover:drop-shadow-sm cursor-pointer" : "transition-all duration-300 trans w-[400px] h-[450px] max-w-[900px] max-h-[600px] xl:w-[45vw] xl:h-[30vw] text-md p-10 leading-none text-white bg-indigo-900 drop-shadow-[15px_20px_20px_rgba(0,0,0,0.4)] grid rounded-3xl"}>
+            <div onClick={walletAddress === undefined ? updateConnected : nothing} className={walletAddress === undefined ? "transition-all w-24 h-8 flex flex-wrap text-md px-4 py-2 leading-none rounded text-white bg-blue-300 hover:bg-blue-400 drop-shadow hover:drop-shadow-sm cursor-pointer" : "transition-all duration-300 trans w-[350px] h-[450px] max-w-[900px] max-h-[600px] xl:w-[45vw] xl:h-[30vw] text-md p-10 leading-none text-white bg-indigo-900 drop-shadow-[15px_20px_20px_rgba(0,0,0,0.4)] grid rounded-3xl"}>
               <div className={walletAddress === undefined ? "m-auto" : "hidden"}>Connect</div>
               <div className={walletAddress === undefined ? "transition-all duration-1000 invisible opacity-0" : "transition-all visible flex opacity-100"}>
                 <div className={walletAddress === undefined ? "grid grid-cols-1 xl:grid-cols-2 gap-10 m-auto invisible opacity-0" : "transition-all ease-linear delay-100 duration-200 grid grid-cols-1 xl:grid-cols-2 gap-10 m-auto visible opacity-100"}>
                   <img className="w-[350px] hidden xl:block rounded-3xl drop-shadow-[5px_10px_10px_rgba(0,0,0,0.4)]" src="testpassimg.png"></img>
                   <div className="my-auto">
-                    <h1 className="font-bold text-3xl">Welcome</h1>
-                    <h1 className="font-bold text-3xl">{ensName}</h1>
+                    <h1 className="font-bold text-lg 2xl:text-3xl">Welcome</h1>
+                    <h1 className="font-bold text-lg 2xl:text-3xl">{ensName}</h1>
                     <div className="transition-all pt-5 text-xl">Status: {userStatus}</div>
                     <div className="transition-all pt-2 text-xl">Expiration: {userExpireTime}</div>
                     <div className="flex pt-5 gap-5 text-2xl font-bold">
