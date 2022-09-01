@@ -111,7 +111,20 @@
 				"type": "address"
 			}
 		],
-		"name": "ownerMint",
+		"name": "ownerMintOG",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_receiver",
+				"type": "address"
+			}
+		],
+		"name": "ownerMintRegular",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -121,6 +134,11 @@
 			{
 				"internalType": "uint256",
 				"name": "_tokenId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_days",
 				"type": "uint256"
 			}
 		],
@@ -147,24 +165,6 @@
 		],
 		"name": "OwnershipTransferred",
 		"type": "event"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "operator",
-				"type": "address"
-			},
-			{
-				"internalType": "bool",
-				"name": "approved",
-				"type": "bool"
-			}
-		],
-		"name": "setApprovalForAll",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
 	},
 	{
 		"anonymous": false,
@@ -235,22 +235,14 @@
 				"internalType": "uint256",
 				"name": "_tokenId",
 				"type": "uint256"
-			}
-		],
-		"name": "renewPass",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
+			},
 			{
 				"internalType": "uint256",
-				"name": "_tokenId",
+				"name": "_months",
 				"type": "uint256"
 			}
 		],
-		"name": "renewPassOG",
+		"name": "renewPass",
 		"outputs": [],
 		"stateMutability": "payable",
 		"type": "function"
@@ -316,12 +308,17 @@
 	{
 		"inputs": [
 			{
-				"internalType": "string",
-				"name": "baseURI_",
-				"type": "string"
+				"internalType": "address",
+				"name": "operator",
+				"type": "address"
+			},
+			{
+				"internalType": "bool",
+				"name": "approved",
+				"type": "bool"
 			}
 		],
-		"name": "setBaseURI",
+		"name": "setApprovalForAll",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -329,12 +326,25 @@
 	{
 		"inputs": [
 			{
-				"internalType": "string",
-				"name": "_contractURI",
-				"type": "string"
+				"internalType": "bool",
+				"name": "_state",
+				"type": "bool"
 			}
 		],
-		"name": "setContractURI",
+		"name": "setCanRenew",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_maxRenewMonths",
+				"type": "uint256"
+			}
+		],
+		"name": "setMaxRenewMonths",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -381,6 +391,19 @@
 	{
 		"inputs": [
 			{
+				"internalType": "string[]",
+				"name": "metadataParts_",
+				"type": "string[]"
+			}
+		],
+		"name": "setMetadataParts",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "uint256",
 				"name": "_price",
 				"type": "uint256"
@@ -410,14 +433,9 @@
 				"internalType": "uint256",
 				"name": "_renewPrice",
 				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_renewPriceOG",
-				"type": "uint256"
 			}
 		],
-		"name": "setRenews",
+		"name": "setRenewPrice",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -517,51 +535,12 @@
 	},
 	{
 		"inputs": [],
-		"name": "baseExtension",
+		"name": "canRenew",
 		"outputs": [
 			{
-				"internalType": "string",
+				"internalType": "bool",
 				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "baseURI",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "baseURIActive",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "contractURI",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
+				"type": "bool"
 			}
 		],
 		"stateMutability": "view",
@@ -570,6 +549,19 @@
 	{
 		"inputs": [],
 		"name": "currentOgMinted",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "currentRegularMinted",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -663,12 +655,51 @@
 	},
 	{
 		"inputs": [],
+		"name": "maxRenewMonths",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "maxSupply",
 		"outputs": [
 			{
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "merkleRoot",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "merkleRootOG",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
 			}
 		],
 		"stateMutability": "view",
@@ -772,19 +803,6 @@
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "renewPriceOG",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"inputs": [
 			{
 				"internalType": "bytes4",
@@ -863,7 +881,7 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "_tokenId",
+				"name": "tokenId",
 				"type": "uint256"
 			}
 		],
@@ -886,49 +904,6 @@
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "verifyPass",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_user",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "verifyPassUser",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
 			}
 		],
 		"stateMutability": "view",

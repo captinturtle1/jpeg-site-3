@@ -3,15 +3,14 @@ import { ethers } from "ethers";
 import { 
   requestAccount,
   getAccount, 
-  checkIfPaused,
-  getTotalSupply,
   mintToken,
   getENS,
   getExpire,
   getAddressBalanceOf,
   getTokenIdOfBalance,
   renewPass,
-  getProof
+  getProof,
+  checkContractStatus
 } from './web3/ethersComponents'
 import { FaSearch } from "react-icons/fa";
 
@@ -27,8 +26,10 @@ const Dashboard = () => {
   const [tokenId, setTokenId] = useState();
   const [userExpireTime, setUserExpireTime] = useState("");
   const [userStatus, setUserStatus] = useState("");
+  const [userMintStatus, setUserMintStatus] = useState<any>();
   const [proof, setProof] = useState<any>();
-  const [privateSale, setPrivateSale] = useState();
+  const [privateSaleStatus, setPrivateSaleStatus] = useState();
+  const [canRenewStatus, setCanRenewStatus] = useState();
 
   useEffect(() => {
     updateConnected();
@@ -120,13 +121,31 @@ const Dashboard = () => {
           setWalletAddress(value);
           getENSName(value);
           findBalanceOfOwner(value);
-          let gotProof = getProof(walletAddress);
-          console.log(gotProof);
-          setProof(gotProof);
+          getProofStatus(value);
+          getContractStatus();
         }
       }).catch((err) => {
         console.log(err);
       })
+    }).catch((err) => {
+      console.log(err);
+    })
+  }
+
+  const getProofStatus = (walletAddress) => {
+    let gotProof = getProof(walletAddress);
+    console.log(`usermintstatus is ${gotProof[0]}`);
+    console.log(`user proof is ${gotProof[1]}`);
+    setUserMintStatus(gotProof[0])
+    setProof(gotProof[1]);
+  }
+
+  const getContractStatus = () => {
+    checkContractStatus().then(value => {
+      setCanRenewStatus(value[0]);
+      setPrivateSaleStatus(value[1]);
+      console.log(`canRenew is ${value[0]}`);
+      console.log(`privateSale is ${value[1]}`);
     }).catch((err) => {
       console.log(err);
     })
@@ -199,6 +218,17 @@ const Dashboard = () => {
     })
   }
 
+  const mintPass = () => {
+    if (userMintStatus !== 0) {
+      mintToken(userMintStatus, proof).then(tx => {
+        console.log(tx);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+    }
+  }
+
   const nothing = () => {}
 
     return (
@@ -222,8 +252,12 @@ const Dashboard = () => {
                     <div className="transition-all pt-5 text-xl">Status: {userStatus}</div>
                     <div className="transition-all pt-2 text-xl">Expiration: {userExpireTime}</div>
                     <div className="flex pt-5 gap-5 text-2xl font-bold">
-                      <div onClick={renew} className="transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 rounded-xl">Mint</div>
-                      <div onClick={renew} className="transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 rounded-xl">Apply</div>
+                      {tokenId !== undefined ? (
+                        <div onClick={canRenewStatus === true ? renew : nothing} className={canRenewStatus === true ? "transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 rounded-xl" : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none"}>Renew</div>
+                      ) : (
+                        <div onClick={privateSaleStatus === true ? mintPass : nothing} className={privateSaleStatus === true && userMintStatus !== 0 ? "transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 rounded-xl" : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none"}>Mint</div>
+                      )}
+                      <a href="" className="transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 rounded-xl">Apply</a>
                     </div>
                     <h1 className="pt-10 font-light">check other pass</h1>
                     <form className="flex pt-1 gap-3">

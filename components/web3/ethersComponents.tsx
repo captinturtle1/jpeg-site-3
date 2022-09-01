@@ -15,20 +15,24 @@ let isInitialized = false;
 export function getProof(address) {
     let check = lowerAddresses.findIndex(element => element == address);
     let checkOG = lowerAdressesOG.findIndex(element => element == address);
+    let info = []
     if (checkOG > -1) {
         let leafNodes = lowerAdressesOG.map(addr => keccak256(addr));
         let merkleTree = new MerkleTree(leafNodes, keccak256, { sortPairs: true});
         let addressIndex = leafNodes[checkOG];
         let hexProof = merkleTree.getHexProof(addressIndex);
-        return hexProof;
+        let info = [1, hexProof];
+        return info;
     } else if (check > -1) {
         let leafNodes = lowerAddresses.map(addr => keccak256(addr));
         let merkleTree = new MerkleTree(leafNodes, keccak256, { sortPairs: true});
         let addressIndex = leafNodes[check];
         let hexProof = merkleTree.getHexProof(addressIndex);
-        return hexProof;
+        let info = [2, hexProof];
+        return info;
     } else {
-        return false;
+        let info = [0, false];
+        return info;
     }
     
 }
@@ -106,12 +110,13 @@ export async function getExpire(tokenId) {
     return expireTime;
 }
 
-export const checkIfPaused = async () => {
+export const checkContractStatus= async () => {
     if (!isInitialized) {
         await initWeb3();
     }
-    let isPaused = await nftContract.paused();
-    return isPaused;
+    let canRenew = await nftContract.canRenew();
+    let privateSale = await nftContract.privateSale();
+    return [canRenew, privateSale];
 };
 
 export const getTotalSupply = async () => {
@@ -122,26 +127,32 @@ export const getTotalSupply = async () => {
      return supply.toString()
 };
 
-export const mintToken = async (mintAmount) => {
+export const mintToken = async (userMintStatus, proof) => {
     if (!isInitialized) {
       await initWeb3();
     }
+
     let cost = await nftContract.price();
     let overrides = {
         value: cost
     };
-    return nftContract.mint(mintAmount, overrides);
+
+    if (userMintStatus == 1) {
+        return nftContract.ogMint(proof, overrides);
+    }
+
+    return nftContract.whitelistMint(proof, overrides);
 };
 
 export const renewPass = async (tokenId) => {
     if (!isInitialized) {
       await initWeb3();
     }
-    console.log("Renewing regular pass")
+    console.log("Renewing pass")
     let cost = await nftContract.renewPrice();
     console.log(cost.toString());
     let overrides = {
-        value: cost
+        value: cost.toString()
     };
     return nftContract.renewPass(tokenId, overrides);
 };
