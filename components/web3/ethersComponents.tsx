@@ -137,23 +137,11 @@ export const renewPass = async (tokenId) => {
     if (!isInitialized) {
       await initWeb3();
     }
-    let ogTokenEnd = await nftContract.ogTokenEnd();
-    // mint if token is regular
-    if (tokenId > ogTokenEnd) {
-        console.log("renewing regular pass")
-        let cost = await nftContract.renewPrice();
-        console.log(cost.toString());
-        let overrides = {
-            value: cost
-        };
-        return nftContract.renewPass(tokenId, overrides);
-    }
-    //mint if token is og
-    console.log("renewing og pass")
-    let cost = await nftContract.renewPriceOG().toString();
-    console.log(cost);
+    console.log("Renewing regular pass")
+    let cost = await nftContract.renewPrice();
+    console.log(cost.toString());
     let overrides = {
-        value: ethers.utils.parseEther(cost.toString())
+        value: cost
     };
-    return nftContract.renewPassOG(tokenId, overrides);
+    return nftContract.renewPass(tokenId, overrides);
 };
