@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import { 
   requestAccount,
@@ -29,34 +29,40 @@ const Dashboard = () => {
   const [userStatus, setUserStatus] = useState("");
   const [proof, setProof] = useState<any>();
   const [privateSale, setPrivateSale] = useState();
+
+  useEffect(() => {
+    updateConnected();
+    try{
+      let provider = new ethers.providers.Web3Provider(window.ethereum);
+      if (typeof provider !== 'undefined') {
+        window.ethereum.on('accountsChanged', function (accounts){
+          let selectedAccount = accounts[0];
+          console.log(`Selected account changed to ${selectedAccount}`);
+          updateConnected();
+        })
+        window.ethereum.on('chainChanged', function(network){
+          console.log(`Selected network changed to ${network}. Refreshing...`);
+          window.location.reload();
+        })
+        getAccount().then(value => {
+          if (value !== undefined) {
+            setWalletAddress(value);
+            getENSName(value);
+          } else {
+            console.log("Not connected");
+          }
+        }).catch((err) => {
+          console.log(err);
+        })
+      }
+    } catch (err) {
+      console.log("No ethereum service.");
+    }
+  },
+  [walletAddress])
   
   // checks if there is an ethereum service, refreshes on network change, auto updates on account change, looks for address if ethereum is present
-  try{
-    let provider = new ethers.providers.Web3Provider(window.ethereum);
-    if (typeof provider !== 'undefined') {
-      window.ethereum.on('accountsChanged', function (accounts){
-        let selectedAccount = accounts[0];
-        console.log(`Selected account changed to ${selectedAccount}`);
-        updateConnected();
-      })
-      window.ethereum.on('chainChanged', function(network){
-        console.log(`Selected network changed to ${network}`);
-        window.location.reload();
-      })
-      getAccount().then(value => {
-        if (value !== undefined) {
-          setWalletAddress(value);
-          getENSName(value);
-        } else {
-          console.log("Not connected");
-        }
-      }).catch((err) => {
-        console.log(err);
-      })
-    }
-  } catch (err) {
-    console.log("No ethereum service.");
-  }
+  
 
   // handles input box for pass expire check box
   const handleNumChange = event => {
@@ -115,6 +121,7 @@ const Dashboard = () => {
           getENSName(value);
           findBalanceOfOwner(value);
           let gotProof = getProof(walletAddress);
+          console.log(gotProof);
           setProof(gotProof);
         }
       }).catch((err) => {

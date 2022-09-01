@@ -2,8 +2,7 @@ import { ethers } from "ethers";
 import { MerkleTree } from "merkletreejs";
 import keccak256 from "keccak256";
 import abi from './abi.json'
-import { addresses, contractAddress } from "./config";
-//import { refresh } from '../DashboardPage'
+import { lowerAddresses, lowerAdressesOG, contractAddress } from "./config";
 
 declare var window: any
 
@@ -13,17 +12,25 @@ let isInitialized = false;
 
 
 
-const leafNodes = addresses.map(addr => keccak256(addr));
-const merkleTree = new MerkleTree(leafNodes, keccak256, { sortPairs: true});
-
 export function getProof(address) {
-    const check = addresses.findIndex(element => element == address);
-    if (check > -1) {
-        const addressIndex = leafNodes[check];
-        const hexProof = merkleTree.getHexProof(addressIndex);
+    let check = lowerAddresses.findIndex(element => element == address);
+    let checkOG = lowerAdressesOG.findIndex(element => element == address);
+    if (checkOG > -1) {
+        let leafNodes = lowerAdressesOG.map(addr => keccak256(addr));
+        let merkleTree = new MerkleTree(leafNodes, keccak256, { sortPairs: true});
+        let addressIndex = leafNodes[checkOG];
+        let hexProof = merkleTree.getHexProof(addressIndex);
         return hexProof;
+    } else if (check > -1) {
+        let leafNodes = lowerAddresses.map(addr => keccak256(addr));
+        let merkleTree = new MerkleTree(leafNodes, keccak256, { sortPairs: true});
+        let addressIndex = leafNodes[check];
+        let hexProof = merkleTree.getHexProof(addressIndex);
+        return hexProof;
+    } else {
+        return false;
     }
-    return false;
+    
 }
 
 export const initWeb3 = async () => {
@@ -51,21 +58,21 @@ export async function requestAccount() {
 
 export async function getAccount() {
     if (window.ethereum) {
-        console.log("Wallet detected");
+        //console.log("Wallet detected");
         try {
             const accounts = await window.ethereum.request({
                 method: "eth_accounts"
             });
             selectedAccount = accounts[0];
             if (selectedAccount !== undefined) {
-                console.log(selectedAccount, "Is connected");
+                //console.log(selectedAccount, "Is connected");
             }
             return accounts[0];
         } catch (error) {
-            console.log("Error connecting...");
+            //console.log("Error connecting...");
         }
     } else {
-        console.log("No wallet detected");
+        //console.log("No wallet detected");
     }
 }
 
