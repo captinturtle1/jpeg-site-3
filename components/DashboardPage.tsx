@@ -30,6 +30,7 @@ const Dashboard = () => {
   const [proof, setProof] = useState<any>();
   const [privateSaleStatus, setPrivateSaleStatus] = useState();
   const [canRenewStatus, setCanRenewStatus] = useState();
+  const [monthsToRenew, setMonthsToRenew] = useState(1);
 
   useEffect(() => {
     updateConnected();
@@ -71,6 +72,11 @@ const Dashboard = () => {
     setToken(event.target.value.slice(0, limit));
   };
 
+  const handleMonthsChange = event => {
+    const limit = 1;
+    setMonthsToRenew(event.target.value.slice(0, limit));
+  };
+
   // gets pass balance info from address
   const findBalanceOfOwner = (address) => {
     getAddressBalanceOf(address).then(value => {
@@ -92,6 +98,7 @@ const Dashboard = () => {
       } else {
         setUserStatus("Not a member");
         setUserExpireTime("N/A");
+        setTokenId(undefined);
         return;
       }
     }).catch((err) => {
@@ -210,8 +217,15 @@ const Dashboard = () => {
   }
 
   const renew = () => {
-    renewPass(tokenId).then(tx => {
+    renewPass(tokenId, monthsToRenew).then(tx => {
       console.log(tx);
+      tx.wait(1).then(value => {
+        console.log("Confirmed");
+        updateConnected();
+      })
+      .catch((err) => {
+        console.log(err);
+      })
     })
     .catch((err) => {
       console.log(err);
@@ -222,6 +236,13 @@ const Dashboard = () => {
     if (userMintStatus !== 0) {
       mintToken(userMintStatus, proof).then(tx => {
         console.log(tx);
+        tx.wait(1).then(value => {
+          console.log("Confirmed");
+          updateConnected();
+        })
+        .catch((err) => {
+          console.log(err);
+        })
       })
       .catch((err) => {
         console.log(err);
@@ -252,19 +273,36 @@ const Dashboard = () => {
                     <div className="transition-all pt-5 text-xl">Status: {userStatus}</div>
                     <div className="transition-all pt-2 text-xl">Expiration: {userExpireTime}</div>
                     <div className="flex pt-5 gap-5 text-2xl font-bold">
-                      {tokenId !== undefined ? (
-                        <div onClick={canRenewStatus === true ? renew : nothing} className={canRenewStatus === true ? "transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 rounded-xl" : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none"}>Renew</div>
+                      {userMintStatus !== 0 ? (
+                        <>
+                          {tokenId !== undefined ? (
+                            <>
+                            <div onClick={canRenewStatus === true ? renew : nothing} className={canRenewStatus === true ? "transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 rounded-xl" : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none"}>Renew</div>
+                            <form>
+                              <select
+                                value={monthsToRenew}
+                                onChange={handleMonthsChange}
+                                className="pl-2 p-1 focus:outline-none rounded-lg w-20 h-full"
+                              >
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                              </select>
+                            </form>
+                            <div className="my-auto">{0.08 * monthsToRenew} Ξ</div>
+                            </>
+                          ) : (
+                            <div onClick={privateSaleStatus === true ? mintPass : nothing} className={privateSaleStatus === true && userMintStatus !== 0 ? "transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 rounded-xl" : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none"}>Mint</div>
+                          )}
+                        </>
                       ) : (
-                        <div onClick={privateSaleStatus === true ? mintPass : nothing} className={privateSaleStatus === true && userMintStatus !== 0 ? "transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 rounded-xl" : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none"}>Mint</div>
+                        <a href="" className="transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 rounded-xl">Apply</a>
                       )}
-                      <a href="" className="transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 rounded-xl">Apply</a>
                     </div>
                     <h1 className="pt-10 font-light">check other pass</h1>
                     <form className="flex pt-1 gap-3">
                       <input
                         maxLength={4}
-                        type="number"
-                        value={token}
                         onChange={handleNumChange}
                         placeholder="token #"
                         className="pl-2 p-1 focus:outline-none rounded-lg"

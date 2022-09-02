@@ -144,15 +144,15 @@ export const mintToken = async (userMintStatus, proof) => {
     return nftContract.whitelistMint(proof, overrides);
 };
 
-export const renewPass = async (tokenId) => {
+export const renewPass = async (tokenId, monthsToRenew) => {
     if (!isInitialized) {
       await initWeb3();
     }
     console.log("Renewing pass")
-    let cost = await nftContract.renewPrice();
+    let cost = await nftContract.renewPrice() * monthsToRenew;
     console.log(cost.toString());
     let overrides = {
         value: cost.toString()
     };
-    return nftContract.renewPass(tokenId, overrides);
+    return nftContract.renewPass(tokenId, monthsToRenew, overrides);
 };
