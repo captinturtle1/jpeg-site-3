@@ -277,19 +277,19 @@ const Dashboard = () => {
                         <>
                           {tokenId !== undefined ? (
                             <>
-                            <div onClick={canRenewStatus === true ? renew : nothing} className={canRenewStatus === true ? "transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 rounded-xl" : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none"}>Renew</div>
-                            <form>
+                            <div onClick={canRenewStatus === true ? renew : nothing} className={canRenewStatus === true ? "transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 my-auto rounded-xl" : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none my-auto"}>Renew</div>
+                            <form className="my-auto">
                               <select
                                 value={monthsToRenew}
                                 onChange={handleMonthsChange}
-                                className="pl-2 p-1 focus:outline-none rounded-lg w-20 h-full"
+                                className="pl-2 p-1 focus:outline-none rounded-lg w-16 h-full"
                               >
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
                               </select>
                             </form>
-                            <div className="my-auto">{0.08 * monthsToRenew} Ξ</div>
+                            <div className="my-auto text-[1.1rem] 2xl:text-[1.5rem]">{0.08 * monthsToRenew} Ξ</div>
                             </>
                           ) : (
                             <div onClick={privateSaleStatus === true ? mintPass : nothing} className={privateSaleStatus === true && userMintStatus !== 0 ? "transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 rounded-xl" : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none"}>Mint</div>

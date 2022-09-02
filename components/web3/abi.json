@@ -167,6 +167,19 @@
 		"type": "event"
 	},
 	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_maxRenewMonths",
+				"type": "uint256"
+			}
+		],
+		"name": "setMaxRenewMonths",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"anonymous": false,
 		"inputs": [
 			{
@@ -340,19 +353,6 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "_maxRenewMonths",
-				"type": "uint256"
-			}
-		],
-		"name": "setMaxRenewMonths",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
 				"name": "_maxSupply",
 				"type": "uint256"
 			}
@@ -379,7 +379,7 @@
 		"inputs": [
 			{
 				"internalType": "bytes32",
-				"name": "_merkleRoot",
+				"name": "_merkleRootOG",
 				"type": "bytes32"
 			}
 		],
@@ -536,6 +536,49 @@
 	{
 		"inputs": [],
 		"name": "canRenew",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "checkPass",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_user",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "checkUserWithPass",
 		"outputs": [
 			{
 				"internalType": "bool",
