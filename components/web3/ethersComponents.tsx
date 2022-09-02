@@ -116,7 +116,11 @@ export const checkContractStatus= async () => {
     }
     let canRenew = await nftContract.canRenew();
     let privateSale = await nftContract.privateSale();
-    return [canRenew, privateSale];
+    let price = await nftContract.price();
+    let renewPrice = await nftContract.renewPrice();
+    let maxRenewMonths = await nftContract.maxRenewMonths();
+    let ogTokenEnd = await nftContract.ogTokenEnd();
+    return [canRenew, privateSale, price, renewPrice, maxRenewMonths, ogTokenEnd];
 };
 
 export const getTotalSupply = async () => {

@@ -26,11 +26,16 @@ const Dashboard = () => {
   const [tokenId, setTokenId] = useState();
   const [userExpireTime, setUserExpireTime] = useState("");
   const [userStatus, setUserStatus] = useState("");
+  const [userStatusNum, setUserStatusNum] = useState(0);
   const [userMintStatus, setUserMintStatus] = useState<any>();
   const [proof, setProof] = useState<any>();
   const [privateSaleStatus, setPrivateSaleStatus] = useState();
   const [canRenewStatus, setCanRenewStatus] = useState();
   const [monthsToRenew, setMonthsToRenew] = useState(1);
+  const [price, setPrice] = useState(0);
+  const [renewPrice, setRenewPrice] = useState(0);
+  const [maxRenewMonths, setMaxRenewMonths] = useState(0);
+  const [ogTokenEnd, setOgTokenEnd] = useState(10);
 
   useEffect(() => {
     updateConnected();
@@ -81,22 +86,23 @@ const Dashboard = () => {
   const findBalanceOfOwner = (address) => {
     getAddressBalanceOf(address).then(value => {
       if (value > 0) {
-        console.log("User owns pass");
         getTokenIdOfBalance(address, 0).then(value => {
           setTokenId(value.toString());
           getUserExpireTime(value.toString());
-          console.log(value.toString());
-          if (value.toString() > 5) {
+          if (value.toString() > ogTokenEnd) {
             setUserStatus("Member");
+            setUserStatusNum(2);
             return;
           }
           setUserStatus("OG");
+          setUserStatusNum(1);
           return;
         }).catch((err) => {
           console.log(err);
         })
       } else {
         setUserStatus("Not a member");
+        setUserStatusNum(0);
         setUserExpireTime("N/A");
         setTokenId(undefined);
         return;
@@ -141,7 +147,6 @@ const Dashboard = () => {
 
   const getProofStatus = (walletAddress) => {
     let gotProof = getProof(walletAddress);
-    console.log(`usermintstatus is ${gotProof[0]}`);
     console.log(`user proof is ${gotProof[1]}`);
     setUserMintStatus(gotProof[0])
     setProof(gotProof[1]);
@@ -151,8 +156,10 @@ const Dashboard = () => {
     checkContractStatus().then(value => {
       setCanRenewStatus(value[0]);
       setPrivateSaleStatus(value[1]);
-      console.log(`canRenew is ${value[0]}`);
-      console.log(`privateSale is ${value[1]}`);
+      setPrice(value[2] / 1000000000000000000);
+      setRenewPrice(value[3] / 1000000000000000000);
+      setMaxRenewMonths(value[4]);
+      //setOgTokenEnd(value[5]);
     }).catch((err) => {
       console.log(err);
     })
@@ -277,26 +284,50 @@ const Dashboard = () => {
                         <>
                           {tokenId !== undefined ? (
                             <>
-                            <div onClick={canRenewStatus === true ? renew : nothing} className={canRenewStatus === true ? "transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 my-auto rounded-xl" : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none my-auto"}>Renew</div>
-                            <form className="my-auto">
-                              <select
-                                value={monthsToRenew}
-                                onChange={handleMonthsChange}
-                                className="pl-2 p-1 focus:outline-none rounded-lg w-16 h-full"
-                              >
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                              </select>
-                            </form>
-                            <div className="my-auto text-[1.1rem] 2xl:text-[1.5rem]">{0.08 * monthsToRenew} Ξ</div>
+                              <div onClick={canRenewStatus === true ? renew : nothing} className={canRenewStatus === true ? "transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 my-auto rounded-xl" : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none my-auto"}>Renew</div>
+                              <form className="my-auto">
+                                <select
+                                  value={monthsToRenew}
+                                  onChange={handleMonthsChange}
+                                  className="pl-2 p-1 focus:outline-none rounded-lg w-16 h-full"
+                                >
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                </select>
+                              </form>
+                              <div className="my-auto text-[1.1rem] 2xl:text-[1.5rem]">{renewPrice * monthsToRenew} Ξ</div>
                             </>
                           ) : (
-                            <div onClick={privateSaleStatus === true ? mintPass : nothing} className={privateSaleStatus === true && userMintStatus !== 0 ? "transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 rounded-xl" : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none"}>Mint</div>
+                            <>
+                              <div onClick={privateSaleStatus === true ? mintPass : nothing} className={privateSaleStatus === true && userMintStatus !== 0 ? "transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 rounded-xl" : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none"}>Mint</div>
+                              <div className="my-auto text-[1.1rem] 2xl:text-[1.5rem]">{price} Ξ</div>
+                            </>
                           )}
                         </>
                       ) : (
-                        <a href="" className="transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 rounded-xl">Apply</a>
+                        <>
+                          {userStatusNum !== 0 ? (
+                              <>
+                                <div onClick={canRenewStatus === true ? renew : nothing} className={canRenewStatus === true ? "transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 my-auto rounded-xl" : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none my-auto"}>Renew</div>
+                                  <form className="my-auto">
+                                    <select
+                                      value={monthsToRenew}
+                                      onChange={handleMonthsChange}
+                                      className="pl-2 p-1 focus:outline-none rounded-lg w-16 h-full"
+                                    >
+                                      <option>1</option>
+                                      <option>2</option>
+                                      <option>3</option>
+                                    </select>
+                                  </form>
+                                <div className="my-auto text-[1.1rem] 2xl:text-[1.5rem]">{renewPrice * monthsToRenew} Ξ</div>
+                              </>
+                            ):(
+                              <a href="" className="transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 rounded-xl">Apply</a>
+                            )}
+                          
+                        </>
                       )}
                     </div>
                     <h1 className="pt-10 font-light">check other pass</h1>
