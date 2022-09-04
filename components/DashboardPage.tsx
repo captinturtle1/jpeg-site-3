@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ethers } from "ethers";
+import Image from 'next/image'
+import NextLink from 'next/link'
 import { 
   requestAccount,
   getAccount, 
@@ -14,7 +16,7 @@ import {
 } from './web3/ethersComponents'
 import { FaSearch } from "react-icons/fa";
 
-
+const day = 86400;
 declare var window: any
 
 
@@ -36,6 +38,8 @@ const Dashboard = () => {
   const [renewPrice, setRenewPrice] = useState(0);
   const [maxRenewMonths, setMaxRenewMonths] = useState(0);
   const [ogTokenEnd, setOgTokenEnd] = useState(10);
+  const [expireTimeUnix, setExpireTimeUnix] = useState(0);
+  const [monthsAbleToRenew, setMonthsAbleToRenew] = useState(0);
 
   useEffect(() => {
     updateConnected();
@@ -196,6 +200,11 @@ const Dashboard = () => {
     var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
     return time;
   }
+
+  const getUserMonthsAbleToRenew = (unix) => {
+
+    return;
+  }
   
   const getExpireTime = () => {
     getExpire(token).then(value => {
@@ -217,7 +226,9 @@ const Dashboard = () => {
         return;
       }
       let expireDate = timeConverter(value);
+      setExpireTimeUnix(value.toString());
       setUserExpireTime(expireDate);
+      
     }).catch((err) => {
       console.log(err);
     })
@@ -262,10 +273,14 @@ const Dashboard = () => {
     return (
       <div>
         <nav className="z-[1] fixed ml-20 mt-5 pt-6 px-10">
-          <a href="/" className="flex items-center flex-shrink-0 text-white mr-6">
-            <img className="fill-current h-8 w-8 mr-2 rounded-xl" src={"pinksquare.png"}/>
-            <span className="font-semibold text-xl tracking-tight mr-4">Abyss</span>
-          </a>
+          <NextLink href="/">
+            <a className="flex items-center flex-shrink-0 text-white mr-6">
+              <div className="h-8 w-8 mr-2">
+                <Image height="100%" width="100%" src="/pinksquare.png" className="rounded-xl"/>
+              </div>
+              <span className="font-semibold text-xl tracking-tight mr-4">Abyss</span>
+            </a>
+          </NextLink>
         </nav>
         <div className="flex justify-center h-screen min-h-[700px] bg-slate-900 overflow-hidden">
           <div className="m-auto">
@@ -273,18 +288,20 @@ const Dashboard = () => {
               <div className={walletAddress === undefined ? "m-auto" : "hidden"}>Connect</div>
               <div className={walletAddress === undefined ? "transition-all duration-1000 invisible opacity-0" : "transition-all visible flex opacity-100"}>
                 <div className={walletAddress === undefined ? "grid grid-cols-1 xl:grid-cols-2 gap-10 m-auto invisible opacity-0" : "transition-all ease-linear delay-100 duration-200 grid grid-cols-1 xl:grid-cols-2 gap-10 m-auto visible opacity-100"}>
-                  <img className="w-[350px] hidden xl:block rounded-3xl drop-shadow-[5px_10px_10px_rgba(0,0,0,0.4)]" src="pass.png"></img>
+                  <div className="hidden xl:block rounded-3xl drop-shadow-[5px_10px_10px_rgba(0,0,0,0.4)] m-auto">
+                    <Image width="500px" height="500px" src="/pass.png"/>
+                  </div>
                   <div className="my-auto">
                     <h1 className="font-bold text-lg 2xl:text-3xl">Welcome</h1>
                     <h1 className="font-bold text-lg 2xl:text-3xl">{ensName}</h1>
                     <div className="transition-all pt-5 text-xl">Status: {userStatus}</div>
-                    <div className="transition-all pt-2 text-xl">Expiration: {userExpireTime}</div>
+                    <div className={expireTimeUnix < Math.floor(Date.now() / 1000) ? "transition-all pt-2 text-xl text-red-500" : "transition-all pt-2 text-xl text-white"}>Expiration: {userExpireTime}</div>
                     <div className="flex pt-5 gap-5 text-2xl font-bold">
                       {userMintStatus !== 0 ? (
                         <>
                           {tokenId !== undefined ? (
                             <>
-                              <div onClick={canRenewStatus === true ? renew : nothing} className={canRenewStatus === true ? "transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 my-auto rounded-xl" : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none my-auto"}>Renew</div>
+                              <div onClick={canRenewStatus === true ? renew : nothing} className={canRenewStatus === true ? (monthsToRenew == 1 ? "transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 my-auto rounded-xl" : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none my-auto") : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none my-auto"}>Renew</div>
                               <form className="my-auto">
                                 <select
                                   value={monthsToRenew}
@@ -309,7 +326,7 @@ const Dashboard = () => {
                         <>
                           {userStatusNum !== 0 ? (
                               <>
-                                <div onClick={canRenewStatus === true ? renew : nothing} className={canRenewStatus === true ? "transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 my-auto rounded-xl" : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none my-auto"}>Renew</div>
+                                <div onClick={canRenewStatus === true ? renew : nothing} className={canRenewStatus === true ? (expireTimeUnix > 1 ? "transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 my-auto rounded-xl" : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none my-auto") : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none my-auto"}>Renew</div>
                                   <form className="my-auto">
                                     <select
                                       value={monthsToRenew}
