@@ -306,11 +306,11 @@ const Dashboard = () => {
                                 <select
                                   value={monthsToRenew}
                                   onChange={handleMonthsChange}
-                                  className="pl-2 p-1 focus:outline-none rounded-lg w-16 h-full"
+                                  className="pl-2 p-1 focus:outline-none rounded-lg w-16 h-full bg-neutral-600"
                                 >
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
+                                  <option className="bg-neutral-600">1</option>
+                                  <option className="bg-neutral-600">2</option>
+                                  <option className="bg-neutral-600">3</option>
                                 </select>
                               </form>
                               <div className="my-auto text-[1.1rem] 2xl:text-[1.5rem]">{renewPrice * monthsToRenew} Ξ</div>
@@ -331,11 +331,11 @@ const Dashboard = () => {
                                     <select
                                       value={monthsToRenew}
                                       onChange={handleMonthsChange}
-                                      className="pl-2 p-1 focus:outline-none rounded-lg w-16 h-full"
+                                      className="pl-2 p-1 focus:outline-none rounded-lg w-16 h-full bg-neutral-600"
                                     >
-                                      <option>1</option>
-                                      <option>2</option>
-                                      <option>3</option>
+                                      <option className="bg-neutral-600">1</option>
+                                      <option className="bg-neutral-600">2</option>
+                                      <option className="bg-neutral-600">3</option>
                                     </select>
                                   </form>
                                 <div className="my-auto text-[1.1rem] 2xl:text-[1.5rem]">{renewPrice * monthsToRenew} Ξ</div>
@@ -353,7 +353,7 @@ const Dashboard = () => {
                         maxLength={4}
                         onChange={handleNumChange}
                         placeholder="token #"
-                        className="pl-2 p-1 focus:outline-none rounded-lg"
+                        className="pl-2 p-1 focus:outline-none rounded-lg bg-neutral-600"
                       />
                       <div onClick={getExpireTime} className="transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] rounded-full text-center p-2"><FaSearch/></div>
                     </form>

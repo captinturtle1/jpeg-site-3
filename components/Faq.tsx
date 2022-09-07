@@ -66,10 +66,10 @@ const FAQ = () => {
     return (
       <div className="flex justify-center h-[900px] bg-gray-500 z-[1]" id="Faq">
         <img className="object-cover lg:object-fill h-[901px] w-full absolute z-[2]" src="bg5.png"></img>
-        <div className="flex absolute pt-[150px] z-[3]">
+        <div className="flex absolute pt-[150px] z-[3] text-white">
           <h1 className="text-4xl lg:text-6xl font-bold">Questions?</h1>
         </div>
-        <div className="z-[3] mt-[300px]">
+        <div className="z-[3] mt-[300px] text-white">
           <div className="grid grid-cols-1 gap-1 mx-8 lg:w-[500px] m-auto">
             <div onClick={setBoxOne} className={box1 === true ? "bg-slate-800 h-[180px] rounded-lg transition-all cursor-pointer" : "bg-slate-800 rounded-lg h-[60px] transition-all cursor-pointer"}>
               <div className="text-sm lg:text-lg font-bold px-8 py-[18px] drop-shadow-[15px_10px_10px_rgba(0,0,0,0.4)]">Lorem Ipsum</div>

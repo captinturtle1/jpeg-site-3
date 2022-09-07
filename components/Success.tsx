@@ -10,7 +10,7 @@ const Success = () => {
     return (
         <div className="flex justify-center items-center h-[900px] bg-gray-300 z-[1] overflow-hidden" id="Success">
           <img className="object-cover lg:object-fill h-[901px] w-full absolute z-[2]" src="bg3.png"></img>
-          <div className="z-[4]">
+          <div className="z-[4] text-white">
             <Swiper
               effect={"cards"}
               grabCursor={true}
