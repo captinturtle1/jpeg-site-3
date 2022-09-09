@@ -86,7 +86,7 @@ const Team = () => {
                 </div>
               </SwiperButtonNext>
             </SwiperSlide>
-            <a href="https://twitter.com/heydody" className="m-auto text-3xl">
+            <a href="https://twitter.com/0x_Dylan" className="m-auto text-3xl">
               <FaTwitter/>
             </a>
           </Swiper>
@@ -119,7 +119,7 @@ const Team = () => {
                 </div>
               </SwiperButtonNext>
             </SwiperSlide>
-            <a href="https://twitter.com/heydody" className="m-auto text-3xl">
+            <a href="https://twitter.com/Yashatoshi" className="m-auto text-3xl">
               <FaTwitter/>
             </a>
           </Swiper>
@@ -152,7 +152,7 @@ const Team = () => {
                 </div>
               </SwiperButtonNext>
             </SwiperSlide>
-            <a href="https://twitter.com/heydody" className="m-auto text-3xl">
+            <a href="https://twitter.com/its_Zoid" className="m-auto text-3xl">
               <FaTwitter/>
             </a>
           </Swiper>
@@ -185,7 +185,7 @@ const Team = () => {
                 </div>
               </SwiperButtonNext>
             </SwiperSlide>
-            <a href="https://twitter.com/heydody" className="m-auto text-3xl">
+            <a href="https://twitter.com/chiefnquach" className="m-auto text-3xl">
               <FaTwitter/>
             </a>
           </Swiper>
@@ -218,7 +218,7 @@ const Team = () => {
                 </div>
               </SwiperButtonNext>
             </SwiperSlide>
-            <a href="https://twitter.com/heydody" className="m-auto text-3xl">
+            <a href="https://twitter.com/foxninjac71" className="m-auto text-3xl">
               <FaTwitter/>
             </a>
           </Swiper>
