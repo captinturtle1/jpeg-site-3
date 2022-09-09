@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { EffectFlip, Pagination, Navigation } from "swiper";
 import { Swiper, SwiperSlide, useSwiper, } from "swiper/react";
 import { TbRotate360 } from 'react-icons/tb';
+import { FaTwitter } from 'react-icons/fa';
 
 import "swiper/css";
 import "swiper/css/effect-flip";
@@ -15,20 +16,20 @@ const SwiperButtonNext = ({ children }) => {
 
 const Team = () => {  
   return (
-    <div className="flex justify-center h-[1000px] lg:h-[900px] bg-gray-400 z-[1]" id="Team">
-      <img className="object-cover lg:object-fill h-[1001px] lg:h-[901px] w-full absolute z-[2]" src="bg4.png"></img>
+    <div className="flex justify-center h-[1100px] lg:h-[900px] bg-gray-400 z-[1]" id="Team">
+      <img className="object-cover lg:object-fill h-[1101px] lg:h-[901px] w-full absolute z-[2]" src="bg4.png"></img>
       <div className="z-[4] flex flex-col lg:mx-10 text-white">
         <div className="flex flex-col gap-5">
           <h1 className="text-4xl lg:text-6xl font-bold mx-auto 2xl:mt-32">Meet Our Team</h1>
           <div className="h-[3px] bg-white w-80 lg:w-[500px] mx-auto hidden lg:block"></div>
         </div>
-        <div className="mt-16 lg:m-auto grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6 gap-5 md:gap-10">
+        <div className="mt-16 lg:m-auto grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6 gap-5 gap-y-16 md:gap-10 md:gap-y-20">
           <Swiper
             slidesPerView={1}
             effect={"flip"}
             loop={true}
             modules={[EffectFlip]}
-            className="max-w-[175px] md:max-w-[200px] lg:max-w-[250px]"
+            className="max-w-[175px] md:max-w-[200px] lg:max-w-[250px] flex flex-wrap"
           >
             <SwiperSlide>
               <SwiperButtonNext>
@@ -52,13 +53,16 @@ const Team = () => {
                 </div>
               </SwiperButtonNext>
             </SwiperSlide>
+            <a href="https://twitter.com/heydody" className="m-auto text-3xl">
+              <FaTwitter/>
+            </a>
           </Swiper>
           <Swiper
             slidesPerView={1}
             effect={"flip"}
             loop={true}
             modules={[EffectFlip]}
-            className="max-w-[175px] md:max-w-[200px] lg:max-w-[250px]"
+            className="max-w-[175px] md:max-w-[200px] lg:max-w-[250px] flex flex-wrap"
           >
             <SwiperSlide>
               <SwiperButtonNext>
@@ -82,13 +86,16 @@ const Team = () => {
                 </div>
               </SwiperButtonNext>
             </SwiperSlide>
+            <a href="https://twitter.com/heydody" className="m-auto text-3xl">
+              <FaTwitter/>
+            </a>
           </Swiper>
           <Swiper
             slidesPerView={1}
             effect={"flip"}
             loop={true}
             modules={[EffectFlip]}
-            className="max-w-[175px] md:max-w-[200px] lg:max-w-[250px]"
+            className="max-w-[175px] md:max-w-[200px] lg:max-w-[250px] flex flex-wrap"
           >
             <SwiperSlide>
               <SwiperButtonNext>
@@ -112,13 +119,16 @@ const Team = () => {
                 </div>
               </SwiperButtonNext>
             </SwiperSlide>
+            <a href="https://twitter.com/heydody" className="m-auto text-3xl">
+              <FaTwitter/>
+            </a>
           </Swiper>
           <Swiper
             slidesPerView={1}
             effect={"flip"}
             loop={true}
             modules={[EffectFlip]}
-            className="max-w-[175px] md:max-w-[200px] lg:max-w-[250px]"
+            className="max-w-[175px] md:max-w-[200px] lg:max-w-[250px] flex flex-wrap"
           >
             <SwiperSlide>
               <SwiperButtonNext>
@@ -142,13 +152,16 @@ const Team = () => {
                 </div>
               </SwiperButtonNext>
             </SwiperSlide>
+            <a href="https://twitter.com/heydody" className="m-auto text-3xl">
+              <FaTwitter/>
+            </a>
           </Swiper>
           <Swiper
             slidesPerView={1}
             effect={"flip"}
             loop={true}
             modules={[EffectFlip]}
-            className="max-w-[175px] md:max-w-[200px] lg:max-w-[250px]"
+            className="max-w-[175px] md:max-w-[200px] lg:max-w-[250px] flex flex-wrap"
           >
             <SwiperSlide>
               <SwiperButtonNext>
@@ -172,13 +185,16 @@ const Team = () => {
                 </div>
               </SwiperButtonNext>
             </SwiperSlide>
+            <a href="https://twitter.com/heydody" className="m-auto text-3xl">
+              <FaTwitter/>
+            </a>
           </Swiper>
           <Swiper
             slidesPerView={1}
             effect={"flip"}
             loop={true}
             modules={[EffectFlip]}
-            className="max-w-[175px] md:max-w-[200px] lg:max-w-[250px]"
+            className="max-w-[175px] md:max-w-[200px] lg:max-w-[250px] flex flex-wrap"
           >
             <SwiperSlide>
             <SwiperButtonNext>
@@ -202,6 +218,9 @@ const Team = () => {
                 </div>
               </SwiperButtonNext>
             </SwiperSlide>
+            <a href="https://twitter.com/heydody" className="m-auto text-3xl">
+              <FaTwitter/>
+            </a>
           </Swiper>
         </div>
       </div>
