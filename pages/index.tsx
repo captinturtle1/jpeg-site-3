@@ -43,6 +43,7 @@ const Home: NextPage = () => {
       <Team/>
       <Faq/>
       <Footer/>
+      <Background/>
     </>
   )
 }

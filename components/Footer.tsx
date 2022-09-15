@@ -2,8 +2,9 @@ import { Link, animateScroll as scroll } from 'react-scroll';
 
 const Footer = () => {
     return (
-        <div className="flex justify-center p-10 bg-gray-900 z-[2] text-white">
-          <div className="m-auto z-[4] grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-52 text-center lg:text-left">
+      <div className="grid">
+        <div className="grid justify-center p-10 text-white bg-gray-900 z-[3]">
+          <div className="m-auto grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-52 text-center lg:text-left">
             <div>
               <div className="text-sm max-w-[400px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
               <div className="flex justify-center lg:justify-start">
@@ -44,6 +45,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
+      </div>
     );
 }
 
