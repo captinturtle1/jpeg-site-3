@@ -54,7 +54,7 @@ const Background = () => {
                         direction: "none",
                         enable: true,
                         random: false,
-                        speed: 0.5,
+                        speed: 1,
                         straight: false,
                       },
                       number: {
@@ -65,13 +65,13 @@ const Background = () => {
                         value: 80,
                       },
                       opacity: {
-                        value: 0.05,
+                        value: 0.08,
                       },
                       shape: {
                         type: "circle",
                       },
                       size: {
-                        value: { min: 1, max: 10 },
+                        value: { min: 1, max: 5 },
                       },
                     }
                   }}

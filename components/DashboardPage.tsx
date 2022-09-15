@@ -201,8 +201,37 @@ const Dashboard = () => {
     return time;
   }
 
-  const getUserMonthsAbleToRenew = (unix) => {
+  const getUserMonthsAbleToRenew = (tokenId, expiretime) => {
+    let maxExpireTimeOG = Math.floor(Date.now() / 1000) + (3 * (day * 45));
+    let maxExpireTime = Math.floor(Date.now() / 1000) + (3 * (day * 30));
 
+    if (tokenId > 0 && tokenId <= ogTokenEnd) {
+      if (maxExpireTimeOG > (expiretime + 3 * (45 * day))) {
+        console.log("3 month");
+        setMonthsAbleToRenew(1);
+      } else if (maxExpireTimeOG > (expiretime + 2 * (45 * day))) {
+        console.log("2 month");
+        setMonthsAbleToRenew(2);
+      } else if (maxExpireTimeOG > (expiretime + 1 * (45 * day))) {
+        console.log("1 month");
+        setMonthsAbleToRenew(3);
+      }
+      return;
+    } else if (tokenId > ogTokenEnd) {
+      if (maxExpireTime > (expiretime + 3 * (30 * day))) {
+        console.log("3 month");
+        setMonthsAbleToRenew(1);
+      } else if (maxExpireTime > (expiretime + 2 * (30 * day))) {
+        console.log("2 month");
+        setMonthsAbleToRenew(2);
+      } else if (maxExpireTime > (expiretime + 1 * (30 * day))) {
+        console.log("1 month");
+        setMonthsAbleToRenew(3);
+      }
+      return;
+    }
+    console.log("0 month");
+    setMonthsAbleToRenew(0);
     return;
   }
   
@@ -228,7 +257,7 @@ const Dashboard = () => {
       let expireDate = timeConverter(value);
       setExpireTimeUnix(value.toString());
       setUserExpireTime(expireDate);
-      
+      getUserMonthsAbleToRenew(tokenId, parseInt(value.toString()));
     }).catch((err) => {
       console.log(err);
     })
@@ -276,7 +305,7 @@ const Dashboard = () => {
           <NextLink href="/">
             <a className="flex items-center flex-shrink-0 text-white mr-6">
               <div className="h-8 w-8 mr-2">
-                <Image height="100%" width="100%" src="/pinksquare.png" className="rounded-xl"/>
+                <Image height="100%" width="100%" src="/logo.png" className="rounded-xl"/>
               </div>
               <span className="font-semibold text-xl tracking-tight mr-4">Abyss</span>
             </a>
@@ -284,7 +313,7 @@ const Dashboard = () => {
         </nav>
         <div className="flex justify-center h-screen min-h-[700px] bg-slate-900 overflow-hidden">
           <div className="m-auto">
-            <div onClick={walletAddress === undefined ? updateConnected : nothing} className={walletAddress === undefined ? "transition-all w-24 h-8 flex flex-wrap text-md px-4 py-2 leading-none rounded text-white bg-blue-300 hover:bg-blue-400 drop-shadow hover:drop-shadow-sm cursor-pointer" : "transition-all duration-300 trans w-[350px] h-[450px] max-w-[900px] max-h-[600px] xl:w-[45vw] xl:h-[30vw] text-md p-10 leading-none text-white bg-indigo-900 drop-shadow-[15px_20px_20px_rgba(0,0,0,0.4)] grid rounded-3xl"}>
+            <div onClick={walletAddress === undefined ? updateConnected : nothing} className={walletAddress === undefined ? "transition-all w-24 h-8 flex flex-wrap text-md px-4 py-2 leading-none rounded text-white bg-blue-300 hover:bg-blue-400 drop-shadow hover:drop-shadow-sm cursor-pointer" : "transition-all duration-300 trans w-[350px] h-[450px] max-w-[900px] max-h-[600px] xl:w-[45vw] xl:h-[30vw] text-md p-10 leading-none text-white bg-zinc-700 drop-shadow-[15px_20px_20px_rgba(0,0,0,0.4)] grid rounded-3xl"}>
               <div className={walletAddress === undefined ? "m-auto" : "hidden"}>Connect</div>
               <div className={walletAddress === undefined ? "transition-all duration-1000 invisible opacity-0" : "transition-all visible flex opacity-100"}>
                 <div className={walletAddress === undefined ? "grid grid-cols-1 xl:grid-cols-2 gap-10 m-auto invisible opacity-0" : "transition-all ease-linear delay-100 duration-200 grid grid-cols-1 xl:grid-cols-2 gap-10 m-auto visible opacity-100"}>
@@ -301,16 +330,16 @@ const Dashboard = () => {
                         <>
                           {tokenId !== undefined ? (
                             <>
-                              <div onClick={canRenewStatus === true ? renew : nothing} className={canRenewStatus === true ? (monthsToRenew == 1 ? "transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 my-auto rounded-xl" : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none my-auto") : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none my-auto"}>Renew</div>
+                              <div onClick={canRenewStatus === true ? renew : nothing} className={canRenewStatus === true ? (monthsToRenew <= monthsAbleToRenew ? "transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 my-auto rounded-xl" : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none my-auto") : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none my-auto"}>Renew</div>
                               <form className="my-auto">
                                 <select
                                   value={monthsToRenew}
                                   onChange={handleMonthsChange}
-                                  className="pl-2 p-1 focus:outline-none rounded-lg w-16 h-full bg-neutral-600"
+                                  className="pl-2 p-1 focus:outline-none rounded-lg w-16 h-full bg-neutral-800"
                                 >
-                                  <option className="bg-neutral-600">1</option>
-                                  <option className="bg-neutral-600">2</option>
-                                  <option className="bg-neutral-600">3</option>
+                                  <option className="bg-neutral-800">1</option>
+                                  <option className="bg-neutral-800">2</option>
+                                  <option className="bg-neutral-800">3</option>
                                 </select>
                               </form>
                               <div className="my-auto text-[1.1rem] 2xl:text-[1.5rem]">{renewPrice * monthsToRenew} Ξ</div>
@@ -326,16 +355,16 @@ const Dashboard = () => {
                         <>
                           {userStatusNum !== 0 ? (
                               <>
-                                <div onClick={canRenewStatus === true ? renew : nothing} className={canRenewStatus === true ? (expireTimeUnix > 1 ? "transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 my-auto rounded-xl" : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none my-auto") : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none my-auto"}>Renew</div>
+                                <div onClick={canRenewStatus === true ? renew : nothing} className={canRenewStatus === true ? (monthsToRenew <= monthsAbleToRenew ? "transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 my-auto rounded-xl" : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none my-auto") : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none my-auto"}>Renew</div>
                                   <form className="my-auto">
                                     <select
                                       value={monthsToRenew}
                                       onChange={handleMonthsChange}
-                                      className="pl-2 p-1 focus:outline-none rounded-lg w-16 h-full bg-neutral-600"
+                                      className="pl-2 p-1 focus:outline-none rounded-lg w-16 h-full bg-neutral-800"
                                     >
-                                      <option className="bg-neutral-600">1</option>
-                                      <option className="bg-neutral-600">2</option>
-                                      <option className="bg-neutral-600">3</option>
+                                      <option className="bg-neutral-800">1</option>
+                                      <option className="bg-neutral-800">2</option>
+                                      <option className="bg-neutral-800">3</option>
                                     </select>
                                   </form>
                                 <div className="my-auto text-[1.1rem] 2xl:text-[1.5rem]">{renewPrice * monthsToRenew} Ξ</div>
@@ -353,7 +382,7 @@ const Dashboard = () => {
                         maxLength={4}
                         onChange={handleNumChange}
                         placeholder="token #"
-                        className="pl-2 p-1 focus:outline-none rounded-lg bg-neutral-600"
+                        className="pl-2 p-1 focus:outline-none rounded-lg bg-neutral-800"
                       />
                       <div onClick={getExpireTime} className="transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] rounded-full text-center p-2"><FaSearch/></div>
                     </form>
