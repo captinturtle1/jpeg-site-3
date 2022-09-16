@@ -41,20 +41,29 @@ const Dashboard = () => {
   const [expireTimeUnix, setExpireTimeUnix] = useState(0);
   const [monthsAbleToRenew, setMonthsAbleToRenew] = useState(0);
 
+  // runs when page started and when walletAddress state changes
   useEffect(() => {
     updateConnected();
+
+    // checks if ethereum provider
     try{
       let provider = new ethers.providers.Web3Provider(window.ethereum);
       if (typeof provider !== 'undefined') {
         window.ethereum.on('accountsChanged', function (accounts){
+
+          // runs when metamask accounts change
           let selectedAccount = accounts[0];
           console.log(`Selected account changed to ${selectedAccount}`);
           updateConnected();
         })
+
+        // runs when metamask chains changed
         window.ethereum.on('chainChanged', function(network){
           console.log(`Selected network changed to ${network}. Refreshing...`);
           window.location.reload();
         })
+
+        // gets address sets states
         getAccount().then(value => {
           if (value !== undefined) {
             setWalletAddress(value);
@@ -81,6 +90,7 @@ const Dashboard = () => {
     setToken(event.target.value.slice(0, limit));
   };
 
+  // handles months to renew select box
   const handleMonthsChange = event => {
     const limit = 1;
     setMonthsToRenew(event.target.value.slice(0, limit));
@@ -149,6 +159,7 @@ const Dashboard = () => {
     })
   }
 
+  // sets userMintStatus if there is a proof detected
   const getProofStatus = (walletAddress) => {
     let gotProof = getProof(walletAddress);
     console.log(`user proof is ${gotProof[1]}`);
@@ -156,6 +167,7 @@ const Dashboard = () => {
     setProof(gotProof[1]);
   }
 
+  // updates site with contract info
   const getContractStatus = () => {
     checkContractStatus().then(value => {
       setCanRenewStatus(value[0]);
@@ -169,6 +181,7 @@ const Dashboard = () => {
     })
   }
 
+  // checks if ens name for address and sets it if so
   const getENSName = (address) => {
     getENS(address).then(value => {
       if (value == undefined) {
@@ -188,6 +201,7 @@ const Dashboard = () => {
     })
   }
 
+  // gives human readable time
   const timeConverter = (UNIX_timestamp) => {
     var a = new Date(UNIX_timestamp * 1000);
     var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -201,6 +215,7 @@ const Dashboard = () => {
     return time;
   }
 
+  // sets how many months the user is able to renew
   const getUserMonthsAbleToRenew = (tokenId, expiretime) => {
     let maxExpireTimeOG = Math.floor(Date.now() / 1000) + (3 * (day * 45));
     let maxExpireTime = Math.floor(Date.now() / 1000) + (3 * (day * 30));
@@ -235,6 +250,7 @@ const Dashboard = () => {
     return;
   }
   
+  // gets expire time for pass number inputted
   const getExpireTime = () => {
     getExpire(token).then(value => {
       if (value == 0) {
@@ -248,6 +264,7 @@ const Dashboard = () => {
     })
   }
 
+  // gets user expire time if the user holds a pass
   const getUserExpireTime = (tokenId) => {
     getExpire(tokenId).then(value => {
       if (value == 0) {
@@ -263,6 +280,7 @@ const Dashboard = () => {
     })
   }
 
+  // contract renew calling function
   const renew = () => {
     renewPass(tokenId, monthsToRenew).then(tx => {
       console.log(tx);
@@ -279,6 +297,7 @@ const Dashboard = () => {
     })
   }
 
+  // contract mint pass function
   const mintPass = () => {
     if (userMintStatus !== 0) {
       mintToken(userMintStatus, proof).then(tx => {
@@ -297,6 +316,7 @@ const Dashboard = () => {
     }
   }
 
+  // idk why i have this but it was the only way for me to get something to work
   const nothing = () => {}
 
     return (

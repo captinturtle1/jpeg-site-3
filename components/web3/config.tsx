@@ -1,5 +1,7 @@
+// current contract for the pass
 export const contractAddress = "0xfbbb17037fd01851dda9fc097748eb3e52a56710";
 
+// regular user addresses for merkle whielist
 export const addressesNotLowercase= 
 [
     "0xf887af4B3CaDeCF8AC74e71a9a69DFf4d14f3aF1", 
@@ -39,6 +41,7 @@ export const addressesNotLowercase=
     "0x4bFa2B372F2447e215d57645B2086996B0BAF597"   
 ];
 
+// og user addresses for merkle whielist
 export const OGaddressesNotLowercase= 
 [
     "0x4F5A8BB7D6D0273bC9e932909B8F892e2Ad9c9cd", 
@@ -48,6 +51,8 @@ export const OGaddressesNotLowercase=
     "0x553AADcAd7DB3e40e8030B06904309417cDd5751"  
 ];
 
+
+// formats addresses to lowercase for merkleroot to work
 export const lowerAddresses = addressesNotLowercase.map(element => {
     return element.toLowerCase();
 });

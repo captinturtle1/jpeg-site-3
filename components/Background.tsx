@@ -7,7 +7,7 @@ const Background = () => {
     const [scrollNav, setScrollNav] = useState(0);
     const [scrollNavBool, setScrollNavBool] = useState(false);
 
-    
+    // checks scroll distance for particle appear threshold
     const changeNav = () => {
         setScrollNav(window.scrollY);
         if (window.scrollY >= 750) {
@@ -17,10 +17,14 @@ const Background = () => {
           }
     };
 
+    // scroll listener
     useEffect(() => {
         window.addEventListener('scroll', changeNav);
     }, []);
    
+
+    
+    // particle stuff
     const particlesInit = useCallback(async (engine) => {
         // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
         // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
