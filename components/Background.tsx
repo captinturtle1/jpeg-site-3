@@ -7,6 +7,7 @@ const Background = () => {
     const [scrollNav, setScrollNav] = useState(0);
     const [scrollNavBool, setScrollNavBool] = useState(false);
 
+    /*
     const changeNav = () => {
         setScrollNav(window.scrollY);
         if (window.scrollY >= 888) {
@@ -21,7 +22,8 @@ const Background = () => {
     }, []);
 
     console.log(scrollNav);
-
+    */
+   
     const particlesInit = useCallback(async (engine) => {
         console.log(engine);
         // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
