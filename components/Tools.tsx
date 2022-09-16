@@ -3,6 +3,9 @@ import nftnerdsExample from "../public/tools1.png"
 import zetaExample from "../public/tools2.png"
 import degenmintExample from "../public/tools3.png"
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image'
+import bg2 from '../public/bg2.png'
+
 
 
 // 0 = image, 1 = title, 2 = desc
@@ -44,18 +47,20 @@ const Tools = () => {
   };
 
     return (
-        <div className="flex justify-center h-[900px] bg-gray-200 z-[1]" id="Tools">
-          <img className="object-cover lg:object-fill h-[901px] w-full absolute z-[2]" src="bg2.png"></img>
-          <div className="my-auto mx-8 z-[4] grid grid-cols-1 lg:grid-cols-2 gap-10 text-white">
+        <div className="grid justify-center h-[1200px] lg:h-[900px] bg-gray-200 z-[1]" id="Tools">
+          <div className="object-cover lg:object-fill h-[1201px] lg:h-[901px] w-full absolute z-[2]">
+            <Image layout="fill" quality={100} src={bg2}/>
+          </div>
+          <div className="mx-8 z-[4] grid grid-cols-1 lg:grid-cols-2 gap-10 text-white mt-auto">
             <div className="bg-slate-800 m-auto p-10 rounded-3xl max-w-[500px] lg:min-h-0 drop-shadow-[15px_10px_10px_rgba(0,0,0,0.4)]">
-              <div className="">
-                <img className={exampleCount === 0 ? "transition-all" : "transition-all w-0 translate-x-10"} src={nftnerdsExample.src}/>
+              <div className={exampleCount === 0 ? "transition-all" : "transition-all w-0 h-0 translate-x-10"}>
+                <Image src={nftnerdsExample}/>
               </div>
-              <div className="">
-                <img className={exampleCount === 1 ? "transition-all" : "transition-all w-0 translate-x-10"} src={zetaExample.src}/>
+              <div className={exampleCount === 1 ? "transition-all" : "transition-all w-0 h-0 translate-x-10"}>
+                <Image src={zetaExample}/>
               </div>
-              <div className="">
-                <img className={exampleCount === 2 ? "transition-all" : "transition-all w-0 translate-x-10"} src={degenmintExample.src}/>
+              <div className={exampleCount === 2 ? "transition-all" : "transition-all w-0 h-0 translate-x-10"}>
+                <Image src={degenmintExample}/>
               </div>
               <div className="pt-5 font-bold">{example[1]}</div>
               <div className="pt-5 max-w-lg min-h-[100px]">{example[2]}</div>

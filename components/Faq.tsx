@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import Image from 'next/image'
+
+import bg from '../public/bg5.png'
 
 const FAQ = () => {
   const [box1, setBox1] = useState(false);
@@ -65,7 +68,9 @@ const FAQ = () => {
 
     return (
       <div className="flex justify-center h-[900px] bg-gray-500 z-[1]" id="Faq">
-        <img className="object-cover lg:object-fill h-[901px] w-full absolute z-[2]" src="bg5.png"></img>
+        <div className="object-cover lg:object-fill h-[901px] w-full absolute z-[2]">
+          <Image layout="fill" quality={100} src={bg}/>
+        </div>
         <div className="flex absolute pt-[150px] z-[3] text-white">
           <h1 className="text-4xl lg:text-6xl font-bold">Questions?</h1>
         </div>

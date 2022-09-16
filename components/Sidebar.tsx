@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { Link, animateScroll as scroll } from 'react-scroll';
+import Image from 'next/image'
+import logo from '../public/logo.png'
 
 const Sidebar = ({ isOpen, toggle }) => {
     return (
             <nav className={isOpen === true ? "transition-all z-20 ease-out duration-300 fixed top-0 left-0 right-0 bg-gray-800 p-6 bg-opacity-80 backdrop-blur-lg h-full visible lg:invisible" : "transition-all z-20 ease-out duration-300 fixed top-[-100vh] left-0 right-0 items-center justify-between bg-gray-800 p-6 bg-opacity-80 backdrop-blur-lg h-full invisible"}>
                 <div className="flex">
                   <div className="flex grow items-center text-white">
-                      <img className="fill-current h-8 w-8 mr-2 rounded-xl" src={"pinksquare.png"}/>
+                      <div className="fill-current h-8 w-8 mr-2 rounded-xl">
+                        <Image src={logo}/>
+                      </div>
                       <span className="font-semibold text-xl tracking-tight mr-4">Abyss</span>
                   </div>
                   <div className="block">

@@ -1,4 +1,7 @@
 import { Link, animateScroll as scroll } from 'react-scroll';
+import Image from 'next/image'
+
+import banner from '../public/banner.png'
 
 const Footer = () => {
     return (
@@ -8,7 +11,9 @@ const Footer = () => {
             <div>
               <div className="text-sm max-w-[400px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
               <div className="flex justify-center lg:justify-start">
-                <img className="h-[100px] my-5 object-contain rounded-xl" src="banner.png"></img>
+                <div className="w-[250px] my-5">
+                  <Image layout="responsive" src={banner} className="rounded-xl"/>
+                </div>
               </div>
               <div>ABYSS © 2022 ALL RIGHTS RESERVED.</div>
             </div>

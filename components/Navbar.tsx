@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, animateScroll as scroll } from 'react-scroll';
 import Image from 'next/image'
 import NextLink from 'next/link'
+import logo from '../public/logo.png'
 
 const Navbar = ({ toggle }) => {
 
@@ -27,7 +28,9 @@ const Navbar = ({ toggle }) => {
     return (
         <nav className={scrollNav === true ? "z-20 fixed top-0 left-0 right-0 mx-5 lg:mx-20 mt-5 flex items-center justify-between flex-wrap bg-gray-700 py-6 px-10 ease-out duration-300 bg-opacity-80 backdrop-blur-lg rounded-full select-none" : "z-20 fixed top-0 left-0 right-0 flex items-center justify-between flex-wrap bg-gray-700 p-6 bg-opacity-0 ease-out duration-300 select-none"}>
             <div onClick={toggleHome} className="flex items-center flex-shrink-0 text-white mr-6 cursor-pointer">
-                <img className="fill-current h-8 w-8 mr-2 rounded-xl" src={"logo.png"}/>
+                <div className="fill-current h-8 w-8 mr-2 rounded-xl">
+                  <Image src={logo}/>
+                </div>
                 <span className={scrollNav === true ? "font-semibold text-xl tracking-tight mr-4" : "hidden"}>Abyss</span>
             </div>
             <div className="block lg:hidden">
