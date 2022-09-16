@@ -10,7 +10,7 @@ const Background = () => {
     
     const changeNav = () => {
         setScrollNav(window.scrollY);
-        if (window.scrollY >= 888) {
+        if (window.scrollY >= 750) {
             setScrollNavBool(true);
           } else {
             setScrollNavBool(false);

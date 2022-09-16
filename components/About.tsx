@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import squid from '../public/jpegge.png'
-import bg1 from '../public/bg1.png'
+import bg from '../public/bg1.png'
 
 const About = () => {
     return (
         <div className="flex justify-center h-[1300px] lg:h-[900px] bg-gray-100 z-[1]" id="About">
           <div className="object-cover lg:object-fill h-[1301px] lg:h-[900px] w-full absolute z-[2]">
-            <Image layout="fill" quality={100} src={bg1}/>
+            <Image layout="fill" quality={100} src={bg}/>
           </div>
           <div className="m-auto z-[4] grid grid-cols-1 lg:grid-cols-2 gap-10">
             <div className="grid grid-cols-2 gap-4 lg:gap-5 m-4 text-white">
