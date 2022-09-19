@@ -4,16 +4,11 @@ import Image from 'next/image'
 import NextLink from 'next/link'
 import logo from '../public/logo.png'
 
-class Sprite extends React.Component {
-  render() {
-    var left = 5000 + 'px';
-    var top = 5000 + 'px';
-    var padding = 5000 + 'px';
-    return (
-        <div id="bird" style={{padding, left, top,position:'absolute'}}/>
-    )
-}
-}
+import Opensea from '../public/opensea.svg'
+import X2y2 from '../public/x2y2.svg'
+import Looksrare from '../public/looksrare.svg'
+
+
 
 const Navbar = ({ toggle }) => {
   const [scrollNav, setScrollNav] = useState(false);
@@ -43,16 +38,19 @@ const Navbar = ({ toggle }) => {
                 <div className="fill-current h-8 w-8 mr-2 rounded-xl">
                   <Image src={logo}/>
                 </div>
-                <span className={scrollNav === true ? "font-semibold text-xl tracking-tight mr-4" : "hidden"}>Abyss</span>
+                <span className={scrollNav === true ? "font-semibold text-xl tracking-tight mr-4 visible" : "invisible"}>Abyss</span>
             </Link>
             <div className="block lg:hidden">
                 <button onClick={toggle} className={scrollNav === true ? "flex items-center px-3 py-2 border rounded text-slate-400 border-slate-400 hover:text-white hover:border-white" : "flex items-center px-3 py-2 border rounded text-white border-white hover:text-gray-200 hover:border-gray-200"}>
-                    <svg className="fill-current h-3 w-3" viewBox="0 0 20 20"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+                    <svg className="fill-current h-3 w-3" viewBox="0 0 20 20">
+                      <title>Menu</title>
+                      <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+                    </svg>
                 </button>
             </div>
-            <div className={scrollNav === true ? "transition-all w-full hidden flex-grow lg:flex lg:items-center lg:w-auto text-xl text-gray-200" : "transition-all w-full hidden lg:flex lg:items-center lg:w-auto text-xl text-white"}>
+            <div className={scrollNav === true ? "transition-all w-full hidden flex-grow lg:flex lg:items-center lg:w-auto text-xl text-gray-200" : "transition-all w-full hidden lg:flex lg:items-center lg:w-auto text-xl text-white translate-x-32"}>
                 <div className="">
-                  <div className={scrollNav === true ? "bg-blue-300 w-10 h-2 bottom-[10px] visible rounded-full" : "invisible"} style={{position: "absolute", left: activeSection + 177, transition: "all .2s"}}/>
+                  <div className={scrollNav === true ? "bg-blue-300 w-10 h-2 bottom-[10px] rounded-full transition-all delay-500" : "opacity-0 transition-all"} style={{position: "absolute", left: activeSection + 177, transition: "all .2s"}}/>
                   <Link onSetActive={() => handleSetActive(0)} to="About" spy={true} smooth={true} offset={-20} duration={800}  className={scrollNav === true ? "block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-10 cursor-pointer" : "block mt-4 lg:inline-block lg:mt-0 hover:text-gray-300 mr-10 cursor-pointer"}>
                     About
                   </Link>
@@ -70,9 +68,18 @@ const Navbar = ({ toggle }) => {
                   </Link>
                 </div>
             </div>
-            <div className="hidden lg:block">
+            <div className="hidden lg:flex lg:items-center lg:gap-6">
+              <a href="https://opensea.io/collection/abyssfnf" className={scrollNav === true ? "fill-gray-300 hover:fill-white visible transition-all" : "invisible opacity-0 transition-all"}>
+                <svg className="h-6 w-6"><Opensea/></svg>
+              </a>
+              <a href="https://x2y2.io/collection/abyssfnf/items" className={scrollNav === true ? "fill-gray-300 hover:fill-white visible transition-all" : "invisible opacity-0 transition-all"}>
+                <svg className="h-6 w-6"><X2y2/></svg>
+              </a>
+              <a href="https://looksrare.org/collections/0xFBbB17037Fd01851ddA9FC097748EB3E52A56710" className={scrollNav === true ? "fill-gray-300 hover:fill-white visible transition-all" : "invisible opacity-0 transition-all"}>
+                <svg className="h-6 w-6"><Looksrare/></svg>
+              </a>
               <NextLink href="/dashboard">
-                <a className="transition-all inline-block text-md px-4 py-2 leading-none rounded text-white bg-blue-300 hover:bg-blue-400 drop-shadow hover:drop-shadow-sm">Dashboard</a>
+                <a className="ml-6 transition-all inline-block text-md px-4 py-2 leading-none rounded text-white bg-blue-300 hover:bg-blue-400 drop-shadow hover:drop-shadow-sm">Dashboard</a>
               </NextLink>
             </div>
         </nav>
