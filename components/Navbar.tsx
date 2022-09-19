@@ -67,14 +67,14 @@ const Navbar = ({ toggle }) => {
                   </Link>
                 </div>
             </div>
-            <div className="hidden lg:flex lg:items-center lg:gap-6">
-              <a href="https://opensea.io/collection/abyssfnf" className={scrollNav === true ? "fill-gray-300 hover:fill-white visible transition-all" : "invisible opacity-0 transition-all"}>
+            <div className="hidden lg:flex items-center gap-6">
+              <a href="https://opensea.io/collection/abyssfnf" className={scrollNav === true ? "fill-gray-300 hover:fill-white visible transition-all hidden xl:flex" : "invisible opacity-0 transition-all"}>
                 <svg className="h-6 w-6"><Opensea/></svg>
               </a>
-              <a href="https://x2y2.io/collection/abyssfnf/items" className={scrollNav === true ? "fill-gray-300 hover:fill-white visible transition-all" : "invisible opacity-0 transition-all"}>
+              <a href="https://x2y2.io/collection/abyssfnf/items" className={scrollNav === true ? "fill-gray-300 hover:fill-white visible transition-all hidden xl:flex" : "invisible opacity-0 transition-all"}>
                 <svg className="h-6 w-6"><X2y2/></svg>
               </a>
-              <a href="https://looksrare.org/collections/0xFBbB17037Fd01851ddA9FC097748EB3E52A56710" className={scrollNav === true ? "fill-gray-300 hover:fill-white visible transition-all" : "invisible opacity-0 transition-all"}>
+              <a href="https://looksrare.org/collections/0xFBbB17037Fd01851ddA9FC097748EB3E52A56710" className={scrollNav === true ? "fill-gray-300 hover:fill-white visible transition-all hidden xl:flex" : "invisible opacity-0 transition-all"}>
                 <svg className="h-6 w-6"><Looksrare/></svg>
               </a>
               <NextLink href="/dashboard">
