@@ -1,9 +1,11 @@
+import React, { useState, useEffect } from 'react';
+
 import Image from 'next/image'
 import bg from '../public/bg0.png'
 
 const Landing = () => {
-    return (
-    <div className="flex relative justify-center h-[85vh] bg-gray-900 z-[1]">
+  return (
+    <div className="flex relative justify-center h-[85vh] bg-gray-900 z-[1]" id="Landing">
       <div className="bottom-0 absolute z-[3] translate-y-[6.9px]">
         <Image quality={100} src={bg}/>
       </div>
@@ -14,7 +16,7 @@ const Landing = () => {
         <h1>ABYSS</h1>
       </div>
     </div>
-    );
+  );
 }
 
 export default Landing;

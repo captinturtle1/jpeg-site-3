@@ -21,8 +21,6 @@ const Background = () => {
     useEffect(() => {
         window.addEventListener('scroll', changeNav);
     }, []);
-   
-
     
     // particle stuff
     const particlesInit = useCallback(async (engine) => {
