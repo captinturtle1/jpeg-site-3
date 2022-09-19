@@ -17,7 +17,7 @@ import "swiper/css/effect-cards";
 const Success = () => {
     return (
         <div className="flex justify-center items-center h-[900px] bg-gray-300 z-[1] overflow-hidden" id="Success">
-          <div className="object-cover lg:object-fill h-[901px] w-full absolute z-[2]">
+          <div className="object-cover lg:object-fill h-[902px] w-full absolute z-[2]">
             <Image layout="fill" quality={100} src={bg}/>
           </div>
           <div className="z-[4] text-white">
