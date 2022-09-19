@@ -47,8 +47,8 @@ const Tools = () => {
   };
 
     return (
-        <div className="grid justify-center h-[1200px] lg:h-[900px] bg-gray-200 z-[1]" id="Tools">
-          <div className="object-cover lg:object-fill h-[1201px] lg:h-[901px] w-full absolute z-[2]">
+        <div className="grid justify-center h-[1000px] lg:h-[900px] bg-gray-200 z-[1]" id="Tools">
+          <div className="object-cover lg:object-fill h-[1001px] lg:h-[901px] w-full absolute z-[2]">
             <Image layout="fill" quality={100} src={bg2}/>
           </div>
           <div className="mx-8 z-[4] grid grid-cols-1 lg:grid-cols-2 gap-10 text-white mt-auto">
@@ -72,7 +72,7 @@ const Tools = () => {
             <div className="m-auto text-left">
               <div className="text-3xl lg:text-5xl font-bold pb-3 md:m-0 drop-shadow-[15px_5px_10px_rgba(0,0,0,0.4)] flex justify-center">Keys to our success</div>
               <div className="h-[3px] bg-white w-80 lg:w-[450px] m-auto hidden sm:block"></div>
-              <div className="max-w-[600px] h-[300px] mx-[20px] text-[95%] lg:text-[115%] py-5 px-10 select-none rounded-3xl text-center lg:text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+              <div className="max-w-[600px] mx-[20px] text-[95%] lg:text-[115%] py-5 px-10 select-none rounded-3xl text-center lg:text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
             </div>
             <div className="hidden lg:flex justify-center text-white z-[4] gap-20 text-[30px] select-none">
               <AiOutlineLeft onClick={cycleDown} className="hover:text-gray-300 cursor-pointer"/>
