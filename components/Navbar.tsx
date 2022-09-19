@@ -27,7 +27,6 @@ const Navbar = ({ toggle }) => {
   }, []);
 
   const handleSetActive = (activeNum) => {
-    console.log(activeSection);
     setActiveSection(activeNum);
   };
   
