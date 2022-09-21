@@ -1,8 +1,6 @@
-import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
-import nftnerdsExample from "../public/tools1.png"
-import zetaExample from "../public/tools2.png"
-import degenmintExample from "../public/tools3.png"
-import React, { useState, useEffect } from 'react';
+import { useCallback, useState } from "react";
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+
 import Image from 'next/image'
 import bg from '../public/bg1.png'
 
@@ -13,21 +11,33 @@ import mintScraper from '../public/mint.jpg'
 import raffleScraper from '../public/raffle.jpg'
 import calander from '../public/calendar.jpg'
 
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import { EffectCards } from "swiper";
-import "swiper/css";
-import "swiper/css/effect-cards";
-
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const Tools = () => {
-  const swiper = useSwiper();
+  const [swiperRef, setSwiperRef] = useState<any>();
+
+  const handleLeftClick = useCallback(() => {
+    if (!swiperRef) return;
+    swiperRef.slidePrev();
+  }, [swiperRef]);
+
+  const handleRightClick = useCallback(() => {
+    if (!swiperRef) return;
+    swiperRef.slideNext();
+  }, [swiperRef]);
     return (
         <div className="grid justify-center h-[100vh] bg-gray-200 z-[1]" id="Tools">
           <div className="object-cover lg:object-fill h-[100vh] w-full absolute z-[2]">
             <Image layout="fill" quality={100} src={bg}/>
           </div>
           <div className="z-[4] flex">
-              <Swiper 
+              <div className="m-auto">
+                <div className="text-5xl text-white hover:text-gray-300 cursor-pointer" onClick={handleLeftClick}>
+                  <FiChevronLeft/>
+                </div>
+              </div>
+              <Swiper
+                onSwiper={setSwiperRef}
                 spaceBetween={100}
                 loop={true}
                 slidesPerView={3}
@@ -100,6 +110,11 @@ const Tools = () => {
                   </div>
                 </SwiperSlide>
               </Swiper>
+              <div className="m-auto">
+                <div className="text-5xl text-white hover:text-gray-300 cursor-pointer" onClick={handleRightClick}>
+                  <FiChevronRight/>
+                </div>
+              </div>
           </div>
         </div>
     );
