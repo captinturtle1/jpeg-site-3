@@ -50,19 +50,19 @@ const Navbar = ({ toggle }) => {
             <div className={scrollNav === true ? "transition-all w-full hidden flex-grow lg:flex lg:items-center lg:w-auto text-xl text-gray-200" : "transition-all w-full hidden lg:flex lg:items-center lg:w-auto text-xl text-white translate-x-32"}>
                 <div className="">
                   <div className={scrollNav === true ? "bg-blue-300 w-10 h-2 bottom-[10px] rounded-full transition-all delay-500" : "opacity-0 transition-all"} style={{position: "absolute", left: activeSection + 177, transition: "all .2s"}}/>
-                  <Link onSetActive={() => handleSetActive(0)} to="About" spy={true} smooth={true} offset={-20} duration={800}  className={scrollNav === true ? "block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-10 cursor-pointer" : "block mt-4 lg:inline-block lg:mt-0 hover:text-gray-300 mr-10 cursor-pointer"}>
+                  <Link onSetActive={() => handleSetActive(0)} to="About" spy={true} smooth={true} offset={-100} duration={800}  className={scrollNav === true ? "block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-10 cursor-pointer" : "block mt-4 lg:inline-block lg:mt-0 hover:text-gray-300 mr-10 cursor-pointer"}>
                     About
                   </Link>
-                  <Link onSetActive={() => handleSetActive(92)} to="Tools" spy={true} smooth={true} offset={-20} duration={800} className={scrollNav === true ? "block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-10 cursor-pointer" : "block mt-4 lg:inline-block lg:mt-0 hover:text-gray-300 mr-10 cursor-pointer"}>
+                  <Link onSetActive={() => handleSetActive(92)} to="Tools" spy={true} smooth={true} offset={-100} duration={800} className={scrollNav === true ? "block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-10 cursor-pointer" : "block mt-4 lg:inline-block lg:mt-0 hover:text-gray-300 mr-10 cursor-pointer"}>
                     Tools
                   </Link>
-                  <Link onSetActive={() => handleSetActive(188)} to="Success" spy={true} smooth={true} offset={-20} duration={800} className={scrollNav === true ? "block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-10 cursor-pointer" : "block mt-4 lg:inline-block lg:mt-0 hover:text-gray-300 mr-10 cursor-pointer"}>
+                  <Link onSetActive={() => handleSetActive(188)} to="Success" spy={true} smooth={true} offset={-100} duration={800} className={scrollNav === true ? "block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-10 cursor-pointer" : "block mt-4 lg:inline-block lg:mt-0 hover:text-gray-300 mr-10 cursor-pointer"}>
                     Success
                   </Link>
-                  <Link onSetActive={() => handleSetActive(286)} to="Team" spy={true} smooth={true} offset={-20} duration={800} className={scrollNav === true ? "block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-10 cursor-pointer" : "block mt-4 lg:inline-block lg:mt-0 hover:text-gray-300 mr-10 cursor-pointer"}>
+                  <Link onSetActive={() => handleSetActive(286)} to="Team" spy={true} smooth={true} offset={-100} duration={800} className={scrollNav === true ? "block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-10 cursor-pointer" : "block mt-4 lg:inline-block lg:mt-0 hover:text-gray-300 mr-10 cursor-pointer"}>
                     Team
                   </Link>
-                  <Link onSetActive={() => handleSetActive(365)} to="Faq" spy={true} smooth={true} offset={-20} duration={800} className={scrollNav === true ? "block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-10 cursor-pointer" : "block mt-4 lg:inline-block lg:mt-0 hover:text-gray-300 mr-10 cursor-pointer"}>
+                  <Link onSetActive={() => handleSetActive(365)} to="Faq" spy={true} smooth={true} offset={-100} duration={800} className={scrollNav === true ? "block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-10 cursor-pointer" : "block mt-4 lg:inline-block lg:mt-0 hover:text-gray-300 mr-10 cursor-pointer"}>
                     Faq
                   </Link>
                 </div>
@@ -78,7 +78,7 @@ const Navbar = ({ toggle }) => {
                 <svg className="h-6 w-6"><Looksrare/></svg>
               </a>
               <NextLink href="/dashboard">
-                <a className="ml-6 transition-all inline-block text-md px-4 py-2 leading-none rounded text-white bg-blue-300 hover:bg-blue-400 drop-shadow hover:drop-shadow-sm">Dashboard</a>
+                <a className="ml-6 transition-all inline-block text-md px-4 py-2 leading-none rounded text-white bg-blue-500 hover:bg-blue-400 drop-shadow hover:drop-shadow-sm">Dashboard</a>
               </NextLink>
             </div>
         </nav>

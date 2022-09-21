@@ -10,7 +10,7 @@ const Background = () => {
     // checks scroll distance for particle appear threshold
     const changeNav = () => {
         setScrollNav(window.scrollY);
-        if (window.scrollY >= 750) {
+        if (window.scrollY >= 0) {
             setScrollNavBool(true);
           } else {
             setScrollNavBool(false);

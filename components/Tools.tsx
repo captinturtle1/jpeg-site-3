@@ -4,9 +4,24 @@ import zetaExample from "../public/tools2.png"
 import degenmintExample from "../public/tools3.png"
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image'
-import bg2 from '../public/bg2.png'
+import bg from '../public/bg2.png'
+
+import fomoAlert from '../public/fomoalerts.png'
+import followAlerts from '../public/followalerts.png'
+import contractScraper from '../public/contractscraper.png'
+import mintScraper from '../public/mintscraper.png'
+import raffleScraper from '../public/rafflescraper.png'
+
+import azuki from '../public/azuki.jpg'
+import CloneX from '../public/CloneX.png'
+import doodles from '../public/doodles.jpg'
+import moonbirds from '../public/moonbirds.png'
+import parallel from '../public/parallel.png'
 
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { EffectCards } from "swiper";
+import "swiper/css";
+import "swiper/css/effect-cards";
 
 
 
@@ -59,35 +74,69 @@ const Tools = () => {
   const swiper = useSwiper();
 
     return (
-        <div className="grid justify-center h-[1000px] lg:h-[900px] bg-gray-200 z-[1]" id="Tools">
-          <div className="object-cover lg:object-fill h-[1001px] lg:h-[901px] w-full absolute z-[2]">
-            <Image layout="fill" quality={100} src={bg2}/>
+        <div className="grid justify-center h-[100vh] bg-gray-200 z-[1]" id="Tools">
+          <div className="object-cover lg:object-fill h-[100vh] w-full absolute z-[2]">
+            <Image layout="fill" quality={100} src={bg}/>
           </div>
-          <div className="mx-8 z-[4] grid grid-cols-1 lg:grid-cols-2 gap-10 text-white mt-auto">
-            <div className="bg-slate-800 m-auto p-10 rounded-3xl max-w-[500px] lg:min-h-0 drop-shadow-[15px_10px_10px_rgba(0,0,0,0.4)]">
+          <div className="z-[4] flex">
+
               <Swiper 
-                spaceBetween={150}
+                spaceBetween={100}
                 loop={true}
-                className="w-96 h-96 rounded-xl"
+                slidesPerView={3}
+                className="w-[1500px] rounded-3xl select-none m-auto drop-shadow-[15px_10px_10px_rgba(0,0,0,0.4)]"
               >
-                <SwiperSlide className="text-center text-5xl flex bg-green-200 rounded-xl"><div className="m-auto">Slide 1</div></SwiperSlide>
-                <SwiperSlide className="text-center text-5xl flex bg-green-200 rounded-xl"><div className="m-auto">Slide 2</div></SwiperSlide>
-                <SwiperSlide className="text-center text-5xl flex bg-green-200 rounded-xl"><div className="m-auto">Slide 3</div></SwiperSlide>
-                <SwiperSlide className="text-center text-5xl flex bg-green-200 rounded-xl"><div className="m-auto">Slide 4</div></SwiperSlide>
-                <SwiperSlide className="text-center text-5xl flex bg-green-200 rounded-xl"><div className="m-auto">Slide 5</div></SwiperSlide>
+                <SwiperSlide>
+                  <div className="bg-slate-800 h-[600px] rounded-3xl flex flex-col">
+                    <div className="w-full h-10 flex-grow text-5xl flex rounded-t-3xl">
+                      <Image src={fomoAlert} className="rounded-t-3xl"/>
+                    </div>
+                    <div className="w-full h-32 text-5xl flex bg-400-800 rounded-b-3xl bg-slate-800 p-4">
+                      <div className="m-auto text-[1rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="bg-slate-800 h-[600px] rounded-3xl flex flex-col">
+                    <div className="w-full h-10 flex-grow text-5xl flex rounded-t-3xl">
+                      <Image src={followAlerts} className="rounded-t-3xl"/>
+                    </div>
+                    <div className="w-full h-32 text-5xl flex bg-400-800 rounded-b-3xl bg-slate-800 p-4">
+                      <div className="m-auto text-[1rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="bg-slate-800 h-[600px] rounded-3xl flex flex-col">
+                    <div className="w-full h-10 flex-grow text-5xl flex rounded-t-3xl">
+                      <Image src={contractScraper} className="rounded-t-3xl"/>
+                    </div>
+                    <div className="w-full h-32 text-5xl flex bg-400-800 rounded-b-3xl bg-slate-800 p-4">
+                      <div className="m-auto text-[1rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="bg-slate-800 h-[600px] rounded-3xl flex flex-col">
+                    <div className="w-full h-10 flex-grow text-5xl flex rounded-t-3xl">
+                      <Image src={mintScraper} className="rounded-t-3xl"/>
+                    </div>
+                    <div className="w-full h-32 text-5xl flex bg-400-800 rounded-b-3xl bg-slate-800 p-4">
+                      <div className="m-auto text-[1rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="bg-slate-800 h-[600px] rounded-3xl flex flex-col">
+                    <div className="w-full h-10 flex-grow text-5xl flex rounded-t-3xl">
+                      <Image src={raffleScraper} className="rounded-t-3xl"/>
+                    </div>
+                    <div className="w-full h-32 text-5xl flex bg-400-800 rounded-b-3xl bg-slate-800 p-4">
+                      <div className="m-auto text-[1rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                    </div>
+                  </div>
+                </SwiperSlide>
               </Swiper>
-            </div>
-            <div className="m-auto text-left">
-              <div className="text-3xl lg:text-5xl font-bold pb-3 md:m-0 drop-shadow-[15px_5px_10px_rgba(0,0,0,0.4)] flex justify-center">Keys to our success</div>
-              <div className="h-[3px] bg-white w-80 lg:w-[450px] m-auto hidden sm:block"></div>
-              <div className="max-w-[600px] mx-[20px] text-[95%] lg:text-[115%] py-5 px-10 select-none rounded-3xl text-center lg:text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-            </div>
-            <div className="hidden lg:flex justify-center text-white z-[4] gap-20 text-[30px] select-none">
-              <SwiperButtonNext>
-                <AiOutlineLeft onClick={cycleDown} className="hover:text-gray-300 cursor-pointer"/>
-              </SwiperButtonNext>
-              <AiOutlineRight onClick={cycleUp} className="hover:text-gray-300 cursor-pointer"/>
-            </div>
           </div>
         </div>
     );
