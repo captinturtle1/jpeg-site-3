@@ -6,17 +6,12 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image'
 import bg from '../public/bg1.png'
 
-import fomoAlert from '../public/fomoalerts.png'
-import followAlerts from '../public/followalerts.png'
-import contractScraper from '../public/contractscraper.png'
-import mintScraper from '../public/mintscraper.png'
-import raffleScraper from '../public/rafflescraper.png'
-
-import azuki from '../public/azuki.jpg'
-import CloneX from '../public/CloneX.png'
-import doodles from '../public/doodles.jpg'
-import moonbirds from '../public/moonbirds.png'
-import parallel from '../public/parallel.png'
+import fomoAlert from '../public/fomo.jpg'
+import followAlerts from '../public/follow.jpg'
+import contractScraper from '../public/contract.jpg'
+import mintScraper from '../public/mint.jpg'
+import raffleScraper from '../public/raffle.jpg'
+import calander from '../public/calendar.jpg'
 
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { EffectCards } from "swiper";
@@ -24,115 +19,83 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 
 
-
-// 0 = image, 1 = title, 2 = desc
-const nftnerdsDesc: any = [nftnerdsExample, "NFTNerds.", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."];
-const zetaDesc: any = [zetaExample, "Zeta.", "Aliquam faucibus purus in massa tempor. Aenean sed adipiscing diam donec adipiscing tristique risus. Velit egestas dui id ornare."];
-const degenmintDesc: any = [degenmintExample, "Degen Mint.", "Nullam ac tortor vitae purus faucibus ornare suspendisse. Risus pretium quam vulputate dignissim suspendisse in est."];
-
-const SwiperButtonNext = ({ children }) => {
-  const swiper = useSwiper();
-
-  return (
-    <button onClick={() => swiper.slideNext()}>A</button>
-  );
-};
-
 const Tools = () => {
-  const [example, setExample] = useState(nftnerdsDesc);
-  const [exampleCount, setExampleCount] = useState(0);
-
-  //changes card information depending on exampleCount
-  const updateImage = () => {
-    if (exampleCount == 0) {
-      setExample(nftnerdsDesc);
-    } else if (exampleCount == 1) {
-      setExample(zetaDesc);
-    } else if (exampleCount == 2) {
-      setExample(degenmintDesc);
-    }
-  };
-
-  //cycles examplecCount up, loops back at 2
-  const cycleUp = () => {
-    setExampleCount(exampleCount + 1);
-    if (exampleCount == 2) {
-      setExampleCount(0);
-    }
-    updateImage();
-  };
-
-  //cycles exampleCount down 1, loops back at 0
-  const cycleDown = () => {
-    setExampleCount(exampleCount - 1);
-    if (exampleCount == 0) {
-      setExampleCount(2);
-    }
-    updateImage();
-  };
-
   const swiper = useSwiper();
-
     return (
         <div className="grid justify-center h-[100vh] bg-gray-200 z-[1]" id="Tools">
           <div className="object-cover lg:object-fill h-[100vh] w-full absolute z-[2]">
             <Image layout="fill" quality={100} src={bg}/>
           </div>
           <div className="z-[4] flex">
-
               <Swiper 
                 spaceBetween={100}
                 loop={true}
                 slidesPerView={3}
-                className="w-[1500px] rounded-3xl select-none m-auto drop-shadow-[15px_10px_10px_rgba(0,0,0,0.4)]"
+                className="w-[1300px] rounded-3xl select-none m-auto drop-shadow-[15px_10px_10px_rgba(0,0,0,0.4)]"
               >
                 <SwiperSlide>
-                  <div className="bg-slate-800 h-[600px] rounded-3xl flex flex-col">
-                    <div className="w-full h-10 flex-grow text-5xl flex rounded-t-3xl">
-                      <Image src={fomoAlert} className="rounded-t-3xl"/>
+                  <div className="bg-slate-800 w-96 rounded-3xl flex flex-col pt-7">
+                    <div className="flex-grow text-5xl rounded-t-3xl m-auto">
+                      <Image src={fomoAlert} className="rounded-3xl"/>
                     </div>
-                    <div className="w-full h-32 text-5xl flex bg-400-800 rounded-b-3xl bg-slate-800 p-4">
-                      <div className="m-auto text-[1rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                    </div>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="bg-slate-800 h-[600px] rounded-3xl flex flex-col">
-                    <div className="w-full h-10 flex-grow text-5xl flex rounded-t-3xl">
-                      <Image src={followAlerts} className="rounded-t-3xl"/>
-                    </div>
-                    <div className="w-full h-32 text-5xl flex bg-400-800 rounded-b-3xl bg-slate-800 p-4">
-                      <div className="m-auto text-[1rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                    <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
+                      <div className="text-[1.2rem] font-bold pb-4">Lorem ipsum.</div>
+                      <div className="text-[1rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
                     </div>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className="bg-slate-800 h-[600px] rounded-3xl flex flex-col">
-                    <div className="w-full h-10 flex-grow text-5xl flex rounded-t-3xl">
-                      <Image src={contractScraper} className="rounded-t-3xl"/>
+                  <div className="bg-slate-800 w-96 rounded-3xl flex flex-col pt-7">
+                    <div className="flex-grow text-5xl rounded-t-3xl m-auto">
+                      <Image src={followAlerts} className="rounded-3xl"/>
                     </div>
-                    <div className="w-full h-32 text-5xl flex bg-400-800 rounded-b-3xl bg-slate-800 p-4">
-                      <div className="m-auto text-[1rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                    </div>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="bg-slate-800 h-[600px] rounded-3xl flex flex-col">
-                    <div className="w-full h-10 flex-grow text-5xl flex rounded-t-3xl">
-                      <Image src={mintScraper} className="rounded-t-3xl"/>
-                    </div>
-                    <div className="w-full h-32 text-5xl flex bg-400-800 rounded-b-3xl bg-slate-800 p-4">
-                      <div className="m-auto text-[1rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                    <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
+                      <div className="text-[1.2rem] font-bold pb-4">Lorem ipsum.</div>
+                      <div className="text-[1rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
                     </div>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className="bg-slate-800 h-[600px] rounded-3xl flex flex-col">
-                    <div className="w-full h-10 flex-grow text-5xl flex rounded-t-3xl">
-                      <Image src={raffleScraper} className="rounded-t-3xl"/>
+                  <div className="bg-slate-800 w-96 rounded-3xl flex flex-col pt-7">
+                    <div className="flex-grow text-5xl rounded-t-3xl m-auto">
+                      <Image src={contractScraper} className="rounded-3xl"/>
                     </div>
-                    <div className="w-full h-32 text-5xl flex bg-400-800 rounded-b-3xl bg-slate-800 p-4">
-                      <div className="m-auto text-[1rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                    <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
+                      <div className="text-[1.2rem] font-bold pb-4">Lorem ipsum.</div>
+                      <div className="text-[1rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="bg-slate-800 w-96 rounded-3xl flex flex-col pt-7">
+                    <div className="flex-grow text-5xl rounded-t-3xl m-auto">
+                      <Image src={mintScraper} className="rounded-3xl"/>
+                    </div>
+                    <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
+                      <div className="text-[1.2rem] font-bold pb-4">Lorem ipsum.</div>
+                      <div className="text-[1rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="bg-slate-800 w-96 rounded-3xl flex flex-col pt-7">
+                    <div className="flex-grow text-5xl rounded-t-3xl m-auto">
+                      <Image src={raffleScraper} className="rounded-3xl"/>
+                    </div>
+                    <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
+                      <div className="text-[1.2rem] font-bold pb-4">Lorem ipsum.</div>
+                      <div className="text-[1rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="bg-slate-800 w-96 rounded-3xl flex flex-col pt-7">
+                    <div className="flex-grow text-5xl rounded-t-3xl m-auto">
+                      <Image src={calander} className="rounded-3xl"/>
+                    </div>
+                    <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
+                      <div className="text-[1.2rem] font-bold pb-4">Lorem ipsum.</div>
+                      <div className="text-[1rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
                     </div>
                   </div>
                 </SwiperSlide>
