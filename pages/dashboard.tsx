@@ -18,9 +18,9 @@ const Dashboard: NextPage = () => {
         <title>Abyss Dashboard</title>
         <meta property="og:title" content="Abyss Dashboard" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://localhost:3000/" />
-        <meta property="og:image" content="http://localhost:3000/banner.png" />
-        <meta property="og:description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+        <meta property="og:url" content="https://www.abyssfnf.com/dashboard" />
+        <meta property="og:image" content="https://www.abyssfnf.com/banner.png" />
+        <meta property="og:description" content="A private collective of skilled traders and investors navigating the web3 space." />
         <meta name="theme-color" content="#0f172a" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
