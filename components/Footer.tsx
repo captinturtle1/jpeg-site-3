@@ -1,49 +1,33 @@
-import { Link, animateScroll as scroll } from 'react-scroll';
 import Image from 'next/image'
 
-import banner from '../public/banner.png'
+import { AiFillTwitterCircle } from 'react-icons/ai'; 
+import banner from '../public/jpegge.png'
+import Opensea from '../public/opensea.svg'
+import X2y2 from '../public/x2y2.svg'
+import Looksrare from '../public/looksrare.svg'
 
 const Footer = () => {
     return (
       <div className="grid">
         <div className="grid justify-center p-10 text-white bg-gray-900 z-[3]">
-          <div className="m-auto grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-52 text-center lg:text-left">
-            <div>
-              <div className="text-sm max-w-[400px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-              <div className="flex justify-center lg:justify-start">
-                <div className="w-[250px] my-5">
-                  <Image layout="responsive" src={banner} className="rounded-xl"/>
-                </div>
-              </div>
-              <div>ABYSS © 2022 ALL RIGHTS RESERVED.</div>
-            </div>
-            <div>
-              <div className="mb-2 font-bold text-xl select-none">Nav</div>
-              <div>
-               <Link to="Tools" smooth={true} offset={0} duration={800} className="cursor-pointer text-white hover:text-gray-300">Tools</Link>
-              </div>
-              <div>
-               <Link to="Success" smooth={true} offset={0} duration={800} className="cursor-pointer text-white hover:text-gray-300">Success</Link>
-              </div>
-              <div>
-               <Link to="Team" smooth={true} offset={0} duration={800} className="cursor-pointer text-white hover:text-gray-300">Team</Link>
-              </div>
-              <div>
-               <Link to="Faq" smooth={true} offset={0} duration={800} className="cursor-pointer text-white hover:text-gray-300">Faq</Link>
-              </div>
-              <a href="/dashboard" className="text-white hover:text-gray-300">Dashboard</a>
-            </div>
-            <div>
-              <div className="mb-2 font-bold text-xl select-none">Links</div>
-              <div>
-                <a href="https://opensea.io/collection/jpegmp10" className="text-white hover:text-gray-300">OpenSea</a>
-              </div>
-              <div>
-                <a href="https://twitter.com/jpegpass" className="text-white hover:text-gray-300">Twitter</a>
-              </div>
-              <div>
-                <a href="https://jpegsquared.medium.com/" className="text-white hover:text-gray-300">Medium</a>
-              </div>
+          <div className="w-[60px] m-auto pb-5">
+            <Image src={banner}/>
+          </div>
+          <div>ABYSS © 2022 ALL RIGHTS RESERVED.</div>
+          <div className="flex m-auto">
+            <div className="grid grid-cols-4 gap-2 text-3xl pt-4">
+              <a href="https://twitter.com/AbyssFNF">
+                <AiFillTwitterCircle className="m-auto"/>
+              </a>
+              <a href="https://opensea.io/collection/abyssfnf">
+                <svg className="h-[28px] w-[28px] m-auto fill-white"><Opensea/></svg>
+              </a>
+              <a href="https://x2y2.io/collection/abyssfnf/items">
+                <svg className="h-[28px] w-[28px] m-auto fill-white"><X2y2/></svg>
+              </a>
+              <a href="https://looksrare.org/collections/0xFBbB17037Fd01851ddA9FC097748EB3E52A56710">
+                <svg className="h-[28px] w-[28px] m-auto fill-white"><Looksrare/></svg>
+              </a>
             </div>
           </div>
         </div>
