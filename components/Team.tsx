@@ -25,8 +25,8 @@ const SwiperButtonNext = ({ children }) => {
 
 const Team = () => {  
   return (
-    <div className="flex justify-center h-[2350px] xs:h-[1250px] lg:h-[1100px] bg-gray-400 z-[1] overflow-hidden" id="Team">
-      <div className="object-cover lg:object-fill h-[2351px] xs:h-[1251px] lg:h-[1101px] w-full absolute z-[2]">
+    <div className="flex justify-center h-[2350px] xs:h-[1250px] lg:h-[800px] bg-gray-400 z-[1] overflow-hidden" id="Team">
+      <div className="object-cover lg:object-fill h-[2351px] xs:h-[1251px] lg:h-[801px] w-full absolute z-[2]">
         <Image layout="fill" quality={100} src={bg}/>
       </div>
       <div className="z-[4] lg:mx-10 text-white">
