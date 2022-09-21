@@ -139,7 +139,7 @@ const Tools = () => {
               spaceBetween={150}
               loop={true}
               slidesPerView={1}
-              className="w-[280px] rounded-3xl select-none m-auto drop-shadow-[15px_10px_10px_rgba(0,0,0,0.4)]"
+              className="w-[280px] rounded-3xl select-none mt-auto drop-shadow-[15px_10px_10px_rgba(0,0,0,0.4)]"
             >
               <SwiperSlide>
                 <div className="bg-slate-800 rounded-3xl flex flex-col">

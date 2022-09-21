@@ -74,6 +74,7 @@ const Team = () => {
             effect={"flip"}
             loop={true}
             modules={[EffectFlip]}
+            allowTouchMove={false}
             className="max-w-[175px] md:max-w-[200px] lg:max-w-[250px] flex flex-wrap"
           >
             <SwiperSlide>
@@ -107,6 +108,7 @@ const Team = () => {
             effect={"flip"}
             loop={true}
             modules={[EffectFlip]}
+            allowTouchMove={false}
             className="max-w-[175px] md:max-w-[200px] lg:max-w-[250px] flex flex-wrap"
           >
             <SwiperSlide>
@@ -140,6 +142,7 @@ const Team = () => {
             effect={"flip"}
             loop={true}
             modules={[EffectFlip]}
+            allowTouchMove={false}
             className="max-w-[175px] md:max-w-[200px] lg:max-w-[250px] flex flex-wrap"
           >
             <SwiperSlide>
@@ -173,6 +176,7 @@ const Team = () => {
             effect={"flip"}
             loop={true}
             modules={[EffectFlip]}
+            allowTouchMove={false}
             className="max-w-[175px] md:max-w-[200px] lg:max-w-[250px] flex flex-wrap"
           >
             <SwiperSlide>
@@ -206,6 +210,7 @@ const Team = () => {
             effect={"flip"}
             loop={true}
             modules={[EffectFlip]}
+            allowTouchMove={false}
             className="max-w-[175px] md:max-w-[200px] lg:max-w-[250px] flex flex-wrap"
           >
             <SwiperSlide>
