@@ -1,15 +1,12 @@
-import React, { useState, useEffect } from 'react';
-
 import Image from 'next/image'
 import bg from '../public/bg0.png'
 import squid from '../public/passText.png'
 
-import { Link, animateScroll as scroll } from 'react-scroll';
 
 const Landing = () => {
   return (
     <div className="flex relative justify-center h-[970px] bg-gray-900" id="Landing">
-      <div className="bottom-0 absolute z-[3] translate-y-[6.9px]">
+      <div className="bottom-0 absolute z-[2] translate-y-[6.9px]">
         <Image quality={100} src={bg}/>
       </div>
       <div className="z-[4] grid grid-cols-1 h-[900px] lg:grid-cols-2 gap-20">

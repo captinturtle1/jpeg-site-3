@@ -4,24 +4,6 @@ import { loadFull } from "tsparticles";
 import { useCallback } from "react";
 
 const Background = () => {
-    const [scrollNav, setScrollNav] = useState(0);
-    const [scrollNavBool, setScrollNavBool] = useState(false);
-
-    // checks scroll distance for particle appear threshold
-    const changeNav = () => {
-        setScrollNav(window.scrollY);
-        if (window.scrollY >= 0) {
-            setScrollNavBool(true);
-          } else {
-            setScrollNavBool(false);
-          }
-    };
-
-    // scroll listener
-    useEffect(() => {
-        window.addEventListener('scroll', changeNav);
-    }, []);
-    
     // particle stuff
     const particlesInit = useCallback(async (engine) => {
         // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
@@ -35,7 +17,7 @@ const Background = () => {
 
     return (
         <>
-            <div className={scrollNavBool === true ? "transition-all w-full h-full fixed top-0 z-[2] flex opacity-100" : "transition-all w-full h-full fixed top-0 z-[2] flex opacity-0"}>
+            <div className="transition-all w-full h-full fixed top-0 z-[2] flex opacity-100">
                 <Particles
                   id="tsparticles"
                   init={particlesInit}
