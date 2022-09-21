@@ -53,7 +53,7 @@ const Navbar = ({ toggle }) => {
                   <Link onSetActive={() => handleSetActive(0)} to="Tools" spy={true} smooth={true} offset={0} duration={800} className={scrollNav === true ? "block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-10 cursor-pointer" : "block mt-4 lg:inline-block lg:mt-0 hover:text-gray-300 mr-10 cursor-pointer"}>
                     Tools
                   </Link>
-                  <Link onSetActive={() => handleSetActive(95)} to="Success" spy={true} smooth={true} offset={0} duration={800} className={scrollNav === true ? "block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-10 cursor-pointer" : "block mt-4 lg:inline-block lg:mt-0 hover:text-gray-300 mr-10 cursor-pointer"}>
+                  <Link onSetActive={() => handleSetActive(95)} to="Success" spy={true} smooth={true} offset={-100} duration={800} className={scrollNav === true ? "block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-10 cursor-pointer" : "block mt-4 lg:inline-block lg:mt-0 hover:text-gray-300 mr-10 cursor-pointer"}>
                     Success
                   </Link>
                   <Link onSetActive={() => handleSetActive(193)} to="Team" spy={true} smooth={true} offset={0} duration={800} className={scrollNav === true ? "block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-10 cursor-pointer" : "block mt-4 lg:inline-block lg:mt-0 hover:text-gray-300 mr-10 cursor-pointer"}>
