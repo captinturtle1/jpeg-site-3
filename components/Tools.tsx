@@ -4,7 +4,7 @@ import zetaExample from "../public/tools2.png"
 import degenmintExample from "../public/tools3.png"
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image'
-import bg from '../public/bg2.png'
+import bg from '../public/bg1.png'
 
 import fomoAlert from '../public/fomoalerts.png'
 import followAlerts from '../public/followalerts.png'

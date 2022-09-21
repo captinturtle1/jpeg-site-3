@@ -5,7 +5,7 @@ import { TbRotate360 } from 'react-icons/tb';
 import { FaTwitter } from 'react-icons/fa';
 import Image from 'next/image'
 
-import bg from '../public/bg4.png'
+import bg from '../public/bg3.png'
 import dody from '../public/dody.png'
 import dylan from '../public/dylan.png'
 import yasha from '../public/yasha.png'

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image'
 
-import bg from '../public/bg5.png'
+import bg from '../public/bg4.png'
 
 const FAQ = () => {
   const [box1, setBox1] = useState(false);

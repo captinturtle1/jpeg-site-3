@@ -23,9 +23,7 @@ const Landing = () => {
           <div className="max-w-[700px] text-2xl pb-8">A private collective of skilled traders and investors navigating the web3 space. Membership passes grant access to all community benefits while active. Each membership runs on a 30 day renewal system and can be managed at anytime via our dashboard.</div>
           <div className="max-w-[700px] text-2xl pb-8">Membership passes grant access to all community benefits while active. Each membership runs on a 30 day renewal system and can be managed at anytime via our dashboard.</div>
           <button className="transition-all inline-block text-2xl px-6 py-3 leading-none rounded font-bold text-white bg-blue-500 hover:bg-blue-400 drop-shadow hover:drop-shadow-sm">Apply</button>
-          <Link to="About" spy={true} smooth={true} offset={-100} duration={800}>
-            <button className="ml-6 transition-all inline-block text-2xl px-6 py-3 mb-3 leading-none rounded font-bold text-white bg-blue-500 hover:bg-blue-400 drop-shadow hover:drop-shadow-sm">More Info</button>
-          </Link>
+          <button className="ml-6 transition-all inline-block text-2xl px-6 py-3 mb-3 leading-none rounded font-bold text-white bg-blue-500 hover:bg-blue-400 drop-shadow hover:drop-shadow-sm">Buy Pass</button>
         </div>
       </div>
     </div>

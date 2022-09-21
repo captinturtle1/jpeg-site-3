@@ -37,7 +37,6 @@ const Home: NextPage = () => {
       <Navbar toggle={toggle}/>
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Landing/>
-      <About/>
       <Tools/>
       <Success/>
       <Team/>

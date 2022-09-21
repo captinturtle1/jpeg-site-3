@@ -20,9 +20,6 @@ const Sidebar = ({ isOpen, toggle }) => {
                   </div>
                 </div>
                 <div className="mt-[10vh] gap-10 text-3xl grid justify-items-center">
-                  <Link onClick={toggle} activeClass="" to="About" spy={true} smooth={true} offset={0} duration={800} className="text-gray-300 hover:text-white cursor-pointer">
-                    About
-                  </Link>
                   <Link onClick={toggle} activeClass="" to="Tools" spy={true} smooth={true} offset={0} duration={800} className="text-gray-300 hover:text-white cursor-pointer">
                     Tools
                   </Link>

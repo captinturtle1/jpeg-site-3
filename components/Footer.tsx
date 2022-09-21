@@ -20,9 +20,6 @@ const Footer = () => {
             <div>
               <div className="mb-2 font-bold text-xl select-none">Nav</div>
               <div>
-               <Link to="About" smooth={true} offset={0} duration={800} className="cursor-pointer text-white hover:text-gray-300">About</Link>
-              </div>
-              <div>
                <Link to="Tools" smooth={true} offset={0} duration={800} className="cursor-pointer text-white hover:text-gray-300">Tools</Link>
               </div>
               <div>

@@ -2,7 +2,7 @@ import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
 import React, { useState, useEffect } from 'react';
 
 import Image from 'next/image'
-import bg from '../public/bg3.png'
+import bg from '../public/bg2.png'
 import azuki from '../public/azuki.jpg'
 import CloneX from '../public/CloneX.png'
 import doodles from '../public/doodles.jpg'
