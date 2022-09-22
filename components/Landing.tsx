@@ -17,8 +17,8 @@ const Landing = () => {
         </div>
         <div className="m-auto px-10 lg:p-0 flex flex-wrap">
           <div className="m-auto lg:m-0 text-4xl lg:text-7xl text-center lg:text-left font-bold pb-8">Into the abyss</div>
-          <div className="max-w-[700px] text-center lg:text-left text-md xs:text-lg lg:text-2xl pb-8">A private collective of skilled traders and investors navigating the web3 space. Membership passes grant access to all community benefits while active. Each membership runs on a 30 day renewal system and can be managed at anytime via our dashboard.</div>
-          <div className="hidden lg:block max-w-[700px] text-center lg:text-left text-md xs:text-lg lg:text-2xl pb-8">Membership passes grant access to all community benefits while active. Each membership runs on a 30 day renewal system and can be managed at anytime via our dashboard.</div>
+          <div className="max-w-[700px] text-center lg:text-left text-md xs:text-lg lg:text-2xl pb-8">The Abyss community is hand selected by our staff to ensure the best for each and every member. Owning a membership pass grants access to a wide range of information from exclusive curated alpha that is only available in house, to some of the best tools on the market.</div>
+          <div className="hidden lg:block max-w-[700px] text-center lg:text-left text-md xs:text-lg lg:text-2xl pb-8">To join you can apply when new submissions open up or purchase a pass on OpenSea. Each pass has a renewal of either 30 or 45 days and can be managed using our dashboard.</div>
           <div className="grid xs:block gap-5 xs:gap-0 m-auto lg:m-0">
             <a className="m-auto">
               <button className="transition-all inline-block text-2xl px-6 py-3 leading-none rounded font-bold text-white bg-blue-500 hover:bg-blue-400 drop-shadow hover:drop-shadow-sm">Apply</button>

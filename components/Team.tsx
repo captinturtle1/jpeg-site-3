@@ -12,6 +12,7 @@ import yasha from '../public/yasha.png'
 import zoid from '../public/zoid.png'
 import chief from '../public/chiefnquach.png'
 import turtle from '../public/captinturtle.png'
+import jr from '../public/JR96.png'
 
 import "swiper/css";
 import "swiper/css/effect-flip";
@@ -25,8 +26,8 @@ const SwiperButtonNext = ({ children }) => {
 
 const Team = () => {  
   return (
-    <div className="flex justify-center h-[2350px] xs:h-[1250px] lg:h-[800px] bg-gray-400 z-[1] overflow-hidden" id="Team">
-      <div className="object-cover lg:object-fill h-[2351px] xs:h-[1251px] lg:h-[801px] w-full absolute z-[2]">
+    <div className="flex justify-center h-[2350px] xs:h-[1250px] lg:h-[1200px] bg-gray-400 z-[1] overflow-hidden" id="Team">
+      <div className="object-cover lg:object-fill h-[2351px] xs:h-[1251px] lg:h-[1201px] w-full absolute z-[2]">
         <Image layout="fill" quality={100} src={bg}/>
       </div>
       <div className="z-[4] lg:mx-10 text-white">
@@ -34,7 +35,7 @@ const Team = () => {
           <h1 className="text-4xl lg:text-6xl font-bold mx-auto 2xl:mt-32">Meet Our Team</h1>
           <div className="h-[3px] bg-white w-80 lg:w-[500px] mx-auto hidden lg:block mb-32"></div>
         </div>
-        <div className="mt-16 lg:m-auto grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6 gap-5 gap-y-16 md:gap-10 md:gap-y-20">
+        <div className="mt-16 lg:m-auto grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5 gap-y-16 md:gap-10 md:gap-y-20">
           <Swiper
             slidesPerView={1}
             effect={"flip"}
@@ -229,8 +230,7 @@ const Team = () => {
             <SwiperButtonNext>
               <div>
                   <div className="h-[280px] lg:h-[340px] flex px-5 drop-shadow-xl hover:drop-shadow-lg transition-all ease-out hover:translate-x-1 hover:translate-y-1 cursor-pointer bg-slate-800 rounded-xl py-8">
-                    <p className="text-[.8rem] lg:text-[1.1rem] m-auto text-center">Turtle is our in house developer and has been with us for several years. He is a well rounded, full stack developer focused on creating useful tools, writing and analyzing contracts and much more involving web3.
-</p>
+                    <p className="text-[.8rem] lg:text-[1.1rem] m-auto text-center">Turtle is our in house developer and has been with us for several years. He is a well rounded, full stack developer focused on creating useful tools, writing and analyzing contracts and much more involving web3.</p>
                     <TbRotate360 className="absolute bottom-5 right-5 text-slate-700 text-xl"/>
                   </div>
                 </div>
@@ -239,6 +239,58 @@ const Team = () => {
             <a href="https://twitter.com/foxninjac71" className="m-auto text-3xl">
               <FaTwitter/>
             </a>
+          </Swiper>
+          <Swiper
+            slidesPerView={1}
+            effect={"flip"}
+            loop={true}
+            modules={[EffectFlip]}
+            allowTouchMove={false}
+            className="max-w-[175px] md:max-w-[200px] lg:max-w-[250px] flex flex-wrap"
+          >
+            <SwiperSlide>
+            <SwiperButtonNext>
+              <div>
+                  <div className="h-[280px] lg:h-[340px] px-10 drop-shadow-xl hover:drop-shadow-lg transition-all ease-out hover:translate-x-1 hover:translate-y-1 cursor-pointer bg-slate-800 rounded-xl py-8">
+                    <Image src={jr} className="rounded-full"/>
+                    <div className="text-center font-bold text-3xl py-3">JR</div>
+                    <div className="text-center text-xl">Support</div>
+                    <TbRotate360 className="absolute bottom-5 right-5 text-slate-700 text-xl"/>
+                  </div>
+                </div>
+              </SwiperButtonNext>
+            </SwiperSlide>
+            <SwiperSlide>
+            <SwiperButtonNext>
+              <div>
+                  <div className="h-[280px] lg:h-[340px] flex px-5 drop-shadow-xl hover:drop-shadow-lg transition-all ease-out hover:translate-x-1 hover:translate-y-1 cursor-pointer bg-slate-800 rounded-xl py-8">
+                    <p className="text-[.8rem] lg:text-[1.1rem] m-auto text-center">JR has been involved in the NFT space for the past year and is working full time with several projects. His main focus is securing collabs and server-side support.</p>
+                    <TbRotate360 className="absolute bottom-5 right-5 text-slate-700 text-xl"/>
+                  </div>
+                </div>
+              </SwiperButtonNext>
+            </SwiperSlide>
+            <a href="https://twitter.com/JRLO96" className="m-auto text-3xl">
+              <FaTwitter/>
+            </a>
+          </Swiper>
+          <Swiper
+            slidesPerView={1}
+            effect={"flip"}
+            loop={true}
+            modules={[EffectFlip]}
+            allowTouchMove={false}
+            className="max-w-[175px] md:max-w-[200px] lg:max-w-[250px] flex flex-wrap"
+          >
+            <SwiperSlide>
+              <div>
+                  <div className="h-[280px] lg:h-[340px] px-10 drop-shadow-xl hover:drop-shadow-lg transition-all ease-out hover:translate-x-1 hover:translate-y-1 cursor-pointer bg-slate-800 rounded-xl py-8">
+                    <Image src={turtle} height={1} className="invisible"/>
+                    <div className="text-center font-bold text-3xl pt-20">And</div>
+                    <div className="text-center font-bold text-3xl">others</div>
+                  </div>
+                </div>
+            </SwiperSlide>
           </Swiper>
         </div>
       </div>
