@@ -16,12 +16,6 @@ import Footer from '../components/Footer'
 import Background from '../components/Background'
 
 const Home: NextPage = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
     <>
       <Head>
@@ -34,8 +28,7 @@ const Home: NextPage = () => {
         <meta name="theme-color" content="#0f172a" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <Navbar toggle={toggle}/>
-      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <Navbar/>
       <Landing/>
       <Tools/>
       <Success/>
