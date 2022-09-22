@@ -59,7 +59,7 @@ const Team = () => {
               <SwiperButtonNext>
                 <div>
                     <div className="h-[280px] lg:h-[340px] flex px-5 drop-shadow-xl hover:drop-shadow-lg transition-all ease-out hover:translate-x-1 hover:translate-y-1 cursor-pointer bg-slate-800 rounded-xl py-8">
-                      <p className="text-[.8rem] lg:text-[1.1rem] m-auto text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elilore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      <p className="text-[.8rem] lg:text-[1.1rem] m-auto text-center">Dody is an entrepreneur with a background in business management and hospitality. He's been involved in the crypto space since 2012 and has been doing NFT project analyses for over a year.</p>
                       <TbRotate360 className="absolute bottom-5 right-5 text-slate-700 text-xl"/>
                     </div>
                 </div>
@@ -93,7 +93,7 @@ const Team = () => {
               <SwiperButtonNext>
                 <div>
                   <div className="h-[280px] lg:h-[340px] flex px-5 drop-shadow-xl hover:drop-shadow-lg transition-all ease-out hover:translate-x-1 hover:translate-y-1 cursor-pointer bg-slate-800 rounded-xl py-8">
-                    <p className="text-[.8rem] lg:text-[1.1rem] m-auto text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elilore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p className="text-[.8rem] lg:text-[1.1rem] m-auto text-center">Dylan is a full stack developer with a decade worth of experience. He made the switch to web3 midway through 2021 and has been heavily involved in project development, analysis and more since then.</p>
                     <TbRotate360 className="absolute bottom-5 right-5 text-slate-700 text-xl"/>
                   </div>
                 </div>
@@ -127,7 +127,7 @@ const Team = () => {
               <SwiperButtonNext>
                 <div>
                   <div className="h-[280px] lg:h-[340px] flex px-5 drop-shadow-xl hover:drop-shadow-lg transition-all ease-out hover:translate-x-1 hover:translate-y-1 cursor-pointer bg-slate-800 rounded-xl py-8">
-                    <p className="text-[.8rem] lg:text-[1.1rem] m-auto text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elilore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p className="text-[.8rem] lg:text-[1.1rem] m-auto text-center">Yasha has been involved with NFT's the longest out of all of the owners. He got his start making plays on nifty gateway a few years ago and ever since has developed an eye for trends that others just don't see.</p>
                     <TbRotate360 className="absolute bottom-5 right-5 text-slate-700 text-xl"/>
                   </div>
                 </div>
@@ -151,7 +151,7 @@ const Team = () => {
                   <div className="h-[280px] lg:h-[340px] px-10 drop-shadow-xl hover:drop-shadow-lg transition-all ease-out hover:translate-x-1 hover:translate-y-1 cursor-pointer bg-slate-800 rounded-xl py-8">
                     <Image src={zoid} className="rounded-full"/>
                     <div className="text-center font-bold text-3xl py-3">Zoid</div>
-                    <div className="text-center text-xl">Caller</div>
+                    <div className="text-center text-xl">Defi</div>
                     <TbRotate360 className="absolute bottom-5 right-5 text-slate-700 text-xl"/>
                   </div>
                 </div>
@@ -161,7 +161,7 @@ const Team = () => {
               <SwiperButtonNext>
                 <div>
                   <div className="h-[280px] lg:h-[340px] flex px-5 drop-shadow-xl hover:drop-shadow-lg transition-all ease-out hover:translate-x-1 hover:translate-y-1 cursor-pointer bg-slate-800 rounded-xl py-8">
-                    <p className="text-[.8rem] lg:text-[1.1rem] m-auto text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elilore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p className="text-[.8rem] lg:text-[1.1rem] m-auto text-center">Zoid sets his focus on defi, mainly alts and meme coins instead of typical projects. He has been in the space for over a year and has a good eye for the latest trends and airdrops that could have potential.</p>
                     <TbRotate360 className="absolute bottom-5 right-5 text-slate-700 text-xl"/>
                   </div>
                 </div>
@@ -195,7 +195,7 @@ const Team = () => {
             <SwiperButtonNext>
               <div>
                   <div className="h-[280px] lg:h-[340px] flex px-5 drop-shadow-xl hover:drop-shadow-lg transition-all ease-out hover:translate-x-1 hover:translate-y-1 cursor-pointer bg-slate-800 rounded-xl py-8">
-                    <p className="text-[.8rem] lg:text-[1.1rem] m-auto text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elilore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p className="text-[.8rem] lg:text-[1.1rem] m-auto text-center">Chief is a seasoned vet in the space and works as ambassador for program and collab management at Chibi Dinos. His focus is on expansion through engagement, partnerships and creating utility.</p>
                     <TbRotate360 className="absolute bottom-5 right-5 text-slate-700 text-xl"/>
                   </div>
                 </div>
@@ -219,7 +219,7 @@ const Team = () => {
                   <div className="h-[280px] lg:h-[340px] px-10 drop-shadow-xl hover:drop-shadow-lg transition-all ease-out hover:translate-x-1 hover:translate-y-1 cursor-pointer bg-slate-800 rounded-xl py-8">
                     <Image src={turtle} className="rounded-full"/>
                     <div className="text-center font-bold text-3xl py-3">Turtle</div>
-                    <div className="text-center text-xl">Dev</div>
+                    <div className="text-center text-xl">Developer</div>
                     <TbRotate360 className="absolute bottom-5 right-5 text-slate-700 text-xl"/>
                   </div>
                 </div>
@@ -229,7 +229,8 @@ const Team = () => {
             <SwiperButtonNext>
               <div>
                   <div className="h-[280px] lg:h-[340px] flex px-5 drop-shadow-xl hover:drop-shadow-lg transition-all ease-out hover:translate-x-1 hover:translate-y-1 cursor-pointer bg-slate-800 rounded-xl py-8">
-                    <p className="text-[.8rem] lg:text-[1.1rem] m-auto text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elilore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p className="text-[.8rem] lg:text-[1.1rem] m-auto text-center">Turtle is our in house developer and has been with us for several years. He is a well rounded, full stack developer focused on creating useful tools, writing and analyzing contracts and much more involving web3.
+</p>
                     <TbRotate360 className="absolute bottom-5 right-5 text-slate-700 text-xl"/>
                   </div>
                 </div>
