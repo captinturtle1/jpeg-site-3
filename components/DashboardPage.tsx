@@ -321,7 +321,7 @@ const Dashboard = () => {
 
     return (
       <div>
-        <nav className="z-[1] fixed ml-20 mt-5 pt-6 px-10">
+        <nav className="z-[1] fixed pt-6 px-10">
           <NextLink href="/">
             <a className="flex items-center flex-shrink-0 text-white mr-6">
               <div className="h-8 w-8 mr-2">
@@ -366,7 +366,7 @@ const Dashboard = () => {
                             </>
                           ) : (
                             <>
-                              <div onClick={privateSaleStatus === true ? mintPass : nothing} className={privateSaleStatus === true && userMintStatus !== 0 ? "transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 rounded-xl" : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none"}>Mint</div>
+                              <div onClick={privateSaleStatus === true ? mintPass : nothing} className={privateSaleStatus === true && userMintStatus !== 0 ? "transition-all cursor-pointer bg-blue-500 hover:bg-blue-400 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 rounded-xl" : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none"}>Mint</div>
                               <div className="my-auto text-[1.1rem] 2xl:text-[1.5rem]">{price} Ξ</div>
                             </>
                           )}
@@ -375,7 +375,7 @@ const Dashboard = () => {
                         <>
                           {userStatusNum !== 0 ? (
                               <>
-                                <div onClick={canRenewStatus === true ? renew : nothing} className={canRenewStatus === true ? (monthsToRenew <= monthsAbleToRenew ? "transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 my-auto rounded-xl" : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none my-auto") : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none my-auto"}>Renew</div>
+                                <div onClick={canRenewStatus === true ? renew : nothing} className={canRenewStatus === true ? (monthsToRenew <= monthsAbleToRenew ? "transition-all cursor-pointer bg-blue-500 hover:bg-blue-400 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] text-center py-2 px-5 my-auto rounded-xl" : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none my-auto") : "transition-all bg-slate-600 text-slate-500 drop-shadow-xl text-center py-2 px-5 rounded-xl select-none my-auto"}>Renew</div>
                                   <form className="my-auto">
                                     <select
                                       value={monthsToRenew}
@@ -404,7 +404,7 @@ const Dashboard = () => {
                         placeholder="token #"
                         className="pl-2 p-1 focus:outline-none rounded-lg bg-neutral-800"
                       />
-                      <div onClick={getExpireTime} className="transition-all cursor-pointer bg-slate-500 hover:bg-slate-600 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] rounded-full text-center p-2"><FaSearch/></div>
+                      <div onClick={getExpireTime} className="transition-all cursor-pointer bg-blue-500 hover:bg-blue-400 drop-shadow-xl hover:drop-shadow-sm hover:translate-y-[1px] rounded-full text-center p-2"><FaSearch/></div>
                     </form>
                     <div className="m-auto font-bold pt-2">{expireTime}</div>
                   </div>
