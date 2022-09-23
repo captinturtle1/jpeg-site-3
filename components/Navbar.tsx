@@ -85,7 +85,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="hidden lg:flex items-center gap-6">
+      <div className="hidden lg:flex items-center gap-6 z-[1]">
         <a href="https://opensea.io/collection/abyssfnf" className={scrollNav === true ? "fill-gray-300 hover:fill-white visible transition-all hidden xl:flex" : "invisible opacity-0 transition-all"}>
           <svg className="h-6 w-6"><Opensea/></svg>
         </a>
