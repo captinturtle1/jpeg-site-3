@@ -43,7 +43,7 @@ const Tools = () => {
 
     return (
         <div className="grid justify-center h-[1000px] bg-gray-200 z-[1]" id="Tools">
-          <div className="object-cover lg:object-fill h-[1001px] w-full absolute z-[2]">
+          <div className="object-cover lg:object-fill h-[1001px] w-full absolute z-[2] select-none">
             <Image layout="fill" quality={100} src={bg}/>
           </div>
           <div className="z-[4] hidden lg:flex overflow-hidden">

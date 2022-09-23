@@ -6,7 +6,7 @@ import squid from '../public/passText.png'
 const Landing = () => {
   return (
     <div className="flex relative justify-center h-[1000px] lg:h-[970px] bg-gray-900" id="Landing">
-      <div className="bottom-0 absolute z-[2] translate-y-[6.9px]">
+      <div className="bottom-0 absolute z-[2] translate-y-[6.9px] select-none">
         <Image quality={100} src={bg}/>
       </div>
       <div className="z-[4] grid grid-cols-1 h-[900px] lg:grid-cols-2 gap-0 lg:gap-20">
