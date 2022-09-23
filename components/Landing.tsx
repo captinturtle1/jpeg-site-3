@@ -15,7 +15,7 @@ const Landing = () => {
             <Image src={squid}/>
           </div>
         </div>
-        <div className="m-auto px-10 lg:p-0 flex flex-col">
+        <div className="m-auto px-10 lg:p-0 flex flex-col text-white">
           <div className="m-auto lg:m-0 text-4xl lg:text-7xl text-center lg:text-left font-bold pb-8">Into the abyss</div>
           <div className="max-w-[700px] text-center lg:text-left text-md xs:text-lg lg:text-2xl pb-8">The Abyss community is hand selected by our staff to ensure the best for each and every member. Owning a membership pass grants access to a wide range of information from exclusive curated alpha that is only available in house, to some of the best tools on the market.</div>
           <div className="hidden lg:block max-w-[700px] text-center lg:text-left text-md xs:text-lg lg:text-2xl pb-8">To join you can apply when new submissions open up or purchase a pass on OpenSea. Each pass has a renewal of either 30 or 45 days and can be managed using our dashboard.</div>

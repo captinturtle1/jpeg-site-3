@@ -58,7 +58,7 @@ const Tools = () => {
               centeredSlides={true}
               spaceBetween={170}
               loop={true}
-              className="w-[1492px] rounded-3xl select-none m-auto drop-shadow-[15px_10px_10px_rgba(0,0,0,0.4)]">
+              className="w-[1492px] rounded-3xl select-none m-auto drop-shadow-[15px_10px_10px_rgba(0,0,0,0.4)] text-white">
               <SwiperSlide>
                 <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col pt-7">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
@@ -144,7 +144,7 @@ const Tools = () => {
               centeredSlides={true}
               spaceBetween={120}
               loop={true}
-              className="w-64 md:w-96 rounded-3xl select-none m-auto drop-shadow-[15px_10px_10px_rgba(0,0,0,0.4)]">
+              className="w-64 md:w-96 rounded-3xl select-none m-auto drop-shadow-[15px_10px_10px_rgba(0,0,0,0.4)] text-white">
               <SwiperSlide>
                 <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col pt-7">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
