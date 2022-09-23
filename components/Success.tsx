@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 import Image from 'next/image'
 import bg from '../public/bg2.png'
+
 import azuki from '../public/azuki.jpg'
 import CloneX from '../public/CloneX.png'
 import doodles from '../public/doodles.jpg'
@@ -25,72 +26,67 @@ const Success = () => {
               effect={"cards"}
               grabCursor={true}
               modules={[EffectCards]}
-              className="w-[300px] h-[450px] lg:w-[500px] lg:h-[650px] drop-shadow-2xl"
+              className="w-[250px] lg:w-[400px] drop-shadow-2xl"
             >
-              <SwiperSlide className="rounded-xl bg-slate-800 p-5 lg:p-10">
-                <div className="grid grid-cols-2 gap-6 lg:gap-12">
-                  <div className="w-[100px] lg:w-[200px]">
-                    <Image src={azuki} className="rounded-full"/>
+              <SwiperSlide>
+                <div className="flex flex-col">
+                  <Image src={azuki} className="rounded-t-3xl"/>
+                  <div className="grid gap-y-6 bg-slate-800 rounded-b-3xl pb-12">
+                    <h1 className="my-auto text-4xl font-bold m-auto col-span-2 pt-6">Azuki</h1>
+                    <h1 className="text-2xl ml-6 lg:ml-16">Buy in:</h1>
+                    <h1 className="text-2xl ml-6">10 E</h1>
+                    <h1 className="text-2xl ml-6 lg:ml-16">Sell:</h1>
+                    <h1 className="text-2xl ml-6">1,000 E</h1>
                   </div>
-                  <h1 className="my-auto text-2xl lg:text-4xl font-bold">Azuki</h1>
-                  <h1 className="text-3xl">Buy in:</h1>
-                  <h1 className="text-3xl">10 E</h1>
-                  <h1 className="text-3xl">Sell:</h1>
-                  <h1 className="text-3xl">1,000 E</h1>
                 </div>
-                <p className="text-[.9rem] lg:text-[1rem] pt-6 lg:pt-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               </SwiperSlide>
-              <SwiperSlide className="rounded-xl bg-slate-800 p-5 lg:p-10">
-                <div className="grid grid-cols-2 gap-6 lg:gap-12">
-                  <div className="w-[100px] lg:w-[200px]">
-                    <Image src={CloneX} className="rounded-full"/>
+              <SwiperSlide>
+                <div className="flex flex-col">
+                  <Image src={CloneX} className="rounded-t-3xl"/>
+                  <div className="grid gap-y-6 bg-slate-800 rounded-b-3xl pb-12">
+                    <h1 className="my-auto text-4xl font-bold m-auto col-span-2 pt-6">Azuki</h1>
+                    <h1 className="text-2xl ml-6 lg:ml-16">Buy in:</h1>
+                    <h1 className="text-2xl ml-6">10 E</h1>
+                    <h1 className="text-2xl ml-6 lg:ml-16">Sell:</h1>
+                    <h1 className="text-2xl ml-6">1,000 E</h1>
                   </div>
-                  <h1 className="my-auto text-2xl lg:text-4xl font-bold">CloneX</h1>
-                  <h1 className="text-3xl">Buy in:</h1>
-                  <h1 className="text-3xl">10 E</h1>
-                  <h1 className="text-3xl">Sell:</h1>
-                  <h1 className="text-3xl">1,000 E</h1>
                 </div>
-                <p className="text-[.9rem] lg:text-[1rem] pt-6 lg:pt-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               </SwiperSlide>
-              <SwiperSlide className="rounded-xl bg-slate-800 p-5 lg:p-10">
-                <div className="grid grid-cols-2 gap-6 lg:gap-12">
-                  <div className="w-[100px] lg:w-[200px]">
-                    <Image src={doodles} className="rounded-full"/>
+              <SwiperSlide>
+                <div className="flex flex-col">
+                  <Image src={doodles} className="rounded-t-3xl"/>
+                  <div className="grid gap-y-6 bg-slate-800 rounded-b-3xl pb-12">
+                    <h1 className="my-auto text-4xl font-bold m-auto col-span-2 pt-6">Azuki</h1>
+                    <h1 className="text-2xl ml-6 lg:ml-16">Buy in:</h1>
+                    <h1 className="text-2xl ml-6">10 E</h1>
+                    <h1 className="text-2xl ml-6 lg:ml-16">Sell:</h1>
+                    <h1 className="text-2xl ml-6">1,000 E</h1>
                   </div>
-                  <h1 className="my-auto text-2xl lg:text-4xl font-bold">Doodles</h1>
-                  <h1 className="text-3xl">Buy in:</h1>
-                  <h1 className="text-3xl">10 E</h1>
-                  <h1 className="text-3xl">Sell:</h1>
-                  <h1 className="text-3xl">1,000 E</h1>
                 </div>
-                <p className="text-[.9rem] lg:text-[1rem] pt-6 lg:pt-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               </SwiperSlide>
-              <SwiperSlide className="rounded-xl bg-slate-800 p-5 lg:p-10">
-                <div className="grid grid-cols-2 gap-6 lg:gap-12">
-                  <div className="w-[100px] lg:w-[200px]">
-                    <Image src={moonbirds} className="rounded-full"/>
+              <SwiperSlide>
+                <div className="flex flex-col">
+                  <Image src={moonbirds} className="rounded-t-3xl"/>
+                  <div className="grid gap-y-6 bg-slate-800 rounded-b-3xl pb-12">
+                    <h1 className="my-auto text-4xl font-bold m-auto col-span-2 pt-6">Azuki</h1>
+                    <h1 className="text-2xl ml-6 lg:ml-16">Buy in:</h1>
+                    <h1 className="text-2xl ml-6">10 E</h1>
+                    <h1 className="text-2xl ml-6 lg:ml-16">Sell:</h1>
+                    <h1 className="text-2xl ml-6">1,000 E</h1>
                   </div>
-                  <h1 className="my-auto text-2xl lg:text-4xl font-bold">Moonbirds</h1>
-                  <h1 className="text-3xl">Buy in:</h1>
-                  <h1 className="text-3xl">10 E</h1>
-                  <h1 className="text-3xl">Sell:</h1>
-                  <h1 className="text-3xl">1,000 E</h1>
                 </div>
-                <p className="text-[.9rem] lg:text-[1rem] pt-6 lg:pt-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               </SwiperSlide>
-              <SwiperSlide className="rounded-xl bg-slate-800 p-5 lg:p-10">
-                <div className="grid grid-cols-2 gap-6 lg:gap-12">
-                  <div className="w-[100px] lg:w-[200px]">
-                    <Image src={parallel} className="rounded-full"/>
+              <SwiperSlide>
+                <div className="flex flex-col">
+                  <Image src={parallel} className="rounded-t-3xl"/>
+                  <div className="grid gap-y-6 bg-slate-800 rounded-b-3xl pb-12">
+                    <h1 className="my-auto text-4xl font-bold m-auto col-span-2 pt-6">Azuki</h1>
+                    <h1 className="text-2xl ml-6 lg:ml-16">Buy in:</h1>
+                    <h1 className="text-2xl ml-6">10 E</h1>
+                    <h1 className="text-2xl ml-6 lg:ml-16">Sell:</h1>
+                    <h1 className="text-2xl ml-6">1,000 E</h1>
                   </div>
-                  <h1 className="my-auto text-2xl lg:text-4xl font-bold">Parallel</h1>
-                  <h1 className="text-3xl">Buy in:</h1>
-                  <h1 className="text-3xl">10 E</h1>
-                  <h1 className="text-3xl">Sell:</h1>
-                  <h1 className="text-3xl">1,000 E</h1>
                 </div>
-                <p className="text-[.9rem] lg:text-[1rem] pt-6 lg:pt-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               </SwiperSlide>
             </Swiper>
           </div>
