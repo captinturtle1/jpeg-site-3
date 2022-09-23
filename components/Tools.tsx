@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState, useEffect } from "react";
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 import Image from 'next/image'
@@ -13,9 +13,12 @@ import calander from '../public/calendar.jpg'
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
+
+
 const Tools = () => {
   const [swiperRef, setSwiperRef] = useState<any>();
   const [swiperRefMobile, setSwiperRefMobile] = useState<any>();
+
 
   const handleLeftClick = useCallback(() => {
     if (!swiperRef) return;
@@ -26,6 +29,7 @@ const Tools = () => {
     if (!swiperRef) return;
     swiperRef.slideNext();
   }, [swiperRef]);
+
 
   const handleLeftClickMobile = useCallback(() => {
     if (!swiperRefMobile) return;
@@ -38,11 +42,11 @@ const Tools = () => {
   }, [swiperRefMobile]);
 
     return (
-        <div className="grid justify-center h-[100vh] bg-gray-200 z-[1]" id="Tools">
-          <div className="object-cover lg:object-fill h-[100vh] w-full absolute z-[2]">
+        <div className="grid justify-center h-[1000px] bg-gray-200 z-[1]" id="Tools">
+          <div className="object-cover lg:object-fill h-[1001px] w-full absolute z-[2]">
             <Image layout="fill" quality={100} src={bg}/>
           </div>
-          <div className="z-[4] hidden lg:flex">
+          <div className="z-[4] hidden lg:flex overflow-hidden">
             <div className="m-auto">
               <div className="text-5xl text-white hover:text-gray-300 cursor-pointer" onClick={handleLeftClick}>
                 <FiChevronLeft/>
@@ -50,13 +54,13 @@ const Tools = () => {
             </div>
             <Swiper
               onSwiper={setSwiperRef}
-              spaceBetween={100}
-              loop={true}
               slidesPerView={3}
-              className="w-[1350px] rounded-3xl select-none m-auto drop-shadow-[15px_10px_10px_rgba(0,0,0,0.4)]"
-            >
+              centeredSlides={true}
+              spaceBetween={170}
+              loop={true}
+              className="w-[1492px] rounded-3xl select-none m-auto drop-shadow-[15px_10px_10px_rgba(0,0,0,0.4)]">
               <SwiperSlide>
-                <div className="bg-slate-800 w-96 rounded-3xl flex flex-col pt-7">
+                <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col pt-7">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
                     <Image src={fomoAlert} className="rounded-3xl"/>
                   </div>
@@ -67,7 +71,7 @@ const Tools = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="bg-slate-800 w-96 rounded-3xl flex flex-col pt-7">
+                <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col pt-7">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
                     <Image src={followAlerts} className="rounded-3xl"/>
                   </div>
@@ -78,7 +82,7 @@ const Tools = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="bg-slate-800 w-96 rounded-3xl flex flex-col pt-7">
+                <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col pt-7">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
                     <Image src={contractScraper} className="rounded-3xl"/>
                   </div>
@@ -89,7 +93,7 @@ const Tools = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="bg-slate-800 w-96 rounded-3xl flex flex-col pt-7">
+                <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col pt-7">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
                     <Image src={mintScraper} className="rounded-3xl"/>
                   </div>
@@ -100,7 +104,7 @@ const Tools = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="bg-slate-800 w-96 rounded-3xl flex flex-col pt-7">
+                <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col pt-7">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
                     <Image src={raffleScraper} className="rounded-3xl"/>
                   </div>
@@ -111,7 +115,7 @@ const Tools = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="bg-slate-800 w-96 rounded-3xl flex flex-col pt-7">
+                <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col pt-7">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
                     <Image src={calander} className="rounded-3xl"/>
                   </div>
@@ -128,88 +132,88 @@ const Tools = () => {
               </div>
             </div>
           </div>
-          <div className="z-[4] flex lg:hidden">
+          <div className="z-[4] flex lg:hidden overflow-hidden">
             <div className="m-auto">
-              <div className="hidden xs:block text-5xl text-white hover:text-gray-300 cursor-pointer" onClick={handleLeftClickMobile}>
+              <div className="text-5xl text-white active:text-gray-300 cursor-pointer" onClick={handleLeftClickMobile}>
                 <FiChevronLeft/>
               </div>
             </div>
             <Swiper
               onSwiper={setSwiperRefMobile}
-              spaceBetween={150}
-              loop={true}
               slidesPerView={1}
-              className="w-[280px] rounded-3xl select-none mt-auto drop-shadow-[15px_10px_10px_rgba(0,0,0,0.4)]"
-            >
+              centeredSlides={true}
+              spaceBetween={120}
+              loop={true}
+              className="w-64 md:w-96 rounded-3xl select-none m-auto drop-shadow-[15px_10px_10px_rgba(0,0,0,0.4)]">
               <SwiperSlide>
-                <div className="bg-slate-800 rounded-3xl flex flex-col">
+                <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col pt-7">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
                     <Image src={fomoAlert} className="rounded-3xl"/>
                   </div>
-                  <div className="flex flex-wrap w-full text-5xl rounded-b-3xl bg-slate-800 pt-6 p-8">
+                  <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
                     <div className="text-[1.2rem] font-bold pb-4">FOMO Alerts</div>
-                    <div className="text-[1rem] h-16">FOMO alerts are extremely useful and will notify you based on different market conditions surrounding trending projects.</div>
+                    <div className="text-[1rem] h-26">FOMO alerts are extremely useful and will notify you based on different market conditions surrounding trending projects.</div>
                   </div>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="bg-slate-800 rounded-3xl flex flex-col">
+                <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col pt-7">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
                     <Image src={followAlerts} className="rounded-3xl"/>
                   </div>
-                  <div className="flex flex-wrap w-full text-5xl rounded-b-3xl bg-slate-800 pt-6 p-8">
+                  <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
                     <div className="text-[1.2rem] font-bold pb-4">Follow Alerts</div>
-                    <div className="text-[1rem] h-16">Follow alerts will show you who important figures are following and can be useful for finding new projects before they blow up.</div>
+                    <div className="text-[1rem] h-26">Follow alerts will show you who important figures are following and can be useful for finding new projects before they blow up.</div>
                   </div>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="bg-slate-800 rounded-3xl flex flex-col">
+                <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col pt-7">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
                     <Image src={contractScraper} className="rounded-3xl"/>
                   </div>
-                  <div className="flex flex-wrap w-full text-5xl rounded-b-3xl bg-slate-800 pt-6 p-8">
+                  <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
                     <div className="text-[1.2rem] font-bold pb-4">Contract Alerts</div>
-                    <div className="text-[1rem] h-16">Contract alerts makes sure you have access to any lowkey mints or stealth drops that fly under the radar since not every mint is announced.</div>
+                    <div className="text-[1rem] h-26">Contract alerts makes sure you have access to any lowkey mints or stealth drops that fly under the radar since not every mint is announced.</div>
                   </div>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="bg-slate-800 rounded-3xl flex flex-col">
+                <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col pt-7">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
                     <Image src={mintScraper} className="rounded-3xl"/>
                   </div>
-                  <div className="flex flex-wrap w-full text-5xl rounded-b-3xl bg-slate-800 pt-6 p-8">
+                  <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
                     <div className="text-[1.2rem] font-bold pb-4">Mint Alerts</div>
-                    <div className="text-[1rem] h-16">Mint alerts will let you know when a new project has begun minting or when and older project gains some traction and begins to sell out.</div>
+                    <div className="text-[1rem] h-26">Mint alerts will let you know when a new project has begun minting or when and older project gains some traction and begins to sell out.</div>
                   </div>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="bg-slate-800 rounded-3xl flex flex-col">
+                <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col pt-7">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
                     <Image src={raffleScraper} className="rounded-3xl"/>
                   </div>
-                  <div className="flex flex-wrap w-full text-5xl rounded-b-3xl bg-slate-800 pt-6 p-8">
+                  <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
                     <div className="text-[1.2rem] font-bold pb-4">Raffle Alerts</div>
-                    <div className="text-[1rem] h-16">Raffle alerts will ensure you never miss another whitelist opportunity whether its on premint, superful, discord, twitter, you name it.</div>
+                    <div className="text-[1rem] h-26">Raffle alerts will ensure you never miss another whitelist opportunity whether its on premint, superful, discord, twitter, you name it.</div>
                   </div>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="bg-slate-800 rounded-3xl flex flex-col">
+                <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col pt-7">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
                     <Image src={calander} className="rounded-3xl"/>
                   </div>
-                  <div className="flex flex-wrap w-full text-5xl rounded-b-3xl bg-slate-800 pt-6 p-8">
+                  <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
                     <div className="text-[1.2rem] font-bold pb-4">Daily Calendar</div>
-                    <div className="text-[1rem] h-16">A daily list that is meant to serve as a quick guide for new projects minting from day to day and is updated regularly.</div>
+                    <div className="text-[1rem] h-26">A daily list that is meant to serve as a quick guide for new projects minting from day to day and is updated regularly.</div>
                   </div>
                 </div>
               </SwiperSlide>
             </Swiper>
             <div className="m-auto">
-              <div className="hidden xs:block text-5xl text-white hover:text-gray-300 cursor-pointer" onClick={handleRightClickMobile}>
+              <div className="text-5xl text-white active:text-gray-300 cursor-pointer" onClick={handleRightClickMobile}>
                 <FiChevronRight/>
               </div>
             </div>
