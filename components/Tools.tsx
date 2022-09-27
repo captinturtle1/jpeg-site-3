@@ -50,7 +50,7 @@ const Tools = () => {
             <h1 className="text-4xl lg:text-6xl font-bold mx-auto">Our tools</h1>
             <div className="h-[3px] bg-white w-[300px] mx-auto hidden lg:block"></div>
           </div>
-          <div className="z-[4] hidden lg:flex overflow-hidden">
+          <div className="z-[4] hidden lg:flex overflow-hidden drop-shadow-lg">
             <div className="m-auto">
               <div className="text-5xl text-white hover:text-gray-300 cursor-pointer" onClick={handleLeftClick}>
                 <FiChevronLeft/>
@@ -62,7 +62,7 @@ const Tools = () => {
               centeredSlides={true}
               spaceBetween={170}
               loop={true}
-              className="w-[1492px] rounded-3xl select-none m-auto mt-16 drop-shadow-[15px_10px_10px_rgba(0,0,0,0.4)] text-white">
+              className="w-[1492px] rounded-3xl select-none m-auto mt-16  text-white">
               <SwiperSlide>
                 <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col pt-7">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
@@ -136,7 +136,7 @@ const Tools = () => {
               </div>
             </div>
           </div>
-          <div className="z-[4] flex lg:hidden overflow-hidden">
+          <div className="z-[4] flex lg:hidden overflow-hidden drop-shadow-xl">
             <div className="m-auto">
               <div className="text-5xl text-white active:text-gray-300 cursor-pointer" onClick={handleLeftClickMobile}>
                 <FiChevronLeft/>
@@ -148,7 +148,7 @@ const Tools = () => {
               centeredSlides={true}
               spaceBetween={120}
               loop={true}
-              className="w-64 md:w-96 rounded-3xl select-none drop-shadow-[15px_10px_10px_rgba(0,0,0,0.4)] text-white">
+              className="w-64 md:w-96 rounded-3xl select-none text-white">
               <SwiperSlide>
                 <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col pt-7">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
