@@ -42,9 +42,13 @@ const Tools = () => {
   }, [swiperRefMobile]);
 
     return (
-        <div className="grid justify-center h-[1000px] bg-gray-200 z-[1]" id="Tools">
-          <div className="object-cover lg:object-fill h-[1001px] w-full absolute z-[2] select-none">
+        <div className="flex flex-col justify-center h-[900px] lg:h-[1100px] bg-gray-200 z-[1]" id="Tools">
+          <div className="object-cover lg:object-fill h-[901px] lg:h-[1101px] w-full absolute z-[2] select-none">
             <Image layout="fill" quality={100} src={bg}/>
+          </div>
+          <div className="z-[4] flex flex-col gap-5 h-24">
+            <h1 className="text-4xl lg:text-6xl font-bold mx-auto">Our tools</h1>
+            <div className="h-[3px] bg-white w-[300px] mx-auto hidden lg:block"></div>
           </div>
           <div className="z-[4] hidden lg:flex overflow-hidden">
             <div className="m-auto">
@@ -58,7 +62,7 @@ const Tools = () => {
               centeredSlides={true}
               spaceBetween={170}
               loop={true}
-              className="w-[1492px] rounded-3xl select-none m-auto drop-shadow-[15px_10px_10px_rgba(0,0,0,0.4)] text-white">
+              className="w-[1492px] rounded-3xl select-none m-auto mt-16 drop-shadow-[15px_10px_10px_rgba(0,0,0,0.4)] text-white">
               <SwiperSlide>
                 <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col pt-7">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
@@ -144,7 +148,7 @@ const Tools = () => {
               centeredSlides={true}
               spaceBetween={120}
               loop={true}
-              className="w-64 md:w-96 rounded-3xl select-none m-auto drop-shadow-[15px_10px_10px_rgba(0,0,0,0.4)] text-white">
+              className="w-64 md:w-96 rounded-3xl select-none drop-shadow-[15px_10px_10px_rgba(0,0,0,0.4)] text-white">
               <SwiperSlide>
                 <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col pt-7">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">

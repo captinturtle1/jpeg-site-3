@@ -71,8 +71,9 @@ const FAQ = () => {
         <div className="object-cover lg:object-fill h-[1101px] lg:h-[951px] w-full absolute z-[2] select-none">
           <Image layout="fill" quality={100} src={bg}/>
         </div>
-        <div className="flex absolute pt-[150px] z-[3] text-white">
-          <h1 className="text-4xl lg:text-6xl font-bold">Questions?</h1>
+        <div className="z-[3] flex flex-col absolute pt-[150px] gap-5 text-white">
+          <h1 className="text-4xl lg:text-6xl font-bold mx-auto">Questions?</h1>
+          <div className="h-[3px] bg-white w-[350px] mx-auto hidden lg:block"></div>
         </div>
         <div className="z-[3] mt-[300px] text-white">
           <div className="grid grid-cols-1 gap-1 mx-8 lg:w-[500px] m-auto">

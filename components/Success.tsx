@@ -22,15 +22,15 @@ const Success = () => {
             <Image layout="fill" quality={100} src={bg}/>
           </div>
           <div className="z-[4] text-white">
-            <div className="flex flex-col gap-5">
-              <h1 className="text-4xl lg:text-6xl font-bold mx-auto pb-16 lg:py-0">Past calls</h1>
-              <div className="h-[3px] bg-white w-80 lg:w-[300px] mx-auto hidden lg:block mb-32"></div>
-            </div>
+          <div className="z-[4] flex flex-col gap-5 h-24">
+            <h1 className="text-4xl lg:text-6xl font-bold mx-auto">Past calls</h1>
+            <div className="h-[3px] bg-white w-[300px] mx-auto hidden lg:block"></div>
+          </div>
             <Swiper
               effect={"cards"}
               grabCursor={true}
               modules={[EffectCards]}
-              className="w-[250px] lg:w-[400px] drop-shadow-2xl"
+              className="w-[250px] lg:w-[400px] drop-shadow-2xl mt-16"
             >
               <SwiperSlide>
                 <div className="flex flex-col">

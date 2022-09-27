@@ -26,16 +26,16 @@ const SwiperButtonNext = ({ children }) => {
 
 const Team = () => {  
   return (
-    <div className="flex justify-center h-[2750px] xs:h-[1650px] lg:h-[1550px] 2xl:h-[1200px] bg-gray-400 z-[1] overflow-hidden" id="Team">
-      <div className="object-cover lg:object-fill h-[2751px] xs:h-[1651px] lg:h-[1551px] 2xl:h-[1200px] w-full absolute z-[2] select-none">
+    <div className="flex justify-center h-[2850px] xs:h-[1750px] lg:h-[1550px] 2xl:h-[1100px] bg-gray-400 z-[1] overflow-hidden" id="Team">
+      <div className="object-cover lg:object-fill h-[2851px] xs:h-[1751px] lg:h-[1551px] 2xl:h-[1101px] w-full absolute z-[2] select-none">
         <Image layout="fill" quality={100} src={bg}/>
       </div>
       <div className="z-[4] lg:mx-10 text-white">
-        <div className="flex flex-col gap-5">
-          <h1 className="text-4xl lg:text-6xl font-bold mx-auto 2xl:mt-32">Meet Our Team</h1>
-          <div className="h-[3px] bg-white w-80 lg:w-[500px] mx-auto hidden lg:block mb-32"></div>
+        <div className="z-[4] flex flex-col gap-5 h-24 mt-16">
+          <h1 className="text-3xl lg:text-6xl font-bold mx-auto">Meet Our Team</h1>
+          <div className="h-[3px] bg-white w-[500px] mx-auto hidden lg:block"></div>
         </div>
-        <div className="mt-16 lg:m-auto grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5 gap-y-16 md:gap-10 md:gap-y-20">
+        <div className="mt-16 grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5 gap-y-16 md:gap-10 md:gap-y-20">
           <Swiper
             slidesPerView={1}
             effect={"flip"}
