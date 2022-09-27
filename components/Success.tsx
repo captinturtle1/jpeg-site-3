@@ -17,11 +17,15 @@ import "swiper/css/effect-cards";
 
 const Success = () => {
     return (
-        <div className="flex justify-center items-center h-[800px] bg-gray-300 z-[1] overflow-hidden" id="Success">
-          <div className="object-cover lg:object-fill h-[802px] w-full absolute z-[2] select-none">
+        <div className="flex justify-center items-center h-[850px] lg:h-[1050px] bg-gray-300 z-[1] overflow-hidden" id="Success">
+          <div className="object-cover lg:object-fill h-[851px] lg:h-[1051px] w-full absolute z-[2] select-none">
             <Image layout="fill" quality={100} src={bg}/>
           </div>
           <div className="z-[4] text-white">
+            <div className="flex flex-col gap-5">
+              <h1 className="text-4xl lg:text-6xl font-bold mx-auto pb-16 lg:py-0">Past calls</h1>
+              <div className="h-[3px] bg-white w-80 lg:w-[300px] mx-auto hidden lg:block mb-32"></div>
+            </div>
             <Swiper
               effect={"cards"}
               grabCursor={true}
@@ -32,7 +36,7 @@ const Success = () => {
                 <div className="flex flex-col">
                   <Image layout="responsive" src={officehours} className="rounded-t-3xl"/>
                   <div className="grid gap-y-6 bg-slate-800 rounded-b-3xl pb-12 translate-y-[-1px]">
-                    <h1 className="my-auto text-4xl font-bold m-auto col-span-2 pt-6">Office Hours</h1>
+                    <h1 className="my-auto text-2xl lg:text-4xl font-bold m-auto col-span-2 pt-6">Office Hours</h1>
                     <h1 className="text-2xl ml-6 lg:ml-16">Avg Entry:</h1>
                     <h1 className="text-2xl ml-6">0 Ξ</h1>
                     <h1 className="text-2xl ml-6 lg:ml-16">Avg Exit</h1>
@@ -45,7 +49,7 @@ const Success = () => {
                 <div className="flex flex-col">
                   <Image layout="responsive" src={eightliens} className="rounded-t-3xl"/>
                   <div className="grid gap-y-6 bg-slate-800 rounded-b-3xl pb-12 translate-y-[-1px]">
-                    <h1 className="my-auto text-4xl font-bold m-auto col-span-2 pt-6">8liens</h1>
+                    <h1 className="my-auto text-2xl lg:text-4xl font-bold m-auto col-span-2 pt-6">8liens</h1>
                     <h1 className="text-2xl ml-6 lg:ml-16">Avg Entry:</h1>
                     <h1 className="text-2xl ml-6">0.1 Ξ</h1>
                     <h1 className="text-2xl ml-6 lg:ml-16">Avg Exit</h1>
@@ -58,7 +62,7 @@ const Success = () => {
                 <div className="flex flex-col">
                   <Image layout="responsive" src={pudgypenguins} className="rounded-t-3xl"/>
                   <div className="grid gap-y-6 bg-slate-800 rounded-b-3xl pb-12 translate-y-[-1px]">
-                    <h1 className="my-auto text-4xl font-bold m-auto col-span-2 pt-6">Pudgy Penguins</h1>
+                    <h1 className="my-auto text-2xl lg:text-4xl font-bold m-auto col-span-2 pt-6">Pudgy Penguins</h1>
                     <h1 className="text-2xl ml-6 lg:ml-16">Avg Entry:</h1>
                     <h1 className="text-2xl ml-6">1.1 Ξ</h1>
                     <h1 className="text-2xl ml-6 lg:ml-16">Avg Exit</h1>
@@ -71,7 +75,7 @@ const Success = () => {
                 <div className="flex flex-col">
                   <Image layout="responsive" src={isekai} className="rounded-t-3xl"/>
                   <div className="grid gap-y-6 bg-slate-800 rounded-b-3xl pb-12 translate-y-[-1px]">
-                    <h1 className="my-auto text-4xl font-bold m-auto col-span-2 pt-6">Isekai</h1>
+                    <h1 className="my-auto text-2xl lg:text-4xl font-bold m-auto col-span-2 pt-6">Isekai</h1>
                     <h1 className="text-2xl ml-6 lg:ml-16">Avg Entry:</h1>
                     <h1 className="text-2xl ml-6">0.15 Ξ</h1>
                     <h1 className="text-2xl ml-6 lg:ml-16">Avg Exit</h1>
@@ -84,7 +88,7 @@ const Success = () => {
                 <div className="flex flex-col">
                   <Image layout="responsive" src={lilpudgys} className="rounded-t-3xl"/>
                   <div className="grid gap-y-6 bg-slate-800 rounded-b-3xl pb-12 translate-y-[-1px]">
-                    <h1 className="my-auto text-4xl font-bold m-auto col-span-2 pt-6">Lil Pudgys</h1>
+                    <h1 className="my-auto text-2xl lg:text-4xl font-bold m-auto col-span-2 pt-6">Lil Pudgys</h1>
                     <h1 className="text-2xl ml-6 lg:ml-16">Avg Entry:</h1>
                     <h1 className="text-2xl ml-6">0.08 Ξ</h1>
                     <h1 className="text-2xl ml-6 lg:ml-16">Avg Exit</h1>
