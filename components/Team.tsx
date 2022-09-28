@@ -60,7 +60,7 @@ const Team = () => {
               <SwiperButtonNext>
                 <div>
                     <div className="h-[280px] lg:h-[340px] flex px-5 drop-shadow-xl hover:drop-shadow-lg transition-all ease-out hover:translate-x-1 hover:translate-y-1 cursor-pointer bg-slate-800 rounded-xl py-8">
-                      <p className="text-[.8rem] lg:text-[1.1rem] m-auto text-center">Dody is an entrepreneur with a background in business management and hospitality. He's been involved in the crypto space since 2012 and has been doing NFT project analyses for over a year.</p>
+                      <p className="text-[.8rem] lg:text-[1.1rem] m-auto text-center">Dody is an entrepreneur with a background in business management and hospitality. He&apos;s been involved in the crypto space since 2012 and has been doing NFT project analyses for over a year.</p>
                       <TbRotate360 className="absolute bottom-5 right-5 text-slate-700 text-xl"/>
                     </div>
                 </div>
@@ -128,7 +128,7 @@ const Team = () => {
               <SwiperButtonNext>
                 <div>
                   <div className="h-[280px] lg:h-[340px] flex px-5 drop-shadow-xl hover:drop-shadow-lg transition-all ease-out hover:translate-x-1 hover:translate-y-1 cursor-pointer bg-slate-800 rounded-xl py-8">
-                    <p className="text-[.8rem] lg:text-[1.1rem] m-auto text-center">Yasha has been involved with NFT's the longest out of all of the owners. He got his start making plays on nifty gateway a few years ago and ever since has developed an eye for trends that others just don't see.</p>
+                    <p className="text-[.8rem] lg:text-[1.1rem] m-auto text-center">Yasha has been involved with NFT&apos;s the longest out of all of the owners. He got his start making plays on nifty gateway a few years ago and ever since has developed an eye for trends that others just don&apos;t see.</p>
                     <TbRotate360 className="absolute bottom-5 right-5 text-slate-700 text-xl"/>
                   </div>
                 </div>
