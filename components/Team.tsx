@@ -283,13 +283,26 @@ const Team = () => {
             className="max-w-[175px] md:max-w-[200px] lg:max-w-[250px] flex-wrap hidden 2xl:flex"
           >
             <SwiperSlide>
-              <div>
+              <SwiperButtonNext>
+                <div>
                   <div className="h-[280px] lg:h-[340px] px-10 drop-shadow-xl hover:drop-shadow-lg transition-all ease-out hover:translate-x-1 hover:translate-y-1 cursor-pointer bg-slate-800 rounded-xl py-8">
                     <Image src={turtle} height={1} className="invisible"/>
-                    <div className="text-center font-bold text-3xl pt-20">And</div>
-                    <div className="text-center font-bold text-3xl">others</div>
+                    <div className="text-center font-bold text-3xl pt-20"></div>
+                    <div className="text-center font-bold text-3xl"></div>
                   </div>
                 </div>
+              </SwiperButtonNext>
+            </SwiperSlide>
+            <SwiperSlide>
+              <SwiperButtonNext>
+                <div>
+                  <div className="h-[280px] lg:h-[340px] px-10 drop-shadow-xl hover:drop-shadow-lg transition-all ease-out hover:translate-x-1 hover:translate-y-1 cursor-pointer bg-slate-800 rounded-xl py-8">
+                    <Image src={turtle} height={1} className="invisible"/>
+                    <div className="text-center font-bold text-3xl pt-20">+Additional</div>
+                    <div className="text-center font-bold text-3xl">Staff</div>
+                  </div>
+                </div>
+              </SwiperButtonNext>
             </SwiperSlide>
           </Swiper>
         </div>
