@@ -150,7 +150,7 @@ const Tools = () => {
               loop={true}
               className="w-64 md:w-96 rounded-3xl select-none text-white">
               <SwiperSlide>
-                <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col pt-7">
+                <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
                     <Image src={fomoAlert} className="rounded-3xl"/>
                   </div>
@@ -161,7 +161,7 @@ const Tools = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col pt-7">
+                <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
                     <Image src={followAlerts} className="rounded-3xl"/>
                   </div>
@@ -172,7 +172,7 @@ const Tools = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col pt-7">
+                <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
                     <Image src={contractScraper} className="rounded-3xl"/>
                   </div>
@@ -183,7 +183,7 @@ const Tools = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col pt-7">
+                <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
                     <Image src={mintScraper} className="rounded-3xl"/>
                   </div>
@@ -194,7 +194,7 @@ const Tools = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col pt-7">
+                <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
                     <Image src={raffleScraper} className="rounded-3xl"/>
                   </div>
@@ -205,7 +205,7 @@ const Tools = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col pt-7">
+                <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
                     <Image src={calander} className="rounded-3xl"/>
                   </div>
