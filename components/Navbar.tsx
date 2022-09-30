@@ -44,7 +44,7 @@ const Navbar = () => {
       <div className="absolute top-0 left-0 flex w-full py-6 px-10">
         <Link onSetActive={() => handleSetActive(0)} to="Landing" spy={true} smooth={true} offset={0} duration={800} className="flex flex-none items-center flex-shrink-0 text-white mr-6 cursor-pointer">
           <div className="fill-current h-8 w-8 mr-2 rounded-xl">
-            <Image src={logo}/>
+            <Image priority={true} src={logo}/>
           </div>
           <span className="font-semibold text-xl tracking-tight mr-4 visible">Abyss</span>
         </Link>

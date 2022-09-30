@@ -325,7 +325,7 @@ const Dashboard = () => {
           <NextLink href="/">
             <a className="flex items-center flex-shrink-0 text-white mr-6">
               <div className="h-8 w-8 mr-2">
-                <Image height="100%" width="100%" src="/logo.png" className="rounded-xl"/>
+                <Image height="100%" width="100%" priority={true} src="/logo.png" className="rounded-xl"/>
               </div>
               <span className="font-semibold text-xl tracking-tight mr-4">Abyss</span>
             </a>

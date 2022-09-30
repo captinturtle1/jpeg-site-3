@@ -12,7 +12,7 @@ const Landing = () => {
       <div className="z-[4] grid grid-cols-1 h-[900px] lg:grid-cols-2 gap-0 lg:gap-20">
         <div className="mx-auto mt-20 xs:mt-32 lg:m-auto w-[200px] xs:w-[300px] sm:w-[400px] md:w-[400px] lg:w-[580px] xl:w-[650px] flex justify-center drop-shadow-[15px_10px_10px_rgba(0,0,0,0.4)]">
           <div>
-            <Image src={squid}/>
+            <Image priority={true} src={squid}/>
           </div>
         </div>
         <div className="m-auto px-10 lg:p-0 flex flex-col text-white">

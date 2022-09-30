@@ -48,7 +48,7 @@ const Team = () => {
               <SwiperButtonNext>
                 <div>
                   <div className="h-[280px] lg:h-[340px] px-10 drop-shadow-xl hover:drop-shadow-lg transition-all ease-out hover:translate-x-1 hover:translate-y-1 cursor-pointer bg-slate-800 rounded-xl py-8">
-                    <Image src={dody} className="rounded-full"/>
+                    <Image priority={true} src={dody} className="rounded-full"/>
                     <div className="text-center font-bold text-3xl py-3">Dody</div>
                     <div className="text-center text-xl">Owner</div>
                     <TbRotate360 className="absolute bottom-5 right-5 text-slate-700 text-xl"/>
@@ -82,7 +82,7 @@ const Team = () => {
               <SwiperButtonNext>
                 <div>
                   <div className="h-[280px] lg:h-[340px] px-10 drop-shadow-xl hover:drop-shadow-lg transition-all ease-out hover:translate-x-1 hover:translate-y-1 cursor-pointer bg-slate-800 rounded-xl py-8">
-                    <Image src={dylan} className="rounded-full"/>
+                    <Image priority={true} src={dylan} className="rounded-full"/>
                     <div className="text-center font-bold text-3xl py-3">Dylan</div>
                     <div className="text-center text-xl">Owner</div>
                     <TbRotate360 className="absolute bottom-5 right-5 text-slate-700 text-xl"/>
@@ -116,7 +116,7 @@ const Team = () => {
               <SwiperButtonNext>
                 <div>
                   <div className="h-[280px] lg:h-[340px] px-10 drop-shadow-xl hover:drop-shadow-lg transition-all ease-out hover:translate-x-1 hover:translate-y-1 cursor-pointer bg-slate-800 rounded-xl py-8">
-                    <Image src={yasha} className="rounded-full"/>
+                    <Image priority={true} src={yasha} className="rounded-full"/>
                     <div className="text-center font-bold text-3xl py-3">Yasha</div>
                     <div className="text-center text-xl">Owner</div>
                     <TbRotate360 className="absolute bottom-5 right-5 text-slate-700 text-xl"/>
@@ -150,7 +150,7 @@ const Team = () => {
               <SwiperButtonNext>
                 <div>
                   <div className="h-[280px] lg:h-[340px] px-10 drop-shadow-xl hover:drop-shadow-lg transition-all ease-out hover:translate-x-1 hover:translate-y-1 cursor-pointer bg-slate-800 rounded-xl py-8">
-                    <Image src={zoid} className="rounded-full"/>
+                    <Image priority={true} src={zoid} className="rounded-full"/>
                     <div className="text-center font-bold text-3xl py-3">Zoid</div>
                     <div className="text-center text-xl">Defi</div>
                     <TbRotate360 className="absolute bottom-5 right-5 text-slate-700 text-xl"/>
@@ -184,7 +184,7 @@ const Team = () => {
               <SwiperButtonNext>
                 <div>
                   <div className="h-[280px] lg:h-[340px] px-10 drop-shadow-xl hover:drop-shadow-lg transition-all ease-out hover:translate-x-1 hover:translate-y-1 cursor-pointer bg-slate-800 rounded-xl py-8">
-                    <Image src={chief} className="rounded-full"/>
+                    <Image priority={true} src={chief} className="rounded-full"/>
                     <div className="text-center font-bold text-3xl py-3">Chief</div>
                     <div className="text-center text-xl">Collabs</div>
                     <TbRotate360 className="absolute bottom-5 right-5 text-slate-700 text-xl"/>
@@ -218,7 +218,7 @@ const Team = () => {
             <SwiperButtonNext>
               <div>
                   <div className="h-[280px] lg:h-[340px] px-10 drop-shadow-xl hover:drop-shadow-lg transition-all ease-out hover:translate-x-1 hover:translate-y-1 cursor-pointer bg-slate-800 rounded-xl py-8">
-                    <Image src={turtle} className="rounded-full"/>
+                    <Image priority={true} src={turtle} className="rounded-full"/>
                     <div className="text-center font-bold text-3xl py-3">Turtle</div>
                     <div className="text-center text-xl">Developer</div>
                     <TbRotate360 className="absolute bottom-5 right-5 text-slate-700 text-xl"/>
@@ -252,7 +252,7 @@ const Team = () => {
             <SwiperButtonNext>
               <div>
                   <div className="h-[280px] lg:h-[340px] px-10 drop-shadow-xl hover:drop-shadow-lg transition-all ease-out hover:translate-x-1 hover:translate-y-1 cursor-pointer bg-slate-800 rounded-xl py-8">
-                    <Image src={jr} className="rounded-full"/>
+                    <Image priority={true} src={jr} className="rounded-full"/>
                     <div className="text-center font-bold text-3xl py-3">JR</div>
                     <div className="text-center text-xl">Support</div>
                     <TbRotate360 className="absolute bottom-5 right-5 text-slate-700 text-xl"/>

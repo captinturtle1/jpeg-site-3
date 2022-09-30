@@ -66,7 +66,7 @@ const Tools = () => {
               <SwiperSlide>
                 <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col pt-7">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
-                    <Image src={fomoAlert} className="rounded-3xl"/>
+                    <Image priority={true} src={fomoAlert} className="rounded-3xl"/>
                   </div>
                   <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
                     <div className="text-[1.2rem] font-bold pb-4">FOMO Alerts</div>
@@ -77,7 +77,7 @@ const Tools = () => {
               <SwiperSlide>
                 <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col pt-7">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
-                    <Image src={followAlerts} className="rounded-3xl"/>
+                    <Image priority={true} src={followAlerts} className="rounded-3xl"/>
                   </div>
                   <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
                     <div className="text-[1.2rem] font-bold pb-4">Follow Alerts</div>
@@ -88,7 +88,7 @@ const Tools = () => {
               <SwiperSlide>
                 <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col pt-7">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
-                    <Image src={contractScraper} className="rounded-3xl"/>
+                    <Image priority={true} src={contractScraper} className="rounded-3xl"/>
                   </div>
                   <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
                     <div className="text-[1.2rem] font-bold pb-4">Contract Alerts</div>
@@ -99,7 +99,7 @@ const Tools = () => {
               <SwiperSlide>
                 <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col pt-7">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
-                    <Image src={mintScraper} className="rounded-3xl"/>
+                    <Image priority={true} src={mintScraper} className="rounded-3xl"/>
                   </div>
                   <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
                     <div className="text-[1.2rem] font-bold pb-4">Mint Alerts</div>
@@ -110,7 +110,7 @@ const Tools = () => {
               <SwiperSlide>
                 <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col pt-7">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
-                    <Image src={raffleScraper} className="rounded-3xl"/>
+                    <Image priority={true} src={raffleScraper} className="rounded-3xl"/>
                   </div>
                   <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
                     <div className="text-[1.2rem] font-bold pb-4">Raffle Alerts</div>
@@ -121,7 +121,7 @@ const Tools = () => {
               <SwiperSlide>
                 <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col pt-7">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
-                    <Image src={calander} className="rounded-3xl"/>
+                    <Image priority={true} src={calander} className="rounded-3xl"/>
                   </div>
                   <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
                     <div className="text-[1.2rem] font-bold pb-4">Daily Calendar</div>
@@ -152,7 +152,7 @@ const Tools = () => {
               <SwiperSlide>
                 <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
-                    <Image src={fomoAlert} className="rounded-3xl"/>
+                    <Image priority={true} src={fomoAlert} className="rounded-3xl"/>
                   </div>
                   <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
                     <div className="text-[1.2rem] font-bold pb-4">FOMO Alerts</div>
@@ -163,7 +163,7 @@ const Tools = () => {
               <SwiperSlide>
                 <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
-                    <Image src={followAlerts} className="rounded-3xl"/>
+                    <Image priority={true} src={followAlerts} className="rounded-3xl"/>
                   </div>
                   <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
                     <div className="text-[1.2rem] font-bold pb-4">Follow Alerts</div>
@@ -174,7 +174,7 @@ const Tools = () => {
               <SwiperSlide>
                 <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
-                    <Image src={contractScraper} className="rounded-3xl"/>
+                    <Image priority={true} src={contractScraper} className="rounded-3xl"/>
                   </div>
                   <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
                     <div className="text-[1.2rem] font-bold pb-4">Contract Alerts</div>
@@ -185,7 +185,7 @@ const Tools = () => {
               <SwiperSlide>
                 <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
-                    <Image src={mintScraper} className="rounded-3xl"/>
+                    <Image priority={true} src={mintScraper} className="rounded-3xl"/>
                   </div>
                   <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
                     <div className="text-[1.2rem] font-bold pb-4">Mint Alerts</div>
@@ -196,7 +196,7 @@ const Tools = () => {
               <SwiperSlide>
                 <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
-                    <Image src={raffleScraper} className="rounded-3xl"/>
+                    <Image priority={true} src={raffleScraper} className="rounded-3xl"/>
                   </div>
                   <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
                     <div className="text-[1.2rem] font-bold pb-4">Raffle Alerts</div>
@@ -207,7 +207,7 @@ const Tools = () => {
               <SwiperSlide>
                 <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
-                    <Image src={calander} className="rounded-3xl"/>
+                    <Image priority={true} src={calander} className="rounded-3xl"/>
                   </div>
                   <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
                     <div className="text-[1.2rem] font-bold pb-4">Daily Calendar</div>
