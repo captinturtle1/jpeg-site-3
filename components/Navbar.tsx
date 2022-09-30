@@ -41,7 +41,7 @@ const Navbar = () => {
 
   return (
     <nav className={isOpen === true ? "z-20 fixed top-0 left-0 right-0 flex items-center justify-between flex-col bg-gray-800 py-6 px-10 ease-out bg-opacity-80 backdrop-blur-lg h-[95vh] transition-all m-5 rounded-[35px]" : (scrollNav === true ?  "h-20 z-20 fixed top-0 left-0 right-0 mx-5 lg:mx-20 mt-5 flex items-center justify-between flex-wrap bg-gray-700 py-6 px-10 ease-out transition-all bg-opacity-80 backdrop-blur-lg rounded-[35px] select-none" : "h-20 z-20 fixed top-0 left-0 right-0 flex items-center justify-between flex-wrap bg-gray-700 p-6 bg-opacity-0 ease-out transition-all select-none")}>
-      <div className="fixed top-0 left-0 flex w-full py-6 px-10">
+      <div className="absolute top-0 left-0 flex w-full py-6 px-10">
         <Link onSetActive={() => handleSetActive(0)} to="Landing" spy={true} smooth={true} offset={0} duration={800} className="flex flex-none items-center flex-shrink-0 text-white mr-6 cursor-pointer">
           <div className="fill-current h-8 w-8 mr-2 rounded-xl">
             <Image src={logo}/>
