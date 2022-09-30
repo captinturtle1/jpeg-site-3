@@ -338,7 +338,7 @@ const Dashboard = () => {
               <div className={walletAddress === undefined ? "transition-all duration-1000 invisible opacity-0" : "transition-all visible flex opacity-100"}>
                 <div className={walletAddress === undefined ? "grid grid-cols-1 xl:grid-cols-2 gap-10 m-auto invisible opacity-0" : "transition-all ease-linear delay-100 duration-200 grid grid-cols-1 xl:grid-cols-2 gap-10 m-auto visible opacity-100"}>
                   <div className="hidden xl:block rounded-3xl drop-shadow-[5px_10px_10px_rgba(0,0,0,0.4)] m-auto">
-                    <Image width="500px" height="500px" src="/pass.png"/>
+                    <Image width="500px" height="500px" priority={true} src="/pass.png"/>
                   </div>
                   <div className="my-auto">
                     <h1 className="font-bold text-lg 2xl:text-3xl">Welcome</h1>

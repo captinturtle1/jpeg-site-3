@@ -28,7 +28,7 @@ const Team = () => {
   return (
     <div className="flex justify-center h-[2850px] xs:h-[1750px] lg:h-[1550px] 2xl:h-[1100px] bg-gray-400 z-[1] overflow-hidden" id="Team">
       <div className="object-cover lg:object-fill h-[2851px] xs:h-[1751px] lg:h-[1551px] 2xl:h-[1101px] w-full absolute z-[2] select-none">
-        <Image layout="fill" quality={100} src={bg}/>
+        <Image layout="fill" quality={100} priority={true} src={bg}/>
       </div>
       <div className="z-[4] lg:mx-10 text-white">
         <div className="z-[4] flex flex-col gap-5 h-24 mt-16">

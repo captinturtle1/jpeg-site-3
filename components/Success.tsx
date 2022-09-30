@@ -19,7 +19,7 @@ const Success = () => {
     return (
         <div className="flex justify-center items-center h-[850px] lg:h-[1050px] bg-gray-300 z-[1] overflow-hidden" id="Success">
           <div className="object-cover lg:object-fill h-[851px] lg:h-[1051px] w-full absolute z-[2] select-none">
-            <Image layout="fill" quality={100} src={bg}/>
+            <Image layout="fill" quality={100} priority={true} src={bg}/>
           </div>
           <div className="z-[4] text-white">
           <div className="z-[4] flex flex-col gap-5 h-24">

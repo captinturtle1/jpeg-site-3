@@ -44,7 +44,7 @@ const Tools = () => {
     return (
         <div className="flex flex-col justify-center h-[900px] lg:h-[1100px] bg-gray-200 z-[1]" id="Tools">
           <div className="object-cover lg:object-fill h-[901px] lg:h-[1101px] w-full absolute z-[2] select-none">
-            <Image layout="fill" quality={100} src={bg}/>
+            <Image layout="fill" quality={100} priority={true} src={bg}/>
           </div>
           <div className="z-[4] flex flex-col gap-5 h-24">
             <h1 className="text-4xl lg:text-6xl font-bold mx-auto">Our tools</h1>
