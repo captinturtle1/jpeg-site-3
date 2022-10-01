@@ -11,6 +11,9 @@ import mintScraper from '../public/Mints.png'
 import raffleScraper from '../public/Raffles.png'
 import calander from '../public/Calendar.png'
 import tokun from '../public/Tokun.png'
+import blur from '../public/Blur.png'
+import nerds from '../public/Nerds.png'
+import soloist from '../public/Soloist.png'
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -141,6 +144,39 @@ const Tools = () => {
                   </div>
                 </div>
               </SwiperSlide>
+              <SwiperSlide>
+                <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col">
+                  <div className="flex-grow text-5xl rounded-t-3xl m-auto">
+                    <Image priority={true} src={blur} className="rounded-3xl"/>
+                  </div>
+                  <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
+                    <div className="text-[1.2rem] font-bold pb-4">Blur Access</div>
+                    <div className="text-[1rem] h-16">Access to one of the best (private) real-time aggregators with bulk (de)listing, instant metadata reveals and portfolio analytics. </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col">
+                  <div className="flex-grow text-5xl rounded-t-3xl m-auto">
+                    <Image priority={true} src={nerds} className="rounded-3xl"/>
+                  </div>
+                  <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
+                    <div className="text-[1.2rem] font-bold pb-4">Nerds Access</div>
+                    <div className="text-[1rem] h-16">Access to the premium version of NFT Nerds, the top NFT analytics toolkit on Ethereum for professional traders.</div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col">
+                  <div className="flex-grow text-5xl rounded-t-3xl m-auto">
+                    <Image priority={true} src={soloist} className="rounded-3xl"/>
+                  </div>
+                  <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
+                    <div className="text-[1.2rem] font-bold pb-4">Soloist Access</div>
+                    <div className="text-[1rem] h-16">Access to the premium version of NFT Soloist, the top NFT analytics toolkit on Solana for professional traders.</div>
+                  </div>
+                </div>
+              </SwiperSlide>
             </Swiper>
             <div className="m-auto">
               <div className="text-5xl text-white hover:text-gray-300 cursor-pointer" onClick={handleRightClick}>
@@ -235,6 +271,39 @@ const Tools = () => {
                   <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
                     <div className="text-[1.2rem] font-bold pb-4">Tokun Access</div>
                     <div className="text-[1rem] h-26">Free lifetime access to Tokun Toolbox for all Abyss pass holders. Access to wallet management, bulk aggregation, analytics and more.</div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col">
+                  <div className="flex-grow text-5xl rounded-t-3xl m-auto">
+                    <Image priority={true} src={blur} className="rounded-3xl"/>
+                  </div>
+                  <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
+                    <div className="text-[1.2rem] font-bold pb-4">Blur Access</div>
+                    <div className="text-[1rem] h-26">Access to one of the best (private) real-time aggregators with bulk (de)listing, instant metadata reveals and portfolio analytics.</div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col">
+                  <div className="flex-grow text-5xl rounded-t-3xl m-auto">
+                    <Image priority={true} src={nerds} className="rounded-3xl"/>
+                  </div>
+                  <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
+                    <div className="text-[1.2rem] font-bold pb-4">Nerds Access</div>
+                    <div className="text-[1rem] h-26">Access to the premium version of NFT Nerds, the top NFT analytics toolkit on Ethereum for professional traders.</div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col">
+                  <div className="flex-grow text-5xl rounded-t-3xl m-auto">
+                    <Image priority={true} src={soloist} className="rounded-3xl"/>
+                  </div>
+                  <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
+                    <div className="text-[1.2rem] font-bold pb-4">Soloist Access</div>
+                    <div className="text-[1rem] h-26">Access to the premium version of NFT Soloist, the top NFT analytics toolkit on Solana for professional traders.</div>
                   </div>
                 </div>
               </SwiperSlide>
