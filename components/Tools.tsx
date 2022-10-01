@@ -4,12 +4,13 @@ import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import Image from 'next/image'
 import bg from '../public/bg1.png'
 
-import fomoAlert from '../public/fomo.jpg'
-import followAlerts from '../public/follow.jpg'
-import contractScraper from '../public/contract.jpg'
-import mintScraper from '../public/mint.jpg'
-import raffleScraper from '../public/raffle.jpg'
-import calander from '../public/calendar.jpg'
+import fomoAlert from '../public/FOMO.png'
+import followAlerts from '../public/Follows.png'
+import contractScraper from '../public/Contracts.png'
+import mintScraper from '../public/Mints.png'
+import raffleScraper from '../public/Raffles.png'
+import calander from '../public/Calendar.png'
+import tokun from '../public/Tokun.png'
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -64,7 +65,7 @@ const Tools = () => {
               loop={true}
               className="w-[1492px] rounded-3xl select-none m-auto mt-16  text-white">
               <SwiperSlide>
-                <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col pt-7">
+                <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
                     <Image priority={true} src={fomoAlert} className="rounded-3xl"/>
                   </div>
@@ -75,7 +76,7 @@ const Tools = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col pt-7">
+                <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
                     <Image priority={true} src={followAlerts} className="rounded-3xl"/>
                   </div>
@@ -86,7 +87,7 @@ const Tools = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col pt-7">
+                <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
                     <Image priority={true} src={contractScraper} className="rounded-3xl"/>
                   </div>
@@ -97,7 +98,7 @@ const Tools = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col pt-7">
+                <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
                     <Image priority={true} src={mintScraper} className="rounded-3xl"/>
                   </div>
@@ -108,7 +109,7 @@ const Tools = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col pt-7">
+                <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
                     <Image priority={true} src={raffleScraper} className="rounded-3xl"/>
                   </div>
@@ -119,13 +120,24 @@ const Tools = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col pt-7">
+                <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col">
                   <div className="flex-grow text-5xl rounded-t-3xl m-auto">
                     <Image priority={true} src={calander} className="rounded-3xl"/>
                   </div>
                   <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
                     <div className="text-[1.2rem] font-bold pb-4">Daily Calendar</div>
                     <div className="text-[1rem] h-16">A daily list that is meant to serve as a quick guide for new projects minting from day to day and is updated regularly.</div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="bg-slate-800 w-80 xl:w-96 rounded-3xl flex flex-col">
+                  <div className="flex-grow text-5xl rounded-t-3xl m-auto">
+                    <Image priority={true} src={tokun} className="rounded-3xl"/>
+                  </div>
+                  <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
+                    <div className="text-[1.2rem] font-bold pb-4">Tokun Access</div>
+                    <div className="text-[1rem] h-16">Free lifetime access to Tokun Toolbox for all Abyss pass holders. Access to wallet management, bulk aggregation, analytics and more.</div>
                   </div>
                 </div>
               </SwiperSlide>
@@ -212,6 +224,17 @@ const Tools = () => {
                   <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
                     <div className="text-[1.2rem] font-bold pb-4">Daily Calendar</div>
                     <div className="text-[1rem] h-26">A daily list that is meant to serve as a quick guide for new projects minting from day to day and is updated regularly.</div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="bg-slate-800 w-64 md:w-96 rounded-3xl flex flex-col">
+                  <div className="flex-grow text-5xl rounded-t-3xl m-auto">
+                    <Image priority={true} src={tokun} className="rounded-3xl"/>
+                  </div>
+                  <div className="flex flex-wrap w-full text-5xl bg-400-800 rounded-b-3xl bg-slate-800 pt-6 p-8">
+                    <div className="text-[1.2rem] font-bold pb-4">Tokun Access</div>
+                    <div className="text-[1rem] h-26">Free lifetime access to Tokun Toolbox for all Abyss pass holders. Access to wallet management, bulk aggregation, analytics and more.</div>
                   </div>
                 </div>
               </SwiperSlide>
