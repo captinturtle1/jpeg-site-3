@@ -70,16 +70,20 @@ export default async function handler(req, res) {
     let nftObject = {
         name: name,
         description: description,
+        external_url: external_url,
+        image: image,
+        animation_url: animation_url,
         attributes: [
             {trait_type: "Type", value: type},
             {display_type: "date", trait_type: "Expiration", value: expiration},
             {trait_type: "Status", value: expiredStatus}
-        ],
-        image: image,
-        animation_url: animation_url,
-        external_url: external_url 
+        ]
     }
 
-    res.end(`${JSON.stringify(nftObject)}`)
+    try {
+        res.status(200).json({ nftObject })
+    } catch (err) {
+        res.status(500).json({ error: 'failed to load data' })
+    } 
   }
   
