@@ -26,6 +26,7 @@ export default async function handler(req, res) {
     let description;
     let type;
     let expiration = timeConverter(expireTime);
+    let expirationUNIX = expireTime;
     let expiredStatus;
     let image;
     let animation_url;
@@ -75,7 +76,8 @@ export default async function handler(req, res) {
         animation_url: animation_url,
         attributes: [
             {trait_type: "Type", value: type},
-            {display_type: "date", trait_type: "Expiration", value: expiration},
+            {display_type: "date", trait_type: "Expiration", value: expirationUNIX},
+            {display_type: "date", trait_type: "ExpirationDate", value: expiration},
             {trait_type: "Status", value: expiredStatus}
         ]
     }
