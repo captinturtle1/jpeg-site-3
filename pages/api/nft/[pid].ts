@@ -80,6 +80,6 @@ export default async function handler(req, res) {
         external_url: external_url 
     }
 
-    res.end(`${JSON.stringify(nftObject)}}`)
+    res.end(`${JSON.stringify(nftObject)}`)
   }
   
