@@ -128,7 +128,7 @@ export const getTotalSupply = async () => {
       await initWeb3();
     }
     let supply = await nftContract.totalSupply();
-     return supply.toString()
+    return supply.toString()
 };
 
 export const mintToken = async (userMintStatus, proof) => {

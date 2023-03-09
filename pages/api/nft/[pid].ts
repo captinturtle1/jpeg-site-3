@@ -1,7 +1,7 @@
 import { ethers } from "ethers";
 
 const abi = require('../../../components/web3/abi.json');
-const provider = new ethers.providers.JsonRpcProvider("https://eth-mainnet.g.alchemy.com/v2/y-6zzw3DXBgO-qvDv_FHbLCSQHiSz13d");
+const provider = new ethers.providers.JsonRpcProvider(`https://eth-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_API}`);
 const contract = new ethers.Contract("0xFBbB17037Fd01851ddA9FC097748EB3E52A56710", abi, provider);
 
 const timeConverter = (UNIX_timestamp) => {
